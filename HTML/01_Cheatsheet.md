@@ -1,13 +1,9 @@
-# HTML Cheatsheet 
+<h1 align="center"> <b> HTML Cheatsheet </b> </h1>
 
 **By YB-Productions** <br>
 **Updated: 4 June 2025**
 
 <br>
-
-
-
-
 
 <br>
 
