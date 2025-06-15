@@ -30,3 +30,8 @@ getElementsByTagName("input")     //not work
 
 ### Some common error faced 
 - see item.dataset / item.targer.dataset...see what we need while accesing contents from the folder
+
+
+## Text animations
+[1](https://tobiasahlin.com/moving-letters/)
+[2](https://prismic.io/blog/css-hover-effects#3-explosive-text-effect)
