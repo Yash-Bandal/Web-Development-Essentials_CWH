@@ -113,8 +113,85 @@ App (Parent Component)
 
 <br>
 
-Thus
+---
 
-* **Props** are used to configure components from the outside.
-* **State** is used to manage internal, changeable data.
-* Together, they help React build interactive, modular UIs.
+<br>
+
+# Proptypes (Compliance checkers)
+PropTypes are a type-checking feature built into React (via the prop-types package) that allows you to validate the types of props passed to your components during development.
+
+---
+> 💡 Think of them as runtime checks that warn you in the console if the wrong type of prop is passed to a component.
+---
+
+```js
+import PropTypes from 'prop-types';
+//Componant = created componant
+// all inside are props passed
+
+
+// Basic types
+Component.propTypes = {
+  text: PropTypes.string,
+  count: PropTypes.number,
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
+  data: PropTypes.object,
+  children: PropTypes.node,       // anything that can be rendered
+  element: PropTypes.element      // only React elements
+};
+
+// Required props
+Component.propTypes = {
+  name: PropTypes.string.isRequired
+};
+
+// Array types
+Component.propTypes = {
+  tags: PropTypes.array,                         // any array
+  scores: PropTypes.arrayOf(PropTypes.number),   // array of numbers
+};
+
+// Object with shape
+Component.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    isAdmin: PropTypes.bool
+  })
+};
+
+// One of specific values (enum-like)
+Component.propTypes = {
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
+};
+
+// One of many types
+Component.propTypes = {
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
+};
+
+// Object with flexible keys and value types
+Component.propTypes = {
+  options: PropTypes.objectOf(PropTypes.string)
+};
+```
+
+### Default Props
+
+Passed like default attribute inside functions
+- use `isrequired` for strong compliance 
+
+```js
+Component.defaultProps = {
+  text: 'Hello',
+  count: 0,
+  isActive: false,
+  tags: [],
+  onClick: () => {}
+};
+
+```
