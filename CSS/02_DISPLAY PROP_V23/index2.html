@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Property</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            padding: 45px;
+            margin : 45px;
+            /*padding top is hided by inline so use inline-blocl*/
+            /* display: inline; */ /*Converts the 2 div blocks to inline.side by side */
+            /* display: inline-block; */
+
+            display: inline-flex;
+            justify-content: center;
+
+        }
+
+        .box1 {
+            border: 2px solid purple;
+
+        }
+
+        .box2 {
+            border: 2px solid black;
+            /* display:none */
+            /* visibility: hidden; */
+
+            
+
+        }
+
+        .inline {
+            border: 2px solid red;
+        }
+
+        .inline2 {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Blocks-->
+    <div class="box box1">
+        I am box1..inside div
+    </div>
+
+    <div class="box box2">
+        I am box2 ..try hiding with display none and visibility hidden
+        visiblity hidden retains space
+    </div>
+
+    <!--Inlines-->
+    <span class="inline">
+        I am a good boy
+    </span>
+    <span class="inline2">
+        and a good boy 2
+    </span>
+</body>
+
+</html>
+
+<!--
+Used for conversions specially for div span..inline and block eles
+
+display inline does not respect padding top..so if  padding added..the above top padding is not maintained
+same for margin..width
+so use inline-blovk
+
+
+Generally display flex box is used 70 80 percent timesto center the box or bajula sarkavayla
+display flex justify content center
+display inline flex ..justify
+-->
+<!---->
