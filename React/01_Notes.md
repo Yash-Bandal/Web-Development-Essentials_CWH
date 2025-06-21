@@ -56,7 +56,12 @@ function App() {
 9. While sharing project, we dont give `node_modules` folder, its removed and can be reinstalled using `npm install`
 10. Replace all `#` with `/`, and `class` (div class = "") with camelcase `className`
 
+<br>
+
 ## Part 2
 
 1. For neatness create a  folder `components` and include all files in initial capital letter, eg `Navbar.js`
 2. Module files are `.mjs`
+3. We communicate from embeded parent to child created componant using props,
+   - Use case :
+   - You can just copy entire componant and make small changes to reuse that componant
