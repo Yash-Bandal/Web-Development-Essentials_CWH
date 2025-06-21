@@ -54,26 +54,8 @@ npm start
 [Reference](https://www.codewithharry.com/tutorial/react-home) <br>
 [Documentation](https://react.dev/learn)
 
----
-> Note:
----
-1. There aee some folders inside the created react app, you will make changes to package.json when add package , and add componants inside `src` folder
-2. We mostly dont change the index.html , inside the `public` folder, only make changes when adding bootstrap or such things, we make changes in src for componants
-3. The `<div id="root"></div>` inside index.html is populated using `js` 
-4. You cant return more than one main JSX, only one </APP>
-```js
-function App() {
-  return (
 
-    //JSX
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
 
-  );
-}
-
-```
 
 
 <br>
