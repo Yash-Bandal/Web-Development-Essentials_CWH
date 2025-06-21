@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Handlers</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button, input, div, video { margin: 10px; padding: 5px; border: 1px solid black; }
+        .box { width: 100px; height: 100px; background-color: lightblue; }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript `on___` Event Handlers</h2>
+
+    <!-- Mouse Events -->
+    <button id="clickBtn">Click Me</button>
+    <button id="dblClickBtn">Double Click Me</button>
+    <div id="mouseBox" class="box">Hover Me</div>
+
+    <!-- Keyboard Events -->
+    <input type="text" id="textInput" placeholder="Type something...">
+
+    <!-- Form Events -->
+    <form id="myForm">
+        <input type="text" placeholder="Enter Name" id="nameInput">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Window Events -->
+    <p id="scrollMsg">Scroll down to trigger an event.</p>
+
+    <!-- Drag & Drop -->
+    <div id="dragBox" class="box" draggable="true">Drag Me</div>
+    <div id="dropZone" class="box" style="background-color: lightcoral;">Drop Here</div>
+
+    <!-- Media Events -->
+    <video id="videoPlayer" width="200" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+
+    <!-- Output -->
+    <p id="output"></p>
+
+    <script>
+        // 1. Mouse Events
+        document.getElementById("clickBtn").onclick = function () {
+            alert("Button Clicked!");
+        };
+
+        document.getElementById("dblClickBtn").ondblclick = function () {
+            alert("Button Double-Clicked!");
+        };
+
+        document.getElementById("mouseBox").onmouseover = function () {
+            this.style.backgroundColor = "yellow";
+        };
+        document.getElementById("mouseBox").onmouseout = function () {
+            this.style.backgroundColor = "lightblue";
+        };
+
+        // 2. Keyboard Events
+        document.getElementById("textInput").onkeydown = function (event) {
+            document.getElementById("output").innerText = "Key Pressed: " + event.key;
+        };
+
+        // 3. Form Events
+        document.getElementById("nameInput").onfocus = function () {
+            this.style.backgroundColor = "lightgray";
+        };
+        document.getElementById("nameInput").onblur = function () {
+            this.style.backgroundColor = "white";
+        };
+
+        document.getElementById("myForm").onsubmit = function (event) {
+            event.preventDefault();
+            alert("Form Submitted!");
+        };
+
+        // 4. Window Events
+        window.onload = function () {
+            console.log("Page Loaded!");
+        };
+
+        window.onscroll = function () {
+            document.getElementById("scrollMsg").innerText = "You scrolled!";
+        };
+
+        // 5. Drag & Drop Events
+        let dragBox = document.getElementById("dragBox");
+        let dropZone = document.getElementById("dropZone");
+
+        dragBox.ondragstart = function (event) {
+            event.dataTransfer.setData("text", event.target.id);
+        };
+
+        dropZone.ondragover = function (event) {
+            event.preventDefault();
+        };
+
+        dropZone.ondrop = function (event) {
+            event.preventDefault();
+            let data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+            alert("Dropped Successfully!");
+        };
+
+        // 6. Media Events
+        let videoPlayer = document.getElementById("videoPlayer");
+
+        videoPlayer.onplay = function () {
+            console.log("Video is playing...");
+        };
+
+        videoPlayer.onpause = function () {
+            console.log("Video paused.");
+        };
+
+        videoPlayer.onended = function () {
+            alert("Video has ended.");
+        };
+
+        // 7. Clipboard Events
+        document.getElementById("textInput").oncopy = function () {
+            alert("Text Copied!");
+        };
+
+        document.getElementById("textInput").onpaste = function () {
+            alert("Text Pasted!");
+        };
+
+        // 8. Touch Events (For Mobile Devices)
+        document.body.ontouchstart = function () {
+            console.log("Screen Touched!");
+        };
+    </script>
+
+</body>
+</html>

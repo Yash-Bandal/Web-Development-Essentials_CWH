@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Events Example</title>
+  <style>
+    form {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      max-width: 400px;
+    }
+    input, select, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Form Events Example</h1>
+
+  <form id="myForm">
+    <label for="textInput">Text Input:</label>
+    <input type="text" id="textInput" placeholder="Type something...">
+
+    <label for="selectBox">Select Box:</label>
+    <select id="selectBox">
+      <option value="">Choose an option</option>
+      <option value="Option 1">Option 1</option>
+      <option value="Option 2">Option 2</option>
+      <option value="Option 3">Option 3</option>
+    </select>
+
+    <label for="textarea">Text Area:</label>
+    <textarea id="textarea" rows="4" placeholder="Write something..."></textarea>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+  </form>
+
+  <p id="output">Interact with the form to see the events in action.</p>
+
+  <script src="form.js"></script>
+</body>
+</html>

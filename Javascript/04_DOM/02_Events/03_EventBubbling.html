@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+
+    <style>
+           .Child {
+            background-color: rgb(107, 186, 255);
+            border: 2px solid black;
+            padding: 14px;
+            margin: 14px;
+            cursor: pointer;
+        }
+
+        .Parent {
+            background-color: rgb(0, 80, 146);
+            padding: 14px;
+            margin: 14px;
+        }
+
+        .GrandParent {
+            background-color: rgb(2, 25, 57);
+            padding: 14px;
+            margin: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="GrandParent">
+        <div class="Parent">
+            <div class="Child">
+             I am Child
+            </div>
+        </div>
+    </div>
+    <script src="bubble.js"></script>
+</body>
+
+<script>
+// document.getElementsByClassName("GrandParent").addEventListener("click",(e)=>{
+//     alert("GrandParent was clicked");
+// })
+
+
+document.querySelector(".GrandParent").addEventListener("click",(e)=>{
+    e.stoppropogation()
+    alert("GrandParent was clicked");
+})
+
+document.querySelector(".Parent").addEventListener("click",(e)=>{
+    e.stoppropogation()
+    alert("Parent was clicked");
+})
+document.querySelector(".Child").addEventListener("click",(e)=>{
+    console.log("adfd");
+    alert("Child was clicked");
+})
+
+/*
+bubbling means..one bubble burst ..others also burst
+if you are dancing in Pune..you are dancing in india and you are dancing on Earth
+
+
+
+to stop the propogation and not want the default event bubbling behaviour 
+fire the even (e) and use e.stoppropogation()
+
+
+used many times so that no effect of one event on the parent class
+*/
+
+</script>
+</html>
+
+
+see other remaining events 
+event.type
+.currentobj
+.xcleit yclien

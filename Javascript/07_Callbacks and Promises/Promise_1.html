@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- <script src="promise.js"></script> -->
+    <script src="yprom.js">
+
+
+        const promVar = new Promise((resolve, reject) => {
+            alert('Pakka Promise');
+            resolve(56);  //like a token number..token 56 resolved
+        });
+
+
+        console.log("Hello 1")
+        setTimeout(() => {
+            console.log("Hello after 2 sec 2")  //at last run
+        }, 2000);
+
+        console.log("Hello 3")
+
+        console.log(promVar) //run before settimeout
+
+
+        //promise has 2 properties..state and result
+        //state initially pending..its either full filled or rejected
+        //fullfillment ..either resolve or reject.if resolved..give value like above 56..if reject error
+
+    </script>
+</body>
+
+</html>
+
+
+
