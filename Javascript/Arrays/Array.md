@@ -197,11 +197,26 @@ console.log(fruits);
 
 ###  3 Splicing / Modifying Elements
 
+index = where, count = how_many <br>
+
+
+Syntax to Add:
+```
+arr.splice(index, count , "element1", "element2", .."elementn")
+```
+
 ```js
 fruits.splice(2, 0, "Peach", "Grapes"); 
 console.log(fruits);
 // ["Banana", "Orange", "Peach", "Grapes", "Apple", "Mango"]
+```
 
+
+Syntax to Remove:
+```
+arr.splice(index, count)
+```
+```js
 fruits.splice(1, 1);  // Remove 1 element at index 1
 console.log(fruits);
 // ["Banana", "Peach", "Grapes", "Apple", "Mango"]
@@ -387,6 +402,12 @@ const numbers2 = numbers1.map(myFunction);
 function myFunction(value) {
   return value * 2;
 }
+
+
+//with html
+let upper = fruits.map(fruit => `<li>${fruit.toUpperCase()} </li>`)
+let text = `<ul> ${upper.join("")}</ul>`
+document.getElementById("demo").innerHTML = text; 
 ```
 
 <br>
