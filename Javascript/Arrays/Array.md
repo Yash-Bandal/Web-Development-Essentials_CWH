@@ -1,5 +1,12 @@
 # JavaScript Arrays 
 
+```
+When to Use Arrays. When to use Objects.
+JavaScript does not support associative arrays.
+You should use objects when you want the element names to be strings (text).
+You should use arrays when you want the element names to be numbers.
+```
+
 <br>
 
 [W3_Schools](https://www.w3schools.com/js/js_array_methods.asp)
