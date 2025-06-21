@@ -60,6 +60,8 @@ const result = fruits.toString(); // "Banana,Orange,Apple,Mango"
 ---
 
 ## 5. Array vs Object
+ Arrays use numbers to access its "elements". In this example, person[0] returns John:
+- Normal Objects use names to access its "members". In this example, person.firstName returns John:
 
 ```js
 const personArray = ["John", "Doe", 46];
@@ -89,7 +91,7 @@ Arr.sort()       // Sorts the array
 
 ## 8. Looping Through Arrays
 
-### 8.1. Using `for` Loop
+### 8.1. Using `for` Loop 
 
 ```js
 let text = "<ul>";
@@ -99,14 +101,27 @@ for (let i = 0; i < fruits.length; i++) {
 text += "</ul>";
 ```
 
-### 8.2. Using `forEach()`
+### 8.2. Using `forEach()` - 🏷
 
 ```js
 let text = "<ul>";
-fruits.forEach(fruit => {
-  text += `<li>${fruit}</li>`;
+
+fruits.forEach((fruit) => {
+   text += "<li>" + fruit + "</li>"; //or`<li>${fruit}</li>`
 });
+
+text += "</ul>"; // Close the list
+
+//or
+
+let text = "<ul>";
+
+fruits.forEach(myFunction);
 text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+ }
 ```
 
 ### 8.3. Using `map()`
@@ -115,72 +130,149 @@ text += "</ul>";
 const listItems = fruits.map(fruit => `<li>${fruit}</li>`);
 const text = `<ul>${listItems.join("")}</ul>`;
 ```
+Output:
+```
+Looping an Array :
+Banana
+Orange
+Apple
+Mango
+```
+
+
+<br>
 
 ---
 
-## 9. Array Operations
+<br>
 
-### Adding Elements
+
+
+## 9. Array Operations (with Output)
+
+Let's consider the base array:
 
 ```js
-fruits.push("Pineapple");     // End
-fruits.unshift("Strawberry"); // Beginning
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
 ```
 
-### Removing Elements
+###  1 Adding Elements
 
 ```js
-fruits.pop();   // Removes last
-fruits.shift(); // Removes first
-```
+fruits.push("Pineapple");     // Adds at end
+console.log(fruits);
+// ["Banana", "Orange", "Apple", "Mango", "Pineapple"]
 
-### Splicing Elements
-
-```js
-fruits.splice(2, 0, "Peach", "Grapes"); // Add at index 2
-fruits.splice(1, 1);                    // Remove 1 element at index 1
-```
-
-### Searching Elements
-
-```js
-fruits.includes("Apple");   // true/false
-fruits.indexOf("Apple");    // Index of Apple
-```
-
-### Copying/Combining
-
-```js
-const sliced = fruits.slice(1, 3);
-const combined = fruits.concat(["Kiwi", "Watermelon"]);
-```
-
-### Iterating & Transforming
-
-```js
-const upper = fruits.map(fruit => fruit.toUpperCase());
-const long = fruits.filter(fruit => fruit.length > 5);
-fruits.forEach(fruit => console.log(fruit));
-```
-
-### Sorting and Reversing
-
-```js
-const sorted = [...fruits].sort();
-const reversed = [...fruits].reverse();
-```
-
-### Other Methods
-
-```js
-const joined = fruits.join(", ");
-const found = fruits.find(fruit => fruit.length > 5);
+fruits.unshift("Strawberry"); // Adds at beginning
+console.log(fruits);
+// ["Strawberry", "Banana", "Orange", "Apple", "Mango", "Pineapple"]
 ```
 
 <br>
 
 
+###  2 Removing Elements
+
+```js
+fruits.pop();   // Removes last
+console.log(fruits);
+// ["Strawberry", "Banana", "Orange", "Apple", "Mango"]
+
+fruits.shift(); // Removes first
+console.log(fruits);
+// ["Banana", "Orange", "Apple", "Mango"]
+```
+
+<br>
+
+
+###  3 Splicing / Modifying Elements
+
+```js
+fruits.splice(2, 0, "Peach", "Grapes"); 
+console.log(fruits);
+// ["Banana", "Orange", "Peach", "Grapes", "Apple", "Mango"]
+
+fruits.splice(1, 1);  // Remove 1 element at index 1
+console.log(fruits);
+// ["Banana", "Peach", "Grapes", "Apple", "Mango"]
+```
+
+<br>
+
+###  4 Searching Elements
+
+```js
+console.log(fruits.includes("Apple"));  
+// true
+
+console.log(fruits.indexOf("Apple"));   
+// 3
+```
+
+<br>
+
+### 5  Copying / Combining / Extracting
+
+```js
+const sliced = fruits.slice(1, 3);
+console.log(sliced);
+// ["Peach", "Grapes"]
+
+const combined = fruits.concat(["Kiwi", "Watermelon"]);
+console.log(combined);
+// ["Banana", "Peach", "Grapes", "Apple", "Mango", "Kiwi", "Watermelon"]
+```
+
+<br>
+
+
+###  6 Iterating & Transforming
+
+```js
+const upper = fruits.map(fruit => fruit.toUpperCase());
+console.log(upper);
+// ["BANANA", "PEACH", "GRAPES", "APPLE", "MANGO"]
+
+const long = fruits.filter(fruit => fruit.length > 5);
+console.log(long);
+// ["Banana", "Grapes"]
+```
+
+<br>
+
+
+### 7 Sorting and Reversing
+
+```js
+const sorted = [...fruits].sort();
+console.log(sorted);
+// ["Apple", "Banana", "Grapes", "Mango", "Peach"]
+
+const reversed = [...fruits].reverse();
+console.log(reversed);
+// ["Mango", "Apple", "Grapes", "Peach", "Banana"]
+```
+
+<br>
+
+###  Other Methods
+
+```js
+const joined = fruits.join(", ");
+console.log(joined);
+// "Banana, Peach, Grapes, Apple, Mango"
+
+const found = fruits.find(fruit => fruit.length > 5);
+console.log(found);
+// "Banana"
+```
+
+<br>
+
 ---
+
+<br>
 
 0.  Array map()....when you need to create array new with certain pattern specifically
 1. JavaScript Array map()
@@ -191,6 +283,9 @@ const found = fruits.find(fruit => fruit.length > 5);
 
 <br>
 
+---
+
+<br>
 
 ## 10. Advanced & Useful Methods
 
@@ -252,7 +347,7 @@ const numbers2 = numbers1.map(function(value) {
 
 ###  `flatMap()` - Map + Flatten One Level
 
-//The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
+The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
 
 ```js
 const myArr = [1, 2, 3, 4, 5, 6];
