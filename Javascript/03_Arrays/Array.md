@@ -488,6 +488,26 @@ const copy = [...arr]; // Clone array
 const merged = [...arr, 4, 5];
 ```
 
+| Task           | Traditional Way          | Spread Operator      |
+| -------------- | ------------------------ | -------------------- |
+| Copy array     | `arr.slice()`            | `[...arr]`           |
+| Merge arrays   | `arr1.concat(arr2)`      | `[...arr1, ...arr2]` |
+| Convert string | `Array.from(str)`        | `[...str]`           |
+| Function args  | `func.apply(null, arr)`  | `func(...arr)`       |
+| Copy object    | `Object.assign({}, obj)` | `{...obj}`           |
+
+
+```js
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const nums = [1, 2, 3];
+
+console.log(sum(...nums)); // 6
+
+```
+
 <br>
 
 ---
