@@ -332,11 +332,24 @@ These are useful in specific cases:
 ###  1. `forEach()` - Execute for Each Element
 
 ```js
+//The forEach() method calls a function (a callback function) once for each array element.
 const numbers = [45, 4, 9, 16, 25];
 let txt = "";
-numbers.forEach(function(value) {
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
   txt += value + "<br>";
-});
+}
+
+
+
+const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+numbers.forEach(myFunction);
+
+function myFunction(value) {
+  txt += value + "<br>";
+}
 ```
 
 <br>
@@ -344,10 +357,23 @@ numbers.forEach(function(value) {
 ###  2. `map()` - Transform and Return New Array
 
 ```js
+
+// This example multiplies each array value by 2:
 const numbers1 = [45, 4, 9, 16, 25];
-const numbers2 = numbers1.map(function(value) {
+const numbers2 = numbers1.map(myFunction);
+
+function myFunction(value, index, array) {
   return value * 2;
-});
+}
+
+
+
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = numbers1.map(myFunction);
+
+function myFunction(value) {
+  return value * 2;
+}
 ```
 
 <br>
