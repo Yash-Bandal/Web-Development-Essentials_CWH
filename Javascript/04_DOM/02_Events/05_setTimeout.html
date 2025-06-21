@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .box2 {
+            border: 2px solid #000;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border: 2px solid #000;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <p>I will stop when timer = 3 second</p>
+    </div>
+
+    <div class="box2">
+        <p>I am also running for 10 seconds..but you can stop me in between</p>
+    </div>
+    <button id="btn">Stop</button>
+
+    <script>
+        let = Math.random();
+        function GetRandColor() {
+            let val1 = Math.ceil(0 + Math.random() * (255 - 0));   //(a,b) = (0,255) rgb vals
+            let val2 = Math.ceil(0 + Math.random() * (255 - 0));
+            let val3 = Math.ceil(0 + Math.random() * (255 - 0));
+            return `rgb(${val1} , ${val2},${val3})`;
+        }
+
+
+
+
+        //store id to stop function after a specific time
+        setTimeout(() => {
+            // document.body.style.backgroundColor = GetRandColor();  //runs for infinite ..as no clearinteraval used
+        }, 1000); //in milisecs 1000ms = 1s
+
+
+
+        //store id to stop function after a specific time
+        setTimeout(() => {
+            // document.querySelector(".box").style.backgroundColor = GetRandColor(); //gives rand color after 3 sec
+            document.querySelector(".box").innerHTML = `Stop..timeout 3 seconds`;
+
+        }, 3000); //in milisecs 1000ms = 1s
+
+
+        const timeoutID = setTimeout(() => {
+            document.querySelector(".box2").style.backgroundColor = GetRandColor(); //gives rand color after 3 sec
+            document.querySelector(".box2").innerHTML = `Stopped after 10s..`;
+
+        }, 10000); //in milisecs 1000ms = 1s
+
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            clearTimeout(timeoutID);
+            alert("TImeout by me");
+        })
+
+
+
+
+
+    </script>
+
+    <!-- setTimeour() is a function that takes in function and interval time in milisecond 1000ms = 1s
+..inputs : function and time in ms
+..just write setTim and click box to use emmet.io syntax 
+
+-->
+
+</body>
+
+</html>

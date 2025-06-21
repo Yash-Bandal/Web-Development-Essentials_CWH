@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Functions</h1>
+
+<p id="demo"></p>
+
+<script>
+  //syntax
+function name(parameter1, parameter2, parameter3) {
+  // code to be executed
+}
+
+
+// 1. Function Declaration
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+document.getElementById("demo").innerHTML = greet("John");
+
+// ===================================
+
+// 2. Function Expression
+const add = function(a, b) {
+  return a + b;
+};
+console.log(add(5, 3));
+
+// ===================================
+
+// 3. Arrow Function
+const multiply = (a, b) => a * b;
+console.log(multiply(4, 7));
+
+// ===================================
+
+// 4. Anonymous Functions
+setTimeout(function() {
+  console.log("This runs after 2 seconds");
+}, 2000);
+
+// ===================================
+
+// 5. Immediately Invoked Function Expression (IIFE)
+(function() {
+  console.log("IIFE executed");
+})();
+
+// ===================================
+
+// 6. Callback Functions
+function processUserInput(name, callback) {
+  callback(`Welcome, ${name}`);
+}
+processUserInput("Alice", (message) => console.log(message));
+
+// ===================================
+
+// 7. Default Parameters
+function subtract(a, b = 0) {
+  return a - b;
+}
+console.log(subtract(10)); // 10 - 0 = 10
+
+// ===================================
+
+// 8. Rest Parameters
+function sumAll(...numbers) {
+  return numbers.reduce((sum, num) => sum + num, 0);
+}
+console.log(sumAll(1, 2, 3, 4)); // Output: 10
+
+// ===================================
+
+// 9. Function as a Return Value
+function createMultiplier(multiplier) {
+  return function(num) {
+    return num * multiplier;
+  };
+}
+const double = createMultiplier(2);
+console.log(double(5)); // Output: 10
+
+// ===================================
+
+// 10. Higher-Order Functions
+const numbers = [1, 2, 3, 4];
+const squaredNumbers = numbers.map(num => num ** 2);
+console.log(squaredNumbers); // [1, 4, 9, 16]
+
+// ===================================
+
+// 11. Recursive Functions
+function factorial(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+console.log(factorial(5)); // Output: 120
+
+// ===================================
+
+// 12. Closures
+function makeCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  };
+}
+const counter = makeCounter();
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+
+// ===================================
+
+// 13. Promises
+const promiseExample = new Promise((resolve, reject) => {
+  let isSuccess = true;
+  if (isSuccess) {
+    resolve("Promise resolved!");
+  } else {
+    reject("Promise rejected.");
+  }
+});
+
+promiseExample
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+
+// ===================================
+
+// 14. Async/Await
+async function fetchData() {
+  const fakeData = new Promise((resolve) => {
+    setTimeout(() => resolve("Data received"), 1000);
+  });
+  const result = await fakeData;
+  console.log(result);
+}
+fetchData();
+
+// ===================================
+
+// 15. Generator Functions
+function* numberGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+const gen = numberGenerator();
+console.log(gen.next().value); // Output: 1
+console.log(gen.next().value); // Output: 2
+
+</script>
+
+</body>
+</html>
