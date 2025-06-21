@@ -315,18 +315,21 @@ These are useful in specific cases:
 * Spread Syntax `...` – Expands arrays into elements or copies arrays.
 
 ###  Related Topics
-
 * Basic Array Methods (e.g. `push`, `pop`, `shift`)
 * Search Methods (`includes`, `find`, `indexOf`)
 * Sort Methods (`sort`, `reverse`)
 
-🔗 **Reference:** [Array Iteration - W3Schools](https://www.w3schools.com/js/js_array_iteration.asp)
+ **Reference:** [Array Iteration - W3Schools](https://www.w3schools.com/js/js_array_iteration.asp)
+
+<br>
 
 ---
 
+<br>
+
 ## 11. Code Examples
 
-###  `forEach()` - Execute for Each Element
+###  1. `forEach()` - Execute for Each Element
 
 ```js
 const numbers = [45, 4, 9, 16, 25];
@@ -336,7 +339,9 @@ numbers.forEach(function(value) {
 });
 ```
 
-###  `map()` - Transform and Return New Array
+<br>
+
+###  2. `map()` - Transform and Return New Array
 
 ```js
 const numbers1 = [45, 4, 9, 16, 25];
@@ -345,7 +350,9 @@ const numbers2 = numbers1.map(function(value) {
 });
 ```
 
-###  `flatMap()` - Map + Flatten One Level
+<br>
+
+### 3.  `flatMap()` - Map + Flatten One Level
 
 The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
 
@@ -355,28 +362,36 @@ const newArr = myArr.flatMap(x => [x, x * 10]);
 // Output: [1,10,2,20,3,30,4,40,5,50,6,60]
 ```
 
-###  `filter()` - Filter Based on Condition
+<br>
+
+###  4. `filter()` - Filter Based on Condition
 
 ```js
 const ages = [32, 33, 16, 40];
 const adults = ages.filter(age => age >= 18);
 ```
 
-###  `reduce()` - Reduce to Single Value
+<br>
+
+###  5. `reduce()` - Reduce to Single Value
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const total = numbers.reduce((acc, val) => acc + val, 0); // Output: 15
 ```
 
-###  `reduceRight()` - Reduce from Right to Left
+<br>
+
+###  6. `reduceRight()` - Reduce from Right to Left
 
 ```js
 const numbers = [1, 2, 3, 4];
 const result = numbers.reduceRight((acc, val) => acc - val); // Output: -2
 ```
 
-###  `some()` / `every()` - Test Conditions
+<br>
+
+###  7. `some()` / `every()` - Test Conditions
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
@@ -384,7 +399,9 @@ numbers.some(x => x > 3);  // true
 numbers.every(x => x > 0); // true
 ```
 
-### `keys()` / `entries()` - Iterators
+<br>
+
+### 8. `keys()` / `entries()` - Iterators
 
 ```js
 const fruits = ["Banana", "Orange"];
@@ -392,14 +409,18 @@ for (let key of fruits.keys()) console.log(key); // 0, 1
 for (let [index, val] of fruits.entries()) console.log(index, val);
 ```
 
-###  `with()` (Immutable Element Update)
+<br>
+
+###  9. `with()` (Immutable Element Update)
 
 ```js
 const arr = [1, 2, 3];
 const newArr = arr.with(1, 99); // [1, 99, 3]
 ```
 
-### Spread Operator `...`
+<br>
+
+### 10. Spread Operator `...`
 
 ```js
 const arr = [1, 2, 3];
@@ -407,9 +428,13 @@ const copy = [...arr]; // Clone array
 const merged = [...arr, 4, 5];
 ```
 
+<br>
+
 ---
 
-## 12. Summary Table
+<br>
+
+## Conclusion
 
 | Operation | Method                            | Description                              |
 | --------- | --------------------------------- | ---------------------------------------- |
@@ -425,5 +450,10 @@ const merged = [...arr, 4, 5];
 | Iterate   | `forEach`, `map`, `entries`       | Apply functions or loop with pairs       |
 | Find/Test | `find`, `some`, `every`           | Find or test conditions                  |
 
+
+<br>
+
 ---
+
+<br>
 
