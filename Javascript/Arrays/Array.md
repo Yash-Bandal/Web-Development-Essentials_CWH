@@ -1,4 +1,4 @@
-# JavaScript Arrays - Canvas Notes
+# JavaScript Arrays 
 
 <br>
 
