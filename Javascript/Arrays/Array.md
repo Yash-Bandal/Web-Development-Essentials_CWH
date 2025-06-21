@@ -11,6 +11,8 @@ You should use arrays when you want the element names to be numbers.
 
 [W3_Schools](https://www.w3schools.com/js/js_array_methods.asp)
 
+
+
 ---
 
 ## 1. Array Creation
@@ -293,6 +295,10 @@ console.log(found);
 ---
 
 <br>
+
+<div align = "center">
+<img src = "https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/a17bb56d5a4520f84a9bd50ed6e5d6013c1cdb3a/Javascript/Arrays/ArrayManip.jpeg" width = 550>
+</div>
 
 ## 10. Advanced & Useful Methods
 
