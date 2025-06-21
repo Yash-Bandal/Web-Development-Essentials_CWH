@@ -494,6 +494,77 @@ const merged = [...arr, 4, 5];
 
 <br>
 
+##  Array `split()` and `join()`
+
+
+### `split()` Method
+
+The `split()` method is used on **strings**, not arrays.
+It splits a string into an **array of substrings** based on a given separator.
+
+ Syntax:
+
+```js
+string.split(separator)
+```
+
+ Example:
+
+```js
+const text = "apple,banana,mango";
+const fruits = text.split(",");
+console.log(fruits);
+```
+
+ Output:
+
+```js
+["apple", "banana", "mango"]
+```
+
+<br>
+
+
+### `join()` Method
+
+The `join()` method is used on **arrays**.
+It joins all elements of an array into a single string with a given separator.
+
+Syntax:
+
+```js
+array.join(separator)
+```
+
+Example:
+
+```js
+const fruits = ["apple", "banana", "mango"];
+const text = fruits.join(" | ");
+console.log(text);
+```
+
+ Output:
+
+```js
+"apple | banana | mango"
+```
+
+<br>
+
+### Real Example: Convert List Text → Array → Back to Text
+
+```js
+let raw = "HTML CSS JS";
+let arr = raw.split(" ");
+let joined = arr.join(" -> ");
+console.log(arr);     // ["HTML", "CSS", "JS"]
+console.log(joined);  // "HTML -> CSS -> JS"
+```
+
+
+
+
 ## Conclusion
 
 | Operation | Method                            | Description                              |
