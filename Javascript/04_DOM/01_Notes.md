@@ -4,19 +4,20 @@
 
 ### Index:
 #### DOM Topics
-1. (Introduction to the DOM)
-2. (Accessing Elements)
-3. (DOM Properties & Content)
-4. (Modifying Elements)
-5. (Creating and Removing Elements)
-6. (Traversing the DOM)
-7. (Event Handling)
-8. Event Delegation
-9. DOM Collections vs Arrays
-10. Practical Examples
+1. [Introduction to the DOM](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#1-introduction-to-the-dom)
+2. [Accessing Elements](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#2-accessing-elements)
+3. [DOM Properties & Content](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#3-dom-properties--content)
+4. [Modifying Elements](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#4-modifying-elements)
+5. [Creating and Removing Elements](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#5-creating-and-removing-elements)
+6. [Traversing the DOM](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#6-traversing-the-dom)
+7. [Event Handlin](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#7-event-handling)
+8. [Event Delegation](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#8-event-delegation)
+9. [DOM Collections vs Arrays](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#9-dom-collections-vs-arrays)
+10. [Practical Examples](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#10-practical-examples)
+    
 
 #### ES6 Features
-1. (ES6 Features)[]
+1. [ES6 Features](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/01_Notes.md#es6-features-ecmascript-2015)
 
 <br>
 <br>
