@@ -9,7 +9,7 @@
 
 # Events
 
-1. [Introduction to Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/View.md#1-introduction-to-events)
+1. [Introduction to Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#1-introduction-to-events)
 2. [Event Handlers](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#2-event-handlers)
 3. [Event Object](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#3-event-object)
 4. [Mouse Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#4-mouse-events)
