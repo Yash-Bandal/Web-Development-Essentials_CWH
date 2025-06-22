@@ -9,17 +9,19 @@
 
 # Events
 
-1. [Introduction to Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/edit/main/Javascript/04_DOM/02_Events/View.md#1-introduction-to-events)
-2. [Event Handlers
-3. [Event Object  
-4. [Mouse Events  
-5. [Keyboard Events  
-6. [Form Events  
-7. [Event Delegation  
-8. [Event Bubbling and Capturing  
-9. [One-time Events  
-10. [Passive Events  
-11. [Custom Events  
+1. [Introduction to Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/View.md#1-introduction-to-events)
+2. [Event Handlers](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#2-event-handlers)
+3. [Event Object](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#3-event-object)
+4. [Mouse Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#4-mouse-events)
+5. [Keyboard Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#5-keyboard-events)
+6. [Form Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#6-form-events)
+7. [Event Delegation](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#7-event-delegation)
+8. [Event Bubbling and Capturing](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#8-event-bubbling-and-capturing)  
+9. [One-time Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#9-one-time-events)
+10. [Passive Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#10-passive-events)
+11. [Custom Events](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#11-custom-events)
+
+<br>
 
 ## 1. Introduction to Events
 
