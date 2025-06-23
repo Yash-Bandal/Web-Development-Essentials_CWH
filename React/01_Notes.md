@@ -65,3 +65,6 @@ function App() {
 3. We communicate from embeded parent to child created componant using props,
    - Use case :
    - You can just copy entire componant and make small changes to reuse that componant
+4. You cant update vars directly in React, like `text = "abcd"`, you have to use updation functions, (usestates)
+5. When you use `onClick` you have to use `onChange`, and vice versa
+6. Whenever you call / listen to an event, any event, you get a event object, [recall JS](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#3-event-object)
