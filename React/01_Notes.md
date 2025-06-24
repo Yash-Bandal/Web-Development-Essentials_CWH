@@ -68,3 +68,13 @@ function App() {
 4. You cant update vars directly in React, like `text = "abcd"`, you have to use updation functions, (usestates)
 5. When you use `onClick` you have to use `onChange`, and vice versa
 6. Whenever you call / listen to an event, any event, you get a event object, [recall JS](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/04_DOM/02_Events/Notes.md#3-event-object)
+7. Use syntax: { condition && <Component /> } when you pass `props` as objects which are not visible on page
+   ```jsx
+       props.alert &&  <div className="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{props.alert.type}</strong> : {props.alert.msg}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+   ```
+
+
+
