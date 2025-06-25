@@ -75,7 +75,7 @@ app.listen(3000, () => {
 ### 1.5 How Express Differs from Native HTTP
 
 | Feature      | Node.js (HTTP)                   | Express.js                     |
-| <br><br><br><br> | <br><br><br><br><br><br><br><br><br><br>-- | <br><br><br><br><br><br><br><br><br><br> |
+| --| -- | -- |
 | Routing      | Manual URL & method check        | Built-in routing methods       |
 | Middleware   | Manual parsing of body, URL etc. | Easy chaining with `app.use()` |
 | JSON parsing | Requires `body-parser` or logic  | Built-in via `express.json()`  |
@@ -114,7 +114,7 @@ app.delete('/user', (req, res) => res.send('Delete User'));
 ### 2.3 Request Methods
 
 | Method | Usage           |
-| <br><br> | <br><br><br><br><br> |
+| -- | -- |
 | GET    | Fetch resources |
 | POST   | Submit data     |
 | PUT    | Update data     |
@@ -696,7 +696,7 @@ Use Postman (or curl) to test each route:
 ### 8.4 Status Codes Summary
 
 | Code | Meaning               |
-| <br>- | <br><br><br><br><br><br><br> |
+|--- | --- |
 | 200  | OK                    |
 | 201  | Created               |
 | 204  | No Content            |
@@ -1040,7 +1040,7 @@ await User.findByIdAndDelete('userId');
 ### 12.6 Mongoose Model Methods
 
 | Method                | Description                  |
-| <br><br><br><br><br><br><br> | <br><br><br><br><br><br><br><br><br>- |
+| ---| ---|
 | `find()`              | Get all documents            |
 | `findById(id)`        | Find by document ID          |
 | `findOne()`           | Find first matching document |
