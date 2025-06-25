@@ -2131,6 +2131,12 @@ Node.js supports two module systems: **CommonJS (CJS)** and **ECMAScript Modules
 * Uses `require()` and `module.exports`.
 * Synchronous loading.
 
+#### `require()`
+```js
+const module = require(' module ')
+```
+
+
 ```js
 // math.js
 function add(a, b) {
