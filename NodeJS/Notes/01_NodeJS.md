@@ -1031,6 +1031,8 @@ npm list --depth=0
 
 ## 9. Express.js Framework
 
+### Course video 87+
+
 Express.js is a minimal and flexible Node.js web application framework that provides robust features for building web and mobile applications.
 
 [Documentation](https://expressjs.com/)
@@ -1070,6 +1072,62 @@ app.post('/submit', (req, res) => res.send('Post received'));
 app.put('/edit', (req, res) => res.send('Put request'));
 app.delete('/delete', (req, res) => res.send('Deleted'));
 ```
+---
+> Use slugs `:slug`
+---
+```js
+const express = require('express')
+const app = express()
+const port = 3000
+
+
+app.use(express.static('public'))
+//try make yash.txt in public and try  http://127.0.0.1:3000/yash.txt..
+
+//app.get app.post app.put or app.delete(path, handler)
+app.get('/', (req, res) => {
+    res.send('Express')
+})
+
+app.get('/home', (req, res) => {
+    res.send('Home')
+})
+
+app.get('/about', (req, res) => {
+    res.send('About')
+})
+
+
+app.get('/contact', (req, res) => {
+    res.send('contact')
+})
+
+// app.get('/contact/pune', (req, res) => {
+//     res.send('contact in pune')
+// })
+
+// app.get('/contact/mumbai', (req, res) => {
+//     res.send('contact in pune')
+// })
+
+app.get('/contact/:slug', (req, res) => {
+    res.send(`Hello ${req.params.slug}`)
+})
+
+//:slug is just a keyword, sytax `:param`
+app.get('/contact/:city1/:city2', (req, res) => {
+    res.send(`Hello ${req.params.city1} and ${req.params.city2}`)
+})
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
+```
+
+<br>
+
 
 Route parameters:
 
@@ -1079,9 +1137,213 @@ app.get('/user/:id', (req, res) => {
 });
 ```
 
+<br>
+
+### 9.4 Serving Static Files
+This allows you to users to access only use files placed in public folder, and not other files
+```js
+app.use(express.static('public'));
+// public/index.html accessible at http://localhost:3000/index.html
+
+
+//try make yash.txt in public and try  http://127.0.0.1:3000/yash.txt..
+
+//try http://127.0.0.1:3000/package.json
+//will not work because its not in public, you cant access it
+```
+
  <br>
 
-### 9.4 Middleware in Express
+ till video 88
+
+### Testing Requests and rendering HTML pages 
+- Methods used GET POST PUT DELETE
+- res.send
+- res.sendFile
+- path render `{root:__dirname}`
+
+<br>
+
+<div align = "center">
+ <img src = "https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/065b2f3ff41b48a46c4e04194e4d0b0e91e9e36f/NodeJS/StoreRoom/Response%20Methods.png" width = 800>
+</div>
+
+
+<br>
+
+project/main.js
+```js
+const express = require('express')
+const app = express()
+const port = 3000
+
+
+app.use(express.static('public'))
+
+
+//test on http://localhost:3000/mypage.html
+app.get('/', (req, res) => {
+    console.log("Console GET")
+    res.send('This Get request')
+})
+
+app.post('/', (req, res) => {
+    console.log("Console POST")
+    res.send('This is post request')
+})
+
+app.put('/', (req, res) => {
+    console.log("Console PUT")
+    res.send('This is Put request')
+}).delete('/', (req, res) => {  //chaining of requests
+    console.log("Console DELETE")
+    res.send('This is Delete request')
+})
+
+
+// http://localhost:3000/index
+
+//rendering an html page
+// index or any name 
+app.get('/index', (req, res) => {
+    console.log("Console INDEX")
+    // res.send('This is INDEX')
+    res.sendFile('templates/index.html', {root:__dirname}) //specify root  or give abs path
+})
+
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
+
+//res.send sends text and content inside
+//to render actual page use res.sendFile (path)
+```
+
+#### Testing Manually {Just for Learn/ Industry uses POSTMAN}
+project/public/mypage.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Post Request</title>
+</head>
+<body>
+    This is mytest
+    <script>
+        async function testPost(){
+            // let a = await fetch("/", {method: "POST"})
+            // let a = await fetch("/", {method: "PUT"})    
+            let a = await fetch("/", {method: "DELETE"})
+            let b = await a.text()
+            console.log(b)
+        }
+
+        testPost()
+    </script>
+</body>
+</html>
+
+```
+
+project/templates/index.html
+```html
+```
+
+### 9.5 Express Router
+
+Take template from here
+[Doc](https://expressjs.com/en/guide/routing.html)
+
+Organize routes into separate files.
+eg project/routes/routeFileName1.js
+
+<br>
+
+### a. Make Organized routes seperately in `routes` or any custom directory
+
+project/routes/routeBlogs.js
+```js
+const express = require('express')
+const router = express.Router()
+
+
+// define the home page route
+router.get('/', (req, res) => {
+    res.send('Yash Dada Blogs home page')
+})
+// define the about route
+router.get('/about', (req, res) => {
+    res.send('About Yash')
+})
+
+module.exports = router
+```
+project/routes/routeHome.js
+```js
+const express = require('express')
+const router = express.Router()
+
+
+router.get('/', (req, res) => {
+    res.send(' home page')
+})
+
+// define the about route
+router.get('/about', (req, res) => {
+    res.send('About Home another route')
+})
+
+module.exports = router
+
+```
+
+
+### b. Call in main
+ project/main.js
+
+```js
+const express = require('express')
+
+//1. Import Routes via path from routes folder
+const routeBlogs = require('./routes/routeBlogs')  //links to routes
+const routeHome = require('./routes/routeHome')
+
+const app = express()
+const port = 3000
+
+
+//2 Call routes 
+app.use('/routeBlogs', routeBlogs)
+app.use('/routeHome', routeHome)
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
+```
+
+### c. Check
+```bash
+http://localhost:3000/routeBlogs/
+Yash Dada Blogs home page
+
+http://localhost:3000/routeBlogs/about  
+op: About Yash
+
+http://localhost:3000/routeHome
+
+```
+
+ br>
+
+ 
+### 9.6 Middleware in Express
 
 Middleware functions are functions that have access to the request, response, and next function.
 
@@ -1104,16 +1366,9 @@ app.use(express.urlencoded({ extended: true }));
 
  <br>
 
-### 9.5 Serving Static Files
 
-```js
-app.use(express.static('public'));
-// public/index.html accessible at http://localhost:3000/index.html
-```
 
- <br>
-
-### 9.6 Error Handling Middleware
+### 9.7 Error Handling Middleware
 
 ```js
 app.use((err, req, res, next) => {
@@ -1124,30 +1379,7 @@ app.use((err, req, res, next) => {
 
  <br>
 
-### 9.7 Express Router
 
-Organize routes into separate files.
-
-#### routes/user.js
-
-```js
-const express = require('express');
-const router = express.Router();
-
-router.get('/', (req, res) => res.send('User Home'));
-router.get('/:id', (req, res) => res.send(`User ID: ${req.params.id}`));
-
-module.exports = router;
-```
-
-#### main file (e.g. app.js)
-
-```js
-const userRoutes = require('./routes/user');
-app.use('/users', userRoutes);
-```
-
- <br>
 
 ### 9.8 Common Express Packages
 
