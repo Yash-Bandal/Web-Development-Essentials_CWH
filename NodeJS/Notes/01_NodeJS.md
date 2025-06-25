@@ -21,10 +21,16 @@
 15. [Authentication with JWT](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#15-authentication-with-jwt-json-web-token)
 16. [Uploading Files with Multer](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#16-uploading-files-with-multer)
 17. [Deployment with Node.js](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#17-deployment-with-nodejs)
+18. [CommonJS vs ECMAScript](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#18-commonjs-vs-ecmascript-modules)
 
 
 <br>
 
+### References
+1. [Documentation](https://nodejs.org/docs/latest/api/synopsis.html)
+2. [W#Schools](https://www.w3schools.com/nodejs/)
+
+<br>
 
 ## 1. Introduction to Node.js
 
@@ -205,6 +211,7 @@ console.log(process.argv);      // Command line arguments
 process.exit(0);                // Exit program
 ```
 
+ [CommonJS vs ECMAScript](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#18-commonjs-vs-ecmascript-modules)
 
 <br>
 
@@ -862,7 +869,7 @@ Creates a `package.json` file.
 
 ```bash
 npm init        # step-by-step
-npm init -y     # auto generate with default values
+npm init -y     # auto generate with default values..skip manual customization
 ```
 
 Example `package.json`:
@@ -2111,6 +2118,81 @@ server {
 ---
 
 <br>
+
+## 18. CommonJS vs ECMAScript Modules
+
+Node.js supports two module systems: **CommonJS (CJS)** and **ECMAScript Modules (ESM)**.
+
+
+
+### 18.1 CommonJS (CJS)
+
+* Default module system in Node.js.
+* Uses `require()` and `module.exports`.
+* Synchronous loading.
+
+```js
+// math.js
+function add(a, b) {
+  return a + b;
+}
+module.exports = { add };
+
+// app.js
+const math = require('./math');
+console.log(math.add(2, 3));
+```
+
+
+
+### 18.2 ECMAScript Modules (ESM)
+
+* Standardized JavaScript module format.
+* Uses `import` and `export`.
+* Asynchronous by design.
+
+```js
+// math.mjs
+export function add(a, b) {
+  return a + b;
+}
+
+// app.mjs
+import { add } from './math.mjs';
+console.log(add(2, 3));
+```
+
+#### Using ESM in Node.js:
+
+* Use `.mjs` file extension **OR**
+* Add `"type": "module"` to `package.json`:
+
+```json
+{
+  "type": "module"
+}
+```
+
+
+
+### 18.3 Key Differences
+
+| Feature         | CommonJS (CJS)                | ECMAScript Modules (ESM)            |
+| --------------- | ----------------------------- | ----------------------------------- |
+| Syntax          | `require()`, `module.exports` | `import`, `export`                  |
+| File Extension  | `.js` (default)               | `.mjs` or `.js` with `type: module` |
+| Loading Type    | Synchronous                   | Asynchronous                        |
+| Browser Support |  Not native                  |  Native                            |
+| Node.js Support |  Default                     |  With config                       |
+
+---
+
+### 18.4 Recommendation
+
+* Use **CommonJS** for compatibility with existing Node.js ecosystem.
+* Use **ESM** if you're writing modern JS, want consistency with frontend, or are using tools like TypeScript with `module: "esnext"`.
+
+
 
 
 <br>
