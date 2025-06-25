@@ -59,3 +59,15 @@ see console, if you see  - This is post, POST is active
 
 
 <br>
+
+### Error Handling
+1. TypeError: path must be absolute or specify root to res.sendFile
+- checl if
+  ```js
+  res.sendFile('templates/index.html')
+  ```
+
+  replace with
+  ```js
+   res.sendFile('templates/index.html', {root:__dirname})
+  ```
