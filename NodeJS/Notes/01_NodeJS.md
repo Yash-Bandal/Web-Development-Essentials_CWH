@@ -4,14 +4,14 @@
 
 ## Index
 
-1. [Introduction to Node.js](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#1-introduction-to-nodejs)
+1. [Introduction](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#1-introduction-to-nodejs)
 2. [Node.js Fundamentals](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#2-nodejs-fundamentals)
-3. [Node.js Modules](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#3-nodejs-modules)
-4. [File System & Path](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#4-file-system--path)
-5. [Events and Streams](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#5-events-and-streams)
-6. [HTTP Module and Server Creation](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#6-http-module-and-server-creation)
-7. [npm and Package Management](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#7-npm-and-package-management)
-8. [Project Initialization](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#8-project-initialization)
+3. [Core Modules](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#3-core-modules-in-nodejs)
+4. [Asynchronous Programming](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#4-asynchronous-programming-in-nodejs)
+5. [ Working with Files in Node.js](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#5-working-with-files-in-nodejs)
+6. [Events and EventEmitter](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#6-events-and-eventemitter-in-nodejs)
+7. [ HTTP Module & Web Server ](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#7-http-module--web-server-in-nodejs)
+8. [NPM (Node Package Manager)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#8-npm-node-package-manager)
 9. [Express.js Framework](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#9-expressjs-framework)
 10. [Templating Engines](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#10-templating-engines-in-expressjs)
 11. [Environment Variables](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#11-environment-variables-in-nodejs)
