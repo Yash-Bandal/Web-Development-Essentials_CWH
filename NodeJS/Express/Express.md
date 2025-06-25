@@ -18,7 +18,7 @@
 11. [Express Project Structure & Organization](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#11-express-project-structure--organization)
 12. [Connecting to MongoDB with Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#12-connecting-to-mongodb-with-mongoose)
 13. [CRUD App with Express + MongoDB](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#13-crud-app-with-express--mongodb)
-14. [REST API with MVC + MongoDB - Best Practices](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#14-rest-api-with-mvc--mongodb---best-practices)
+14. [REST API with MVC + MongoDB - Best Practices](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#14-rest-api-with-mvc--mongodb<br>best-practices)
 15. [Authentication with JWT in Express](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#15-authentication-with-jwt-in-express)
 16. [File Uploads with Multer](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#16-file-uploads-with-multer)
 17. [CORS in Express Apps](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#17-cors-in-express-apps)
@@ -29,10 +29,6 @@
 22. [Rate Limiting and Security](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#22-rate-limiting-and-security)
 23. [Testing Express Apps](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#23-testing-express-apps)
 24. [Deployment Best Practices](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#24-deployment-best-practices)
-
-https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#23-testing-express-apps
-
-
 
 
 <br>
@@ -79,7 +75,7 @@ app.listen(3000, () => {
 ### 1.5 How Express Differs from Native HTTP
 
 | Feature      | Node.js (HTTP)                   | Express.js                     |
-| ------------ | -------------------------------- | ------------------------------ |
+| <br><br><br><br> | <br><br><br><br><br><br><br><br><br><br>-- | <br><br><br><br><br><br><br><br><br><br> |
 | Routing      | Manual URL & method check        | Built-in routing methods       |
 | Middleware   | Manual parsing of body, URL etc. | Easy chaining with `app.use()` |
 | JSON parsing | Requires `body-parser` or logic  | Built-in via `express.json()`  |
@@ -89,7 +85,7 @@ app.listen(3000, () => {
 
 <br>
 
-
+---
 
 <br>
 
@@ -100,7 +96,7 @@ app.listen(3000, () => {
 * `const app = express();`
 * Central object for defining routes, middleware, settings, etc.
 
----
+<br>
 
 ### 2.2 Routing Basics
 
@@ -113,18 +109,18 @@ app.put('/user', (req, res) => res.send('Update User'));
 app.delete('/user', (req, res) => res.send('Delete User'));
 ```
 
----
+<br>
 
 ### 2.3 Request Methods
 
 | Method | Usage           |
-| ------ | --------------- |
+| <br><br> | <br><br><br><br><br> |
 | GET    | Fetch resources |
 | POST   | Submit data     |
 | PUT    | Update data     |
 | DELETE | Remove data     |
 
----
+<br>
 
 ### 2.4 Request and Response Methods
 
@@ -165,7 +161,7 @@ app.route('/book')
 
 <br>
 
-
+---
 
 <br>
 
@@ -184,7 +180,7 @@ app.use((req, res, next) => {
 });
 ```
 
----
+<br>
 
 ### 3.2 Types of Middleware
 
@@ -223,7 +219,7 @@ const morgan = require('morgan');
 app.use(morgan('dev'));
 ```
 
----
+<br>
 
 ### 3.3 Middleware Chaining with `next()`
 
@@ -239,7 +235,7 @@ app.use((req, res, next) => {
 });
 ```
 
----
+<br>
 
 ### 3.4 Error Handling Middleware
 
@@ -252,7 +248,11 @@ app.use((err, req, res, next) => {
 });
 ```
 
+<br>
+
 ---
+
+<br>
 
 ## 4. Serving Static Files and Assets
 
@@ -266,7 +266,7 @@ Static files are files that don’t change dynamically and are sent directly to 
 * Images
 * Fonts
 
----
+<br>
 
 ### 4.2 Using `express.static()`
 
@@ -298,7 +298,7 @@ app.listen(3000, () => {
 
 Now visiting `http://localhost:3000/index.html` will serve your HTML file directly.
 
----
+<br>
 
 ### 4.3 Serving from a Virtual Path Prefix
 
@@ -308,7 +308,7 @@ app.use('/static', express.static('public'));
 
 * Now you must visit `http://localhost:3000/static/index.html`
 
----
+<br>
 
 ### 4.4 Serving Multiple Static Folders
 
@@ -319,7 +319,7 @@ app.use(express.static('assets'));
 
 Express will look for the file in `public/` first, then `assets/`.
 
----
+<br>
 
 ### 4.5 Best Practices
 
@@ -327,7 +327,13 @@ Express will look for the file in `public/` first, then `assets/`.
 * Do not put confidential or backend files in this folder
 * Use cache headers for optimization in production
 
+
+<br>
+
 ---
+
+<br>
+
 ## 5. Route Parameters and Query Strings
 
 ### 5.1 Route Parameters
@@ -352,7 +358,7 @@ app.get('/user/:id/book/:bookId', (req, res) => {
 });
 ```
 
----
+<br>
 
 ### 5.2 Query Strings
 
@@ -374,7 +380,7 @@ app.get('/search', (req, res) => {
 });
 ```
 
----
+<br>
 
 ### 5.3 Combining Params and Query
 
@@ -386,12 +392,19 @@ app.get('/user/:id', (req, res) => {
 });
 ```
 
----
+<br>
 
 ### 5.4 Use Cases
 
 * `req.params`: used for **resource identification** (e.g. `/product/101`)
 * `req.query`: used for **filtering, sorting, or optional input** (e.g. `?page=2&limit=10`)
+
+
+<br>
+
+---
+
+<br>
 
 ## 6. Express Router
 
@@ -400,7 +413,7 @@ app.get('/user/:id', (req, res) => {
 * A mini Express app that handles routes.
 * Helps in separating routes into different files for **modular** and **maintainable** code.
 
----
+<br>
 
 ### 6.2 Creating a Router Module
 
@@ -447,7 +460,7 @@ app.listen(3000, () => {
 
 Now visiting `/users/` or `/users/123` will trigger the router.
 
----
+<br>
 
 ### 6.3 Route Grouping
 
@@ -463,7 +476,7 @@ router.route('/:id')
   .delete((req, res) => res.send(`Delete Product ${req.params.id}`));
 ```
 
----
+<br>
 
 ### 6.4 Benefits of Using Routers
 
@@ -471,7 +484,11 @@ router.route('/:id')
 * Easier to manage and scale large apps
 * Allows separation by features/modules
 
+<br>
+
 ---
+
+<br>
 
 ## 7. Templating Engines in Express
 
@@ -488,7 +505,7 @@ Popular engines:
 
 We'll focus on **EJS**, which is widely used and easy to learn.
 
----
+<br>
 
 ### 7.2 Setting Up EJS
 
@@ -512,7 +529,7 @@ project/
 ├── app.js
 ```
 
----
+<br>
 
 ### 7.3 Basic EJS Template
 
@@ -538,7 +555,7 @@ app.get('/', (req, res) => {
 });
 ```
 
----
+<br>
 
 ### 7.4 Using Partials (Reusable Layouts)
 
@@ -576,7 +593,7 @@ views/
 <%- include('partials/footer') %>
 ```
 
----
+<br>
 
 ### 7.5 Best Practices
 
@@ -584,6 +601,13 @@ views/
 * Use partials for headers, footers, and common layouts
 * Avoid heavy logic in templates
 * Use layout packages like `express-ejs-layouts` (optional)
+
+
+<br>
+
+---
+
+<br>
 
 ## 8. Building REST APIs with Express
 
@@ -597,7 +621,7 @@ views/
   * `PUT` → Update
   * `DELETE` → Remove
 
----
+<br>
 
 ### 8.2 Creating REST Routes
 
@@ -655,7 +679,7 @@ app.delete('/users/:id', (req, res) => {
 app.listen(3000, () => console.log('API running on port 3000'));
 ```
 
----
+<br>
 
 ### 8.3 Testing with Postman
 
@@ -667,12 +691,12 @@ Use Postman (or curl) to test each route:
 * `PUT /users/1` → Update user
 * `DELETE /users/1` → Remove user
 
----
+<br>
 
 ### 8.4 Status Codes Summary
 
 | Code | Meaning               |
-| ---- | --------------------- |
+| <br>- | <br><br><br><br><br><br><br> |
 | 200  | OK                    |
 | 201  | Created               |
 | 204  | No Content            |
@@ -680,7 +704,11 @@ Use Postman (or curl) to test each route:
 | 404  | Not Found             |
 | 500  | Internal Server Error |
 
+<br>
+
 ---
+
+<br>
 
 ## 9. Handling Forms and JSON Data
 
@@ -712,7 +740,7 @@ Send a request with:
 }
 ```
 
----
+<br>
 
 ### 9.2 Handling Form Submissions
 
@@ -741,7 +769,7 @@ app.post('/submit', (req, res) => {
 });
 ```
 
----
+<br>
 
 ### 9.3 Validating Input (Basic)
 
@@ -755,7 +783,7 @@ app.post('/login', (req, res) => {
 });
 ```
 
----
+<br>
 
 ### 9.4 Best Practices
 
@@ -763,7 +791,12 @@ app.post('/login', (req, res) => {
 * Sanitize and validate user inputs.
 * Use external libraries like `express-validator` or `joi` for advanced validation.
 
+<br>
+
 ---
+
+<br>
+
 ## 10. Error Handling in Express
 
 ### 10.1 Handling 404 Errors (Not Found)
@@ -776,7 +809,7 @@ app.use((req, res) => {
 });
 ```
 
----
+<br>
 
 ### 10.2 Global Error Handler
 
@@ -792,7 +825,7 @@ app.use((err, req, res, next) => {
 
 Use `next(err)` to forward errors to this handler.
 
----
+<br>
 
 ### 10.3 Using try-catch in Async Routes
 
@@ -809,7 +842,7 @@ app.get('/data', async (req, res, next) => {
 });
 ```
 
----
+<br>
 
 ### 10.4 Example: Throwing a Custom Error
 
@@ -821,7 +854,7 @@ app.get('/error', (req, res, next) => {
 });
 ```
 
----
+<br>
 
 ### 10.5 Best Practices
 
@@ -830,7 +863,7 @@ app.get('/error', (req, res, next) => {
 * Avoid leaking stack traces in production.
 * Use error-handling libraries (e.g., `http-errors` or `express-async-errors`).
 
----
+<br>
 
 ## 11. Express Project Structure & Organization
 
@@ -840,7 +873,7 @@ app.get('/error', (req, res, next) => {
 * Scalable for large projects
 * Easier debugging and testing
 
----
+<br>
 
 ### 11.2 Common Folder Structure
 
@@ -860,7 +893,7 @@ project/
 └── package.json
 ```
 
----
+<br>
 
 ### 11.3 Separating Routes and Controllers
 
@@ -896,7 +929,7 @@ app.use('/users', userRoutes);
 app.listen(3000, () => console.log('Server started'));
 ```
 
----
+<br>
 
 ### 11.4 Additional Folders
 
@@ -905,7 +938,7 @@ app.listen(3000, () => console.log('Server started'));
 * `logs/`: Custom logging
 * `tests/`: Unit & integration tests
 
----
+<br>
 
 ### 11.5 Best Practices
 
@@ -914,7 +947,7 @@ app.listen(3000, () => console.log('Server started'));
 * Follow MVC pattern where applicable
 * Separate concerns clearly
 
----
+<br>
 
 ## 12. Connecting to MongoDB with Mongoose
 
@@ -939,7 +972,7 @@ app.listen(3000, () => console.log('Server started'));
 npm install mongoose
 ```
 
----
+<br>
 
 ### 12.3 Connecting to MongoDB
 
@@ -953,7 +986,7 @@ mongoose.connect('mongodb://localhost:27017/myapp', {
   .catch(err => console.error('MongoDB error:', err));
 ```
 
----
+<br>
 
 ### 12.4 Defining a Schema & Model
 
@@ -972,7 +1005,7 @@ const User = mongoose.model('User', userSchema);
 * `Schema`: Blueprint of the data structure
 * `Model`: Represents a collection in the database and provides methods to interact with it
 
----
+<br>
 
 ### 12.5 Basic CRUD with Mongoose
 
@@ -1002,12 +1035,12 @@ await User.findByIdAndUpdate('userId', { age: 22 });
 await User.findByIdAndDelete('userId');
 ```
 
----
+<br>
 
 ### 12.6 Mongoose Model Methods
 
 | Method                | Description                  |
-| --------------------- | ---------------------------- |
+| <br><br><br><br><br><br><br> | <br><br><br><br><br><br><br><br><br>- |
 | `find()`              | Get all documents            |
 | `findById(id)`        | Find by document ID          |
 | `findOne()`           | Find first matching document |
@@ -1015,7 +1048,7 @@ await User.findByIdAndDelete('userId');
 | `findByIdAndUpdate()` | Update a document by ID      |
 | `findByIdAndDelete()` | Delete a document by ID      |
 
----
+<br>
 
 ### 12.7 Common Mongoose Concepts
 
@@ -1024,7 +1057,7 @@ await User.findByIdAndDelete('userId');
 * **Middleware**: Pre/post hooks like `save`, `remove`
 * **Virtuals**: Fields not stored in DB but computed on the fly
 
----
+<br>
 
 ## 13. CRUD App with Express + MongoDB
 
@@ -1036,7 +1069,7 @@ We will build a simple **User Management API** with:
 * Mongoose (data modeling)
 * Express (server & routing)
 
----
+<br>
 
 ### 13.2 Folder Structure
 
@@ -1052,7 +1085,7 @@ project/
 └── package.json
 ```
 
----
+<br>
 
 ### 13.3 userModel.js
 
@@ -1075,7 +1108,7 @@ const userSchema = new mongoose.Schema({
 module.exports = mongoose.model('User', userSchema);
 ```
 
----
+<br>
 
 ### 13.4 userController.js
 
@@ -1109,7 +1142,7 @@ exports.deleteUser = async (req, res) => {
 };
 ```
 
----
+<br>
 
 ### 13.5 userRoutes.js
 
@@ -1130,7 +1163,7 @@ router.route('/:id')
 module.exports = router;
 ```
 
----
+<br>
 
 ### 13.6 app.js
 
@@ -1151,7 +1184,7 @@ app.use('/api/users', userRoutes);
 app.listen(3000, () => console.log('Server running on port 3000'));
 ```
 
----
+<br>
 
 ### 13.7 Testing with Postman
 
@@ -1161,7 +1194,7 @@ app.listen(3000, () => console.log('Server running on port 3000'));
 * `PUT /api/users/:id` – update user
 * `DELETE /api/users/:id` – delete user
 
----
+<br>
 ## 14. REST API with MVC + MongoDB - Best Practices
 
 ### 14.1 Why Use MVC (Model-View-Controller)?
@@ -1176,7 +1209,7 @@ app.listen(3000, () => console.log('Server running on port 3000'));
 * Easy to maintain and scale
 * Promotes clean architecture
 
----
+<br>
 
 ### 14.2 Folder Structure (MVC Pattern)
 
@@ -1197,7 +1230,7 @@ project/
 └── .env
 ```
 
----
+<br>
 
 ### 14.3 `server.js` (Entry Point)
 
@@ -1211,7 +1244,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```
 
----
+<br>
 
 ### 14.4 `app.js` (App Setup)
 
@@ -1233,7 +1266,7 @@ app.use(errorHandler);
 module.exports = app;
 ```
 
----
+<br>
 
 ### 14.5 `config/db.js` (DB Connection)
 
@@ -1253,7 +1286,7 @@ const connectDB = async () => {
 module.exports = connectDB;
 ```
 
----
+<br>
 
 ### 14.6 `middleware/errorHandler.js`
 
@@ -1266,7 +1299,7 @@ const errorHandler = (err, req, res, next) => {
 module.exports = errorHandler;
 ```
 
----
+<br>
 
 ### 14.7 `.env` File
 
@@ -1275,7 +1308,7 @@ PORT=3000
 MONGO_URI=mongodb://localhost:27017/mvcAPI
 ```
 
----
+<br>
 
 ### 14.8 Best Practices Checklist 
 
@@ -1286,7 +1319,7 @@ MONGO_URI=mongodb://localhost:27017/mvcAPI
 * Separate server and app files for flexibility (e.g., testing)
 * Organize folders for scalability
 
----
+<br>
 
 ## 15. Authentication with JWT in Express
 
@@ -1303,7 +1336,7 @@ MONGO_URI=mongodb://localhost:27017/mvcAPI
 npm install jsonwebtoken bcryptjs
 ```
 
----
+<br>
 
 ### 15.2 Basic Flow
 
@@ -1313,7 +1346,7 @@ npm install jsonwebtoken bcryptjs
 4. Client sends token in `Authorization` header for protected routes.
 5. Server verifies token and grants access.
 
----
+<br>
 
 ### 15.3 Signup & Login Routes
 
@@ -1351,7 +1384,7 @@ exports.login = async (req, res) => {
 };
 ```
 
----
+<br>
 
 ### 15.4 Middleware to Protect Routes
 
@@ -1376,7 +1409,7 @@ const protect = (req, res, next) => {
 module.exports = protect;
 ```
 
----
+<br>
 
 ### 15.5 Using Protected Routes
 
@@ -1390,7 +1423,7 @@ router.route('/')
   .post(userController.createUser); // public
 ```
 
----
+<br>
 
 ### 15.6 Environment Variables (`.env`)
 
@@ -1398,7 +1431,7 @@ router.route('/')
 JWT_SECRET=supersecretkey123
 ```
 
----
+<br>
 
 ### 15.7 Best Practices
 
@@ -1408,7 +1441,7 @@ JWT_SECRET=supersecretkey123
 * Use HTTPS in production
 * Consider using refresh tokens for long-term sessions
 
----
+<br>
 
 ## 16. File Uploads with Multer
 
@@ -1420,7 +1453,7 @@ JWT_SECRET=supersecretkey123
 npm install multer
 ```
 
----
+<br>
 
 ### 16.2 Basic Setup
 
@@ -1445,7 +1478,7 @@ const upload = multer({ storage });
 module.exports = upload;
 ```
 
----
+<br>
 
 ### 16.3 Creating Upload Route
 
@@ -1474,7 +1507,7 @@ const uploadRoutes = require('./routes/uploadRoutes');
 app.use('/upload', uploadRoutes);
 ```
 
----
+<br>
 
 ### 16.4 Upload Form Example (HTML)
 
@@ -1485,7 +1518,7 @@ app.use('/upload', uploadRoutes);
 </form>
 ```
 
----
+<br>
 
 ### 16.5 Serving Uploaded Files
 
@@ -1497,7 +1530,7 @@ app.use('/uploads', express.static('uploads'));
 
 Now files can be accessed at `http://localhost:3000/uploads/filename.jpg`
 
----
+<br>
 
 ### 16.6 Best Practices
 
@@ -1506,7 +1539,7 @@ Now files can be accessed at `http://localhost:3000/uploads/filename.jpg`
 * Use UUID or timestamps for unique filenames
 * Handle errors using middleware
 
----
+<br>
 
 ## 17. CORS in Express Apps
 
@@ -1517,7 +1550,7 @@ Now files can be accessed at `http://localhost:3000/uploads/filename.jpg`
 
 🔒 By default, browsers block cross-origin requests unless explicitly allowed by the server.
 
----
+<br>
 
 ### 17.2 Common Use Cases
 
@@ -1525,7 +1558,7 @@ Now files can be accessed at `http://localhost:3000/uploads/filename.jpg`
 * Backend API (Express) running on `localhost:5000`
 * Requests from frontend → backend will be blocked unless CORS is handled.
 
----
+<br>
 
 ### 17.3 Installing and Using `cors` Middleware
 
@@ -1564,7 +1597,7 @@ app.use(cors({
 }));
 ```
 
----
+<br>
 
 ### 17.4 Preflight Requests
 
@@ -1572,7 +1605,7 @@ app.use(cors({
 
 Express handles it automatically with `cors()` middleware.
 
----
+<br>
 
 ### 17.5 Enabling Credentials (Cookies, Auth)
 
@@ -1585,7 +1618,7 @@ app.use(cors({
 
 Also set `withCredentials: true` on the frontend request.
 
----
+<br>
 
 ### 17.6 Best Practices
 
@@ -1593,7 +1626,7 @@ Also set `withCredentials: true` on the frontend request.
 * Use environment variables to manage allowed origins.
 * Log and debug CORS errors using browser console/network tab.
 
----
+<br>
 
 ## 18. Environment Management with dotenv
 
@@ -1603,7 +1636,7 @@ Also set `withCredentials: true` on the frontend request.
 * Allows **different configurations** for dev, test, and production
 * Stores variables in a simple `.env` file
 
----
+<br>
 
 ### 18.2 Installing dotenv
 
@@ -1611,7 +1644,7 @@ Also set `withCredentials: true` on the frontend request.
 npm install dotenv
 ```
 
----
+<br>
 
 ### 18.3 Using dotenv in Your App
 
@@ -1621,7 +1654,7 @@ npm install dotenv
 require('dotenv').config();
 ```
 
----
+<br>
 
 ### 18.4 Creating a `.env` File
 
@@ -1639,7 +1672,7 @@ NODE_ENV=development
 .env
 ```
 
----
+<br>
 
 ### 18.5 Accessing Environment Variables
 
@@ -1648,7 +1681,7 @@ const port = process.env.PORT || 3000;
 const mongoURI = process.env.MONGO_URI;
 ```
 
----
+<br>
 
 ### 18.6 Switching Environments
 
@@ -1660,7 +1693,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
----
+<br>
 
 ### 18.7 Best Practices
 
@@ -1669,7 +1702,7 @@ if (process.env.NODE_ENV === 'production') {
 * Use different `.env` files per environment
 * Use secure vaults (e.g., GitHub secrets, Heroku config vars, etc.) in production
 
----
+<br>
 
 ## 19. Logging and Debugging in Express
 
@@ -1679,7 +1712,7 @@ if (process.env.NODE_ENV === 'production') {
 * Debug application flow
 * Record errors and usage patterns
 
----
+<br>
 
 ### 19.2 Using `morgan` for HTTP Request Logging
 
@@ -1696,9 +1729,9 @@ const morgan = require('morgan');
 app.use(morgan('dev'));
 ```
 
----
+<br>
 >  Modes: `dev`, `combined`, `tiny`, `short`
----
+<br>
 
 ```js
 // Save logs to file
@@ -1708,7 +1741,7 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'),
 app.use(morgan('combined', { stream: accessLogStream }));
 ```
 
----
+<br>
 
 ### 19.3 Using `debug` Module for Custom Debugging
 
@@ -1731,7 +1764,7 @@ Enable debug output:
 DEBUG=app:* node server.js
 ```
 
----
+<br>
 
 ### 19.4 Logging Errors
 
@@ -1744,7 +1777,7 @@ app.use((err, req, res, next) => {
 });
 ```
 
----
+<br>
 
 ### 19.5 Logging with Winston (Advanced)
 
@@ -1772,7 +1805,7 @@ const logger = winston.createLogger({
 logger.info('Server started');
 ```
 
----
+<br>
 
 ### 19.6 Best Practices
 
@@ -1782,7 +1815,7 @@ logger.info('Server started');
 * Keep logs in structured JSON
 * Log to external services in production (e.g., Datadog, Loggly)
 
----
+<br>
 
 ## 20. Express + Frontend Integration
 
@@ -1792,7 +1825,7 @@ logger.info('Server started');
 * Simplifies deployment: one server handles both frontend and backend
 * Useful for SEO, SSR, and routing fallback
 
----
+<br>
 
 ### 20.2 Serving Static React Build in Express
 
@@ -1819,7 +1852,7 @@ app.get('*', (req, res) => {
 
 This handles all routes and serves the React frontend.
 
----
+<br>
 
 ### 20.3 Setup Proxy for Dev Environment
 
@@ -1833,7 +1866,7 @@ When running React and Express on different ports in development:
 
 This forwards frontend requests (e.g., API calls) to Express.
 
----
+<br>
 
 ### 20.4 CORS Handling for Frontend
 
@@ -1844,7 +1877,7 @@ const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 ```
 
----
+<br>
 
 ### 20.5 Folder Structure (Fullstack Example)
 
@@ -1861,7 +1894,7 @@ project/
 ├── package.json       # root (with scripts to run both apps)
 ```
 
----
+<br>
 
 ### 20.6 Best Practices
 
@@ -1870,7 +1903,7 @@ project/
 * Configure paths properly in deployment platform (e.g., Vercel, Netlify, Render)
 * Separate frontend/backend clearly for clarity and testing
 
----
+<br>
 
 ## 21. Pagination and Filtering in REST APIs
 
@@ -1880,7 +1913,7 @@ project/
 * Enhance user experience with faster responses
 * Avoid overloading frontend and backend
 
----
+<br>
 
 ### 21.2 Pagination with Mongoose (`limit` & `skip`)
 
@@ -1903,7 +1936,7 @@ exports.getPaginatedUsers = async (req, res) => {
 };
 ```
 
----
+<br>
 
 ### 21.3 Filtering by Fields (Query Parameters)
 
@@ -1916,7 +1949,7 @@ exports.filterUsers = async (req, res) => {
 };
 ```
 
----
+<br>
 
 ### 21.4 Search with Regular Expressions
 
@@ -1931,7 +1964,7 @@ exports.searchUsers = async (req, res) => {
 };
 ```
 
----
+<br>
 
 ### 21.5 Sorting
 
@@ -1941,7 +1974,7 @@ const sortBy = req.query.sort || 'name';
 const users = await User.find().sort(sortBy);
 ```
 
----
+<br>
 
 ### 21.6 Combining All (Pagination + Filter + Search + Sort)
 
@@ -1968,7 +2001,7 @@ exports.getUsersAdvanced = async (req, res) => {
 };
 ```
 
----
+<br>
 
 ### 21.7 Best Practices
 
@@ -1977,7 +2010,7 @@ exports.getUsersAdvanced = async (req, res) => {
 * Paginate all list-heavy endpoints
 * Return meta-data with response (total count, current page, etc.)
 
----
+<br>
 
 Next: **22. Security in Express (Helmet, Rate Limiting)**
 
