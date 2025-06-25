@@ -1351,12 +1351,13 @@ http://localhost:3000/routeHome
 
 ```
 
- br>
+<br>
 
  
 ### 9.6 Middleware in Express
 
 Middleware functions are functions that have access to the request, response, and next function.
+- They are used to modify operate on operations, requests
 
 ```js
 app.use((req, res, next) => {
@@ -1375,6 +1376,75 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 ```
 
+<pre>
+Imagine you are requesting to your friend via his sister
+you -> his sister(middleware)
+
+his sister may modify or forward your req to your friend next(req)
+or modify in between 
+or not response (not use next())
+
+
+Here Order is very important
+The last middleware is final operator
+
+There are 5 types of middleware check docs
+
+
+This may be added in between to perform middle operations
+like
+1. Logging date and time at that instance (using fs.appendFile())
+
+</pre>
+
+
+```js
+const express = require('express')
+const app = express()
+const port = 3000
+const blog = require('./routes/blog')
+const fs = require("fs")
+
+// app.use(express.static("public"))
+
+app.use('/blog', blog)
+
+// Middleware 1 - Logger for our application
+
+//The operating requests passes through middleware before completing response
+app.use((req, res, next) => {
+    console.log(req.headers)
+    req.harry = "I am harry bhai";
+    fs.appendFileSync("logs.txt", `${Date.now()} is a ${req.method}\n`)
+    console.log(`${Date.now()} is a ${req.method}`)
+    // res.send("Hacked by Middlware 1") //this sends the request before completion..imagine stopping in  between
+    // next()
+    next()
+})
+
+// Middleware 2
+app.use((req, res, next) => {
+    console.log('m2')
+    req.harry = "I am Rohan bhai";
+    next()
+})
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.get('/about', (req, res) => {
+    res.send('Hello about!' + req.harry)
+})
+
+app.get('/contact', (req, res) => {
+    res.send('Hello contact!')
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+```
  <br>
 
 
