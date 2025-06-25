@@ -3,7 +3,16 @@
 <br>
 
 ### Index
-1. [Basics]()
+1. [Basics](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-1--basics)
+2. [The async Keyword](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-2-the-async-keyword)
+3. [The await Keyword](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-3-the-await-keyword)
+4. [Error Handling](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-4-error-handling)
+5. [Sequential vs Parallel Execution](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-5-sequential-vs-parallel-execution)
+6. [Async Operations in Loops](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-6-async-operations-in-loops)
+7. [Real-world Use Cases](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-7-real-world-use-cases)
+8. [Advanced Patterns](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-8-advanced-patterns)
+9. [Common Mistakes and Gotchas](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-9-common-mistakes-and-gotchas)
+10. [Testing Async Code](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/Javascript/06_Async%20and%20Await/Notes.md#part-10-testing-async-code)
 
 <br>
 
@@ -667,7 +676,7 @@ const data = await fetch('/api');
 
 * `await` can only be used inside `async` functions or in top-level modules.
 
----
+<br>
 
 ## 2. Forgetting to Handle Errors
 
@@ -681,7 +690,7 @@ async function fetchData() {
 
 * Always wrap async code in `try...catch` to prevent unhandled exceptions.
 
----
+<br>
 
 ## 3. Not Using `Promise.all()` for Parallel Tasks
 
@@ -697,7 +706,7 @@ await Promise.all([task1(), task2(), task3()]);
 
 * Prefer `Promise.all()` when tasks are independent to improve performance.
 
----
+<br>
 
 ## 4. Mixing `.then()` with `await` Unnecessarily
 
@@ -712,7 +721,7 @@ const data = await res.json();
 
 * Mixing styles can reduce readability. Stick to one style (preferably `await`).
 
----
+<br>
 
 ## 5. Using `forEach` with `await`
 
@@ -725,7 +734,7 @@ items.forEach(async item => {
 
 * Use `for...of` or `map` with `Promise.all()` for correct async behavior.
 
----
+<br>
 
 ## 6. Unhandled Promise Rejections
 
