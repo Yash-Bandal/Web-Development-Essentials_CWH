@@ -98,9 +98,13 @@ Hello World
 ```
 
 * Commands:
-
+  * `nodemon fileName.js` - Keeps an eye on the file and avoids manual starting server everytime
   * `.exit` – exit REPL
   * `.help` – show all commands
+  * `npx install moduleName` - Installs the library for that period of time
+  * `npm i express@4` - install specific module version
+  * `nvm use version` - version specific
+    
 
 ### 1.8 First Node.js Program
 
@@ -112,9 +116,14 @@ console.log("Welcome to Node.js!");
 ```
 
 3. Run the file:
-
+- One Time manual
 ```bash
 node app.js
+```
+
+- Auto
+```bash
+nodemon app.js
 ```
 
 <br>
@@ -221,8 +230,8 @@ process.exit(0);                // Exit program
 
 
 ## 3. Core Modules in Node.js
-
 Node.js comes with a set of built-in modules to perform essential functions without external packages.
+[My Module Notes](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/tree/main/NodeJS/Notes/Modules)
 
 <br>
 
@@ -360,6 +369,8 @@ console.log(myUrl.search);   // ?id=100
 
 
 ## 4. Asynchronous Programming in Node.js
+
+[Javascript](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/tree/main/Javascript/06_Async%20and%20Await)
 
 Node.js is designed around **asynchronous**, non-blocking I/O using an **event-driven** architecture.
 
