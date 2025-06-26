@@ -1,3 +1,23 @@
+<h1 align="center"><b> Moongooose </b> </h1>
+
+<br>
+
+### Index
+
+1. [Part 1: Introduction to Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-1-introduction-to-mongoose)
+2. [Part 2: Installation & Connection](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-2-installation--connection)
+3. [Part 3: Schemas and Models](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-3-schemas-and-models)
+4. [Part 4: CRUD Operations in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-4-crud-operations-in-mongoose)
+5. [Part 5: Schema Validation in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-5-schema-validation-in-mongoose)
+6. [Part 6: Model Methods in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-6-model-methods-in-mongoose)
+7. [Part 7: Middleware (Hooks) in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-7-middleware-hooks-in-mongoose)
+8. [Part 8: Relationships and Population in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-8-relationships-and-population-in-mongoose)
+9. [Part 9: Error Handling in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-9-error-handling-in-mongoose)
+10. [Part 10: Mongoose + Express Integration](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-10-mongoose--express-integration)
+
+
+<br>
+
 ## Part 1: Introduction to Mongoose
 
 ### What is Mongoose?
