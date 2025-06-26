@@ -235,7 +235,7 @@ Here's a breakdown of the execution flow:
 
 <br>
 
-1. Step 1: Call Stack Runs Synchronously**
+1. **Step 1: Call Stack Runs Synchronously**
 
 * `console.log("1")`
     * Output: `1`
@@ -245,7 +245,7 @@ Here's a breakdown of the execution flow:
 
 <br>
 
-2. Step 2: Inside `getData()`**
+2. **Step 2: Inside `getData()`**
 
 * `console.log("2")`
     * Output: `2`
@@ -262,7 +262,7 @@ Here's a breakdown of the execution flow:
 
 <br>
 
-3. Step 3: Continue Synchronous Execution**
+3. **Step 3: Continue Synchronous Execution**
 
 * `console.log("6")`
     * Output: `6`
@@ -270,7 +270,7 @@ Here's a breakdown of the execution flow:
 
 <br>
 
-4. Step 4: Timer Expires (After 1 second)**
+4. **Step 4: Timer Expires (After 1 second)**
 
 * The callback from `setTimeout` moves from the Web APIs area to the Callback Queue.
 * The Event Loop picks it up and runs it:
@@ -282,7 +282,7 @@ Here's a breakdown of the execution flow:
 
 <br>
 
-5. Step 5: Resume `getData()` (from Await Point)**
+5. **Step 5: Resume `getData()` (from Await Point)**
 
 * The `await` is now resolved.
 * Execution resumes in `getData()` immediately after the `await` statement.
