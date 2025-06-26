@@ -32,6 +32,30 @@
       app.get('/', (req, res) => res.send('Hello from Express!'));
       app.listen(3000);
       ```
+11. check packages
+    - Generally you check using `--version` or `-v`
+    - for packages ise `npm list <package-name>
+       ```bash
+       npm list mongoose
+       ```
+       ```bash
+       npm list express
+       ```
+12. You can create your own custom scripts to run defined scripts
+   - In **package.json** inside scripts , write your cmd custom script
+   ```json
+     "scripts": {
+       "test": "echo \"Error: no test specified\" && exit 1",
+       "dev": "nodemon main.js"
+     },
+   ```
+   - Then run
+   ```bash
+   npm run dev
+   ```
+   - This helps you to run multiple scripts using 1 script when in development
+
+     
 
 <br>
 
@@ -104,3 +128,4 @@ see console, if you see  - This is post, POST is active
    path = "e:\\CWH\\Sigma-Web-Dev-Course\\Video 91\\Unorganized"
    let files = await fs.readdir("path")
    ```
+4. Dont forget to use  `asynx` and `await` keyword in Mongoose 
