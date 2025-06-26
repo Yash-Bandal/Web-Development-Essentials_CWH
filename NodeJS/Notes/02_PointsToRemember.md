@@ -94,3 +94,13 @@ see console, if you see  - This is post, POST is active
 2. localhost:3000 or other is already running a different file
    - This happends because there may be another directorys file thats running, this is because you dont have expreess in that folder you are working now, and Node is using previos folders node_module
    - One project - > one express
+
+3. Promise error
+   `Promise { <pending> }`
+   
+   - check if await is missing
+   ```js
+   //if you directly place path use double backslash
+   path = "e:\\CWH\\Sigma-Web-Dev-Course\\Video 91\\Unorganized"
+   let files = await fs.readdir("path")
+   ```
