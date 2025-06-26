@@ -1,4 +1,5 @@
-<h1 align="center"><b> Moongooose </b> </h1>
+
+<h1 align="center"><b> Mongooose </b> <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/b7fc024ffbf64d2dfd63b0ccdad5a5ef822a236f/NodeJS/StoreRoom/mongodb-leaf_32x32.png?raw=true"></h1>
 
 <br>
 
