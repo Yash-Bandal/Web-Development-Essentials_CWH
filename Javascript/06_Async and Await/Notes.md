@@ -204,6 +204,126 @@ console.log("This logs first");
 
 <br>
 
+
+## Execution Workflow
+```js
+console.log("1");
+
+async function getData() {
+  console.log("2");
+  await fetchData(); // Assume fetchData returns a Promise
+  console.log("3");
+}
+
+function fetchData() {
+  return new Promise((resolve) => {
+    console.log("4");
+    setTimeout(() => {
+      console.log("5");
+      resolve();
+    }, 1000);
+  });
+}
+
+getData();
+console.log("6");
+
+```
+### Step-by-Step Execution
+
+Here's a breakdown of the execution flow:
+
+<br>
+
+1. Step 1: Call Stack Runs Synchronously**
+
+* `console.log("1")`
+    * Output: `1`
+* `getData()` is called
+    * `getData()` enters the Call Stack.
+
+
+<br>
+
+2. Step 2: Inside `getData()`**
+
+* `console.log("2")`
+    * Output: `2`
+* `await fetchData()`
+    * This *pauses* execution inside `getData()` until the Promise returned by `fetchData()` resolves.
+    * **BUT here's the trick:**
+        * `fetchData()` runs immediately.
+        * `console.log("4")`
+            * Output: `4`
+        * `setTimeout(..., 1000)` sets a timer.
+            * The callback function for `setTimeout` is pushed to the Web APIs area.
+        * Now, `getData()` is paused at the `await`, and JavaScript *exits* the async function temporarily, allowing other synchronous code to run.
+
+
+<br>
+
+3. Step 3: Continue Synchronous Execution**
+
+* `console.log("6")`
+    * Output: `6`
+
+
+<br>
+
+4. Step 4: Timer Expires (After 1 second)**
+
+* The callback from `setTimeout` moves from the Web APIs area to the Callback Queue.
+* The Event Loop picks it up and runs it:
+    * `console.log("5")`
+        * Output: `5`
+    * `resolve()` is called.
+        * This signals that the Promise from `fetchData()` is now resolved.
+
+
+<br>
+
+5. Step 5: Resume `getData()` (from Await Point)**
+
+* The `await` is now resolved.
+* Execution resumes in `getData()` immediately after the `await` statement.
+* `console.log("3")`
+    * Output: `3`
+
+```
+1
+2
+4
+6
+5
+3
+
+```
+
+#### Call Stack
+```
+Call Stack:
+ ┌────────────────────────────────────┐
+ │ console.log("1")                   │ → 1
+ │ getData()                          │
+ │   console.log("2")                 │ → 2
+ │   await fetchData()                │
+ │     console.log("4")               │ → 4
+ │     setTimeout(...)                │
+ │ console.log("6")                   │ → 6
+ │ // Waits...                        │
+ │ Timer done → console.log("5")      │ → 5
+ │ Resume async → console.log("3")    │ → 3
+ └────────────────────────────────────┘
+
+```
+
+<br>
+
+---
+
+<br>
+
+
 #  Part 4: Error Handling
 
 ## Introduction
