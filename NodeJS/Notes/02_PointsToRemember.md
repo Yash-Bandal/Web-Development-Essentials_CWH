@@ -91,3 +91,6 @@ see console, if you see  - This is post, POST is active
   ```js
    res.sendFile('templates/index.html', {root:__dirname})
   ```
+2. localhost:3000 or other is already running a different file
+   - This happends because there may be another directorys file thats running, this is because you dont have expreess in that folder you are working now, and Node is using previos folders node_module
+   - One project - > one express
