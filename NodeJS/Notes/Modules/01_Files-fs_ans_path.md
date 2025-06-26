@@ -374,6 +374,40 @@ Moved ZIP2.zip → zip/
 
 
 
+```js
+const basepath = "e:\\CWH\\Sigma-Web-Dev-Course\\Video 93\\Unorganized"
+
+let files = await fs.readdir(basepath)
+console.log(files)
+/*
+[
+  'Name.PNG',
+  'One.jpg',
+  'Parrot.PNG',
+  'PDF1.pdf',
+  'Two.jpg',
+  'ZIP1.zip',
+  'ZIP2.zip'
+]
+*/
+
+for (const file of files) {
+    let ext = file.split(".")[file.split(".").length - 1]
+    console.log(ext)
+}
+/*
+PNG
+jpg
+PNG
+pdf
+jpg
+zip
+zip
+*/
+
+```
+
+
 These two modules — `fs` and `path` — are foundational when handling file operations and paths in Node.js. They're synchronous and asynchronous capable and widely used in CLI tools, web servers, and backend file processing scripts.
 
 Would you like to move on to `os`, `events`, or another built-in module?
