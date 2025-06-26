@@ -1726,24 +1726,123 @@ app.set('views', path.join(__dirname, 'views'));
 
 <br>
 
-###  Full Mini Example
+###  Full  Example
 
-```ejs
-<% if (user) { %>
-  <h2>Welcome, <%= user.name %></h2>
-<% } else { %>
-  <p>Please log in</p>
-<% } %>
 
-<ul>
-  <% items.forEach(item => { %>
-    <li><%= item %></li>
-  <% }) %>
-</ul>
+```
+project/
+├── views/
+│   └── index.ejs
+|   └── partials    
+│        └── navbar.js
+├── app.js
 
-<%# This comment is ignored %>
 ```
 
+**project/app.js**
+```js
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.set('view engine', 'ejs');
+
+
+app.get('/', (req, res) => {
+    let siteName = "YB Tutorials"
+    let searchText = "Search Now"
+
+    let variable = "Yash is Learning EJS";
+    let arr = ["Yash", 25, 2004]
+    res.render("index", { siteName: siteName, searchText: searchText, arr, variable , name: "Yash" })
+})
+
+app.get('/blog/:slug', (req, res) => {
+    let blogTitle = "Adidas why and when?"
+    let blogContent = "Its a very good brand"
+    res.render("blogpost", { blogTitle: blogTitle, blogContent: blogContent })
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
+```
+
+**project/views/index.ejs**
+```ejs
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <%- include('partials/navbar'); %>
+
+        <h1 align="center">Hello this is , <%= name %>!</h1>
+        <br>
+        <p align="center">
+            <%= variable %>
+        </p>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+
+**project/views/partials/navbar.ejs**
+```ejs
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <%= siteName %>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <% for(let i=0; i < arr.length; i++) { %>
+                            <li>
+                                <%= arr[i] %>
+                            </li>
+                         <% } %>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="<%= searchText %>" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+```
+<br>
+
+<div align = "center">
+<img src = "https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/fd49325e6c305a8f20bfc86281ac6534533ec5d0/NodeJS/StoreRoom/EJS.PNG" width = 700>
+</div>
 
  <br>
 
@@ -1756,6 +1855,8 @@ Split your HTML into reusable components.
 ```html
 <header><h2>My Site</h2></header>
 ```
+
+
 
 **views/index.ejs**
 
