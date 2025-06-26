@@ -3,6 +3,10 @@
 
 <br>
 
+[Documentation](https://mongoosejs.com/docs/)
+
+<br>
+
 ### Index
 
 1. [Part 1: Introduction to Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-1-introduction-to-mongoose)
@@ -15,6 +19,14 @@
 8. [Part 8: Relationships and Population in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-8-relationships-and-population-in-mongoose)
 9. [Part 9: Error Handling in Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-9-error-handling-in-mongoose)
 10. [Part 10: Mongoose + Express Integration](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/02_Moongoose_In_Depth.md#part-10-mongoose--express-integration)
+
+
+<br>
+
+<pre>
+  1. Mongoose enables you to ensure fixed schema like MYSQL if you want
+  2. Mongoose is ODM
+</pre>
 
 
 <br>
@@ -83,6 +95,19 @@ mongoose.connect("mongodb://localhost:27017/myApp")
   .catch((err) => console.error("Connection error", err));
 ```
 
+Use **`await`**
+```js
+const mongoose = require("mongoose");
+
+let conn = await mongoose.connect("mongodb://localhost:27017/")
+    .then(() => console.log("MongoDB Connected"))
+    .catch((err) => console.error("Connection error", err));
+
+```
+
+In `vscode` you can copy te string from Mongoose leaf -> localhost:... on top left corner -> Right click and copy Connection string
+
+
 ### Using Environment Variables (Recommended)
 
 * Store MongoDB URI in `.env` file:
@@ -127,6 +152,17 @@ MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/dbName
 
 ### Creating a Schema
 
+**1. In your project folder create another folder `models`**
+
+
+
+
+**2. In `models` create your schema file**
+
+
+Here `user` is the database name <br>
+
+**project/models/user**
 ```js
 const mongoose = require("mongoose");
 
@@ -139,14 +175,155 @@ const userSchema = new mongoose.Schema({
 });
 ```
 
-### Creating a Model
+**3. Creating a Model**
 
 * A model is a constructor compiled from the schema.
 * It represents the collection and provides methods to interact with it.
 
 ```js
-const User = mongoose.model("User", userSchema);
+const user = mongoose.model("user", userSchema);
 ```
+
+**4. Export it to main.js**
+
+```js
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  age: { type: Number, min: 0 },
+  isActive: { type: Boolean, default: true },
+  createdAt: { type: Date, default: Date.now }
+});
+
+//apply and export
+export const user = mongoose.model("user", userSchema);
+```
+
+---
+> Note: we are using `es` module not `CommonJS`
+
+> So ensure "type" : "module" in **package.json**
+---  
+
+
+**5. Im main.js call the Schema and Apply on Database Document**
+**project/main.js**
+```js
+import mongoose from 'mongoose'
+import express from 'express';
+//import the schema to apply Schema
+import { user } from './models/user.js'
+
+
+let conn = await mongoose.connect("mongodb://localhost:27017/user")
+.then(() => console.log("MongoDB Connected"))
+.catch((err) => console.error("Connection error", err));
+
+
+const app = express()
+const port = 3000
+
+app.use(express.static('public'))
+
+app.get('/', (req, res) => {
+    const user =  new user({name:"Yash", email: yb@mail.com, age:20, isStudent: true})
+    user.save()
+    res.send('Hello, This is my first Mongo Connection!')
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
+```
+
+**6. Validate in `compass` or vscode Mongo Extension**
+
+<br>
+
+## Example implemented along with data check using `.json()`
+**project/model/Todo.js**
+```js
+
+import {mongoose} from "mongoose";
+
+const TodoSchema = new mongoose.Schema(
+    {
+        title: {type: String, required: true, default: "Hey"},
+        desc: String,
+        isDone: Boolean,
+        days: Number
+        //currDate : type: Date,  default: Date.now()}
+    }
+)
+
+//Apply schema and export to main.js
+export const Todo = mongoose.model('Todo', TodoSchema);
+
+//Here use the name of Database Todo and define schmema like TodoSchema which is applied on Todo
+```
+
+**project/main.js**
+```js
+
+import mongoose from 'mongoose'
+import express from 'express';
+//import the schema to apply Schema
+import { Todo } from './models/Todo.js'
+
+
+let conn = await mongoose.connect("mongodb://localhost:27017/todo")
+.then(() => console.log("MongoDB Connected"))
+.catch((err) => console.error("Connection error", err));
+
+
+const app = express()
+const port = 3000
+
+app.use(express.static('public'))
+
+
+app.get('/', (req, res) => {
+    
+    //create a Document with schema defined - defaultwhen refresh, its added that times
+    // const todo =  new Todo({title:"Hey Yash, this is my code ", desc : "Description", isDone: true})
+    // const todo =  new Todo({title:100, desc : "Description", isDone: true}) //when passed number, its accepted as string "`00"
+    // const todo =  new Todo({title:100, desc : "Description", isDone: true, days: "Hindred"})  // we passed string in place of number and   _message: 'Todo validation failed'
+    const todo =  new Todo({title:"Hey Yash, this is my code ", desc : "Description", isDone: true})
+    todo.save()
+    res.send('Hello, This is my first Mongo Connection!')
+})
+
+app.get('/seeData', async(req, res) => {
+    let todo = await Todo.findOne({})
+    todo.save()
+
+    res.json({ title: todo.title, desc: todo.desc }) 
+})
+
+// http://localhost:3000/seeData
+// {
+//     "title": "Hey First code ",
+//      "desc": "Description"
+// }
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+```
+
+Everytime you refresh the page on port 3000, the document is added
+- Check the database on **Compass** or **vscode** extension
+- Try changing schema and manipulate you will get error
+  ```bash
+    _message: 'Todo validation failed'
+  ```
+
+
+<br>
+
 
 ### Data Types in Mongoose
 
