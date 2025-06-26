@@ -8,12 +8,12 @@
 2. [Node.js Fundamentals](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#2-nodejs-fundamentals)
 3. [Core Modules](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#3-core-modules-in-nodejs)
 4. [Asynchronous Programming](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#4-asynchronous-programming-in-nodejs)
-5. [ Working with Files in Node.js](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#5-working-with-files-in-nodejs)
+5. [Working with Files in Node.js](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#5-working-with-files-in-nodejs)
 6. [Events and EventEmitter](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#6-events-and-eventemitter-in-nodejs)
-7. [ HTTP Module & Web Server ](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#7-http-module--web-server-in-nodejs)
+7. [HTTP Module & Web Server ](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#7-http-module--web-server-in-nodejs)
 8. [NPM (Node Package Manager)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#8-npm-node-package-manager)
 9. [Express.js Framework](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#9-expressjs-framework)
-10. [Templating Engines](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#10-templating-engines-in-expressjs)
+10. [Templating Engines - EJS](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#10-templating-engines-in-expressjs)
 11. [Environment Variables](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#11-environment-variables-in-nodejs)
 12. [Working with REST APIs](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#12-working-with-rest-apis-in-express)
 13. [CRUD with MongoDB & Mongoose](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#13-crud-with-mongodb--mongoose)
@@ -1532,6 +1532,8 @@ video 91
 
 ## 10. Templating Engines in Express.js
 
+
+
 [EJS](https://ejs.co/) : Here `CTRL + F - Express` <br>
 
 [Git Docs - main](https://github.com/mde/ejs/wiki/Using-EJS-with-Express)
@@ -1559,6 +1561,8 @@ Templating engines allow dynamic rendering of HTML pages using variables and log
 | Pug        | Indentation  | Minimalist, no HTML tags |
 | Handlebars | Mustache     | Logic-less templates     |
 
+
+## EJS
 We'll use **EJS** for examples.
 
  <br>
