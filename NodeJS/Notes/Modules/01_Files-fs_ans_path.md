@@ -266,6 +266,112 @@ console.log(path.sep);       // '/' (POSIX), '\' (Windows)
 console.log(path.delimiter); // ':' (POSIX), ';' (Windows)
 ```
 
+<br>
+<br>
+
+
+## Example - Clear the clutter - video 91 cwh
+
+<pre>
+PS : You have to write a Node.js program to clear clutter inside of a directory and organize 
+     the contents of that directory into different folders
+
+for example, these files become:
+
+1. name.jpg
+2. name.png
+3. this.pdf 
+4. Yash.zip
+5. Rohan.zip
+6. cat.jpg 
+7. Yash.pdf
+
+
+to this
+    
+```
+target /
+    jpg /
+    name.jpg
+    cat.jpg
+png /
+    name.png
+pdf /
+    this.pdf
+    Yash.pdf
+zip /
+    Yash.zip
+Rohan.zip
+```
+</pre>
+
+<br>
+
+
+```js
+const fs = require('fs');
+const path = require('path');
+
+console.log(__dirname)
+//e:\CWH\Sigma-Web-Dev-Course\Video 91
+
+// Set the target folder path
+//e:\CWH\Sigma-Web-Dev-Course\Video 91 + /Unorganized
+
+const targetFolder = path.join(__dirname, 'Unorganized');
+
+//e:\CWH\Sigma-Web-Dev-Course\Video 91\Unorganized
+
+// Read all items in the target folder above
+fs.readdir(targetFolder, (err, files) => {
+    if (err) return console.error('Error reading folder:', err);
+
+    //iterate through files
+    files.forEach((file) => {
+        const filePath = path.join(targetFolder, file);
+        //eg - e:\CWH\Sigma-Web-Dev-Course\Video 91\Unorganized\ZIP1.zip
+        //eg - e:\CWH\Sigma-Web-Dev-Course\Video 91\Unorganized\JPG1.jpg
+        //eg - e:\CWH\Sigma-Web-Dev-Course\Video 91\Unorganized\PDF1.pdf
+
+
+        // Check if it's a file (not a directory)
+        fs.stat(filePath, (err, stats) => {
+            if (err) return console.error('Error checking file:', err);
+            if (!stats.isFile()) return;
+
+            const ext = path.extname(file).slice(1); // Get extension without '.'
+            //zip pdf png jpg
+
+            // Make folder if not exists
+            const folderPath = path.join(targetFolder, ext);
+            if (!fs.existsSync(folderPath)) {
+                fs.mkdirSync(folderPath);
+            }
+
+            // Move file to new folder
+            const destPath = path.join(folderPath, file);
+
+            //renames the created file with ext type eg folder name = js / PNG..
+            fs.rename(filePath, destPath, (err) => {  
+                if (err) return console.error('Error moving file:', err);
+                console.log(`Moved ${file} → ${ext}/`);
+            });
+        });
+    });
+});
+
+/*
+Moved Name.PNG → PNG/
+Moved One.jpg → jpg/
+Moved PDF1.pdf → pdf/
+Moved Parrot.PNG → PNG/
+Moved Two.jpg → jpg/
+Moved ZIP1.zip → zip/
+Moved ZIP2.zip → zip/
+*/
+
+```
+
 
 
 These two modules — `fs` and `path` — are foundational when handling file operations and paths in Node.js. They're synchronous and asynchronous capable and widely used in CLI tools, web servers, and backend file processing scripts.
