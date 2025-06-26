@@ -1,9 +1,33 @@
-<h1 align = "center"> MongoDB </h1>
+<div display="flex" align = "center">
+<h1>
+  MongoDB
+  <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/b7fc024ffbf64d2dfd63b0ccdad5a5ef822a236f/NodeJS/StoreRoom/mongodb-leaf_32x32.png?raw=true" alt="MongoDB" width="30" />
+</h1>
+
+</div>
 
 <br>
 
-### Index 
-1. []()
+1. [Documentation](https://www.mongodb.com/docs/)
+2. [W3Schools](https://www.w3schools.com/mongodb/)
+
+<br>
+
+
+### Index
+
+1. [Part 1: Introduction to MongoDB](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-1-introduction-to-mongodb)
+2. [Part 2: MongoDB Core Concepts](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-2-mongodb-core-concepts)
+3. [Part 3: Installation and Setup](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-3-installation-and-setup)
+4. [Part 4: Basic MongoDB Shell Commands](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-4-basic-mongodb-shell-commands)
+5. [Part 5: Query Operators](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-5-query-operators)
+6. [Part 6: Indexing](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-6-indexing)
+7. [Part 7: Aggregation Framework](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-7-aggregation-framework)
+8. [Part 8: Data Modeling](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-8-data-modeling)
+9. [Part 9: Mongoose (MongoDB with Node.js)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-9-mongoose-mongodb-with-nodejs)
+10. [Part 10: Using MongoDB in MERN Stack](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-10-using-mongodb-in-mern-stack)
+11. [Part 11: Security and Best Practices](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/MongoDB/01_Notes.md#part-11-security-and-best-practices)
+
 
 <br>
 
