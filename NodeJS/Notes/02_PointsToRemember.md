@@ -12,6 +12,26 @@
 7. Install specific version `npm i express@4`
 8. No one remembers complete code, with practise you get there, its imp to know concepts, where to apply what code , use `documentations`
 9. Get request has a limit of 2048 characters, so you cant send large data on server, just query and requests, we use post to send data
+10. Dont confuse, **Server in Node.js = Software Process / program that processes requests and operstions (not physical)** 
+    - It starts a program that listens on a port (like 3000, 8000, etc.)
+    - That program runs inside Node.js on your machine (localhost), or on a cloud/deployed machine
+    - It Processes them (routes, logic, data)
+    - Sends responses back to the client
+      ```js
+      // Node http server
+      const http = require('http');
+      const server = http.createServer((req, res) => {
+        res.end('Hello from Node!');
+      });
+      server.listen(3000);
+      ```
+      ```js
+      // Express server
+      const express = require('express');
+      const app = express();
+      app.get('/', (req, res) => res.send('Hello from Express!'));
+      app.listen(3000);
+      ```
 
 <br>
 
