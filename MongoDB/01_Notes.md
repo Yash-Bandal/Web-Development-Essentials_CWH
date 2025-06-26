@@ -424,6 +424,8 @@ mongosh
 
 MongoDB provides a wide range of **query operators** to filter documents. These operators are used inside `find`, `update`, and aggregation queries.
 
+[Operators Documentation](https://www.mongodb.com/docs/manual/reference/operator/)
+
 ### A) Operators - 1
 ### MongoDB Update Operators
 
