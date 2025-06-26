@@ -898,7 +898,25 @@ Visit: `http://localhost:3000/?name=Yash`
  <br>
 
 ### 7.7 Streaming Large Files with `fs.createReadStream`
+fs.createReadStream() is a method from Node.js’s File System (fs) module that lets you read large files in chunks (streams), instead of loading the whole file into memory at once.
 
+
+Imagine you're reading a 1GB video file:
+| Method                  | What it Does                                          |
+| ----------------------- | ----------------------------------------------------- |
+| `fs.readFile()`         | Reads the entire file **into memory at once**.        |
+| `fs.createReadStream()` | Reads the file **in small parts (chunks)** as needed. |
+
+
+#### How `fs.createReadStream` Works Internally
+
+* You call `fs.createReadStream('example.txt')`.
+* Node.js opens the file and begins reading a small portion (default: 64 KB).
+* Each chunk of data triggers the `'data'` event.
+* Once all chunks are read, `'end'` is fired.
+* If there's an issue (file not found, etc.), `'error'` is fired.
+
+  
 ```js
 const fs = require('fs');
 
@@ -1041,6 +1059,7 @@ npm list --depth=0
 <br>
 
 ## 9. Express.js Framework
+[YB's_Express-in-depth](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md)
 
 ### Course video 87+
 
@@ -1059,18 +1078,23 @@ npm install express
  <br>
 
 ### 9.2 Basic Express App
-
+Copy this Template 
 ```js
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
+const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello from Express');
-});
+    res.send('Hello..! Yash here!')
+})
 
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000');
-});
+//app.get('/home', (req, res) => {
+//    res.sendFile('./templates/index.html' ,{root:__dirname})
+//})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
 ```
 
  <br>
@@ -1270,7 +1294,7 @@ project/templates/index.html
 Take template from here
 [Doc](https://expressjs.com/en/guide/routing.html)
 
-Organize routes into separate files.
+Organize routes into separate files. <br>
 eg project/routes/routeFileName1.js
 
 <br>
@@ -1356,7 +1380,9 @@ http://localhost:3000/routeHome
  
 ### 9.6 Middleware in Express
 
-Middleware functions are functions that have access to the request, response, and next function.
+[Doc](https://expressjs.com/en/guide/writing-middleware.html)
+
+[ Middleware](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Express/Express.md#3-middleware-in-express) functions are functions that have access to the request, response, and next function.
 - They are used to modify operate on operations, requests
 
 ```js
@@ -1397,6 +1423,26 @@ like
 
 </pre>
 
+---
+
+#### Mental Model
+- The Sandwich Shop (Your Express Server)
+  - Customers (clients)
+  - Place orders (HTTP requests), 
+  - staff (Express server)
+  - makes the sandwiches (responses).
+
+ before the sandwich is ready, it goes through stations like:
+1. Sanitization (clean the ingredients)
+2. Toast the bread
+3. Add toppings
+4. Wrap the sandwich
+5. Hand it to the customer <br>
+Each station is a middleware.
+
+Here Order is very important
+
+---
 
 ```js
 const express = require('express')
@@ -1481,14 +1527,24 @@ npm install morgan cors helmet express-validator
 
 <br>
 
+
+video 91
+
 ## 10. Templating Engines in Express.js
 
+[EJS](https://ejs.co/) : Here `CTRL + F - Express` <br>
+
+[Git Docs - main](https://github.com/mde/ejs/wiki/Using-EJS-with-Express)
+
 Templating engines allow dynamic rendering of HTML pages using variables and logic.
+
+---
+> Simply - They **take** variables from Express index/main.js and **put** it in templates views/file.ejs
+---
 
  <br>
 
 ### 10.1 What is a Templating Engine?
-
 * It allows embedding data into HTML pages.
 * Supports control structures like loops and conditionals.
 * Used to render views (pages) dynamically in server-side web apps.
@@ -1523,15 +1579,17 @@ Folder Structure:
 ```
 project/
 ├── views/
-│   └── index.ejs
+│   └── index.ejs   
 ├── app.js
+
+index.ejs is  just index.html rendered, like in templates/ we use views/
 ```
 
  <br>
 
 ### 10.4 Creating a View (EJS File)
 
-**views/index.ejs**
+**project/views/index.ejs**
 
 ```html
 <!DOCTYPE html>
@@ -1542,34 +1600,150 @@ project/
 </body>
 </html>
 ```
+These variables `title` and `name` are received from 
 
  <br>
 
 ### 10.5 Rendering the View in Express
 
+**project/index.js**
 ```js
+let express = require('express');
+let app = express();
+
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
   res.render('index', { title: 'Home Page', name: 'Yash' });
 });
+
+
+app.listen(4000, () => console.log('Example app listening on port 4000!'));
 ```
 
  <br>
 
 ### 10.6 EJS Syntax
+Use extentions `EJS Language support` on vscode
 
-* `<%= %>`: Output escaped HTML
-* `<%- %>`: Output unescaped HTML
-* `<% %>`: Run JS logic (if, for, etc.)
+| Syntax   | Purpose                         | Example                            |
+| -------- | ------------------------------- | ---------------------------------- |
+| `<%= %>` | Output **escaped** HTML         | `<%= user.name %>`                 |
+| `<%- %>` | Output **unescaped** HTML (raw) | `<%- htmlContent %>`               |
+| `<% %>`  | Execute JS logic (no output)    | `<% if (user) { %>`                |
+| `<%# %>` | Comment (not shown in output)   | `<%# This will not be rendered %>` |
+| `<%% %>` | Literal `<%` in output          | `<%% This will show as <% %>`      |
 
-Example:
+<br>
 
-```html
-<ul>
-<% for(let i = 0; i < items.length; i++) { %>
-  <li><%= items[i] %></li>
+###  Control Flow
+
+####  `if`, `else`, `else if`
+
+```ejs
+<% if (user) { %>
+  <h1>Welcome, <%= user.name %></h1>
+<% } else { %>
+  <h1>Please log in</h1>
 <% } %>
+```
+
+
+####  `for`, `while`, `forEach`
+
+```ejs
+<ul>
+  <% for(let i = 0; i < items.length; i++) { %>
+    <li><%= items[i] %></li>
+  <% } %>
 </ul>
 ```
+
+```ejs
+<ul>
+  <% let i = 0; while (i < items.length) { %>
+    <li><%= items[i] %></li>
+    <% i++; %>
+  <% } %>
+</ul>
+```
+
+```ejs
+<ul>
+  <% items.forEach(item => { %>
+    <li><%= item %></li>
+  <% }) %>
+</ul>
+```
+
+<br>
+
+### Output Variables
+
+#####  Escaped (safe for browser)
+
+```ejs
+<p>Hello, <%= username %></p>
+```
+
+#####  Unescaped (renders raw HTML)
+
+```ejs
+<%- "<strong>Bold</strong>" %>
+<!-- Outputs <strong>Bold</strong> -->
+```
+
+<br>
+
+###  Comments
+
+```ejs
+<%# This is a comment %>
+<!-- Not rendered in output -->
+```
+
+<br>
+
+###  Including Partials
+
+You can include other EJS templates:
+
+```ejs
+<%- include('partials/header') %>
+```
+
+* Use `-` to include the rendered HTML.
+* File path is relative to the `views/` directory.
+
+<br>
+
+### EJS Configuration (in Express)
+
+```js
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+```
+
+<br>
+
+###  Full Mini Example
+
+```ejs
+<% if (user) { %>
+  <h2>Welcome, <%= user.name %></h2>
+<% } else { %>
+  <p>Please log in</p>
+<% } %>
+
+<ul>
+  <% items.forEach(item => { %>
+    <li><%= item %></li>
+  <% }) %>
+</ul>
+
+<%# This comment is ignored %>
+```
+
 
  <br>
 
