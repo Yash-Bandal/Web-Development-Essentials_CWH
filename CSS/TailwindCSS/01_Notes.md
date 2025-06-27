@@ -4,6 +4,8 @@
 
 1. [Documentation](https://v2.tailwindcss.com/docs)
 2. [Portal](https://tailwindcss.com/)
+3. [shadcn](https://ui.shadcn.com/)
+4. [Tailwind-Play](https://play.tailwindcss.com/)
 
 <br>
 
@@ -371,6 +373,12 @@ Example:
 ## 5. Spacing & Sizing
 
 ### 5.1 Margin
+
+#### Syntax
+```
+m {t | r | b | l} - size
+```
+
 - `m-`, `mx-`, `my-`, `mt-`, `mr-`, `mb-`, `ml-`
 - Example: `m-4`, `mt-2`, `mx-auto`, `mb-0`
 - Negative margins: `-m-1`, `-mt-2`, etc.
