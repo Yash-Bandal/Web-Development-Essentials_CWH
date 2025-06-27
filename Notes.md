@@ -8,6 +8,12 @@ display : flex and justify all props
     - box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px; (within hover)
     - transform: scale(1.02);
     - transition: transform 0.3s ease, box-shadow 0.5s ease; (before hover)
+2. Most of the times use
+    - Position
+    - margin and padding
+    - Display
+    - Overflow
+      
 
 ### javascript
 designMode = on..temporarily edit websites
