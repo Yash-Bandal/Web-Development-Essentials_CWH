@@ -13,6 +13,12 @@ display : flex and justify all props
     - margin and padding
     - Display
     - Overflow
+
+<br>
+<div align="center">
+  <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/93ae5c7707c5a8fc914008bee6325b8759860ccc/NodeJS/StoreRoom/FlexBox.PNG" width=600>
+</div>
+<br>
       
 
 ### javascript
