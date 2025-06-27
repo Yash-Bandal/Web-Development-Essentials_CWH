@@ -35,3 +35,6 @@ getElementsByTagName("input")     //not work
 ## Text animations
 [1](https://tobiasahlin.com/moving-letters/)
 [2](https://prismic.io/blog/css-hover-effects#3-explosive-text-effect)
+
+## Swwet Alerts
+[SweetAlerts](https://sweetalert2.github.io/)
