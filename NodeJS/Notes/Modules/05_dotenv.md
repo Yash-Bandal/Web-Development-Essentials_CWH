@@ -6,6 +6,11 @@
 
 It helps in keeping configuration values like database credentials, API keys, and port numbers outside your codebase.
 
+**Import :**
+```js
+require('dotenv').config();   //cjs
+import {} from 'dotenv/config' //ecma
+```
 <br>
 
 ## Why Use Dotenv?
@@ -35,7 +40,8 @@ DB_PASS=secret123
 ### Step 2: Load `.env` variables in your code
 
 ```js
-require('dotenv').config();
+require('dotenv').config();   //cjs
+// import {} from 'dotenv/config' //es
 
 console.log(process.env.PORT);      // 3000
 console.log(process.env.DB_USER);   // admin
