@@ -2,8 +2,25 @@
 
 <br>
 
+1. [Documentation](https://v2.tailwindcss.com/docs)
+2. [Portal](https://tailwindcss.com/)
+
+<br>
+
 ### Index
-1. []()
+1. [Introduction](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#1-introduction)
+2. [Core Concepts](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#2-core-concepts)
+3. [Layout](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#3-layout)
+4. [Flexbox & Grid](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#4-flexbox--grid)
+5. [Spacing & Sizing](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#5-spacing--sizing)
+6. [Typography](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#6-typography)
+7. [Backgrounds](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#7-backgrounds)
+8. [Borders & Effects](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#8-borders--effects)
+9. [Transitions & Animation](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#9-transitions--animation)
+10. [Responsive Design & Variants](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#10-responsive-design--variants)
+11. [Forms](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#11-forms)
+12. [Customization](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#12-customization)
+13. [Tailwind with Frameworks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#13-tailwind-with-frameworks)
 
 
 <br>
