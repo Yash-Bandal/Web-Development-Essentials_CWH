@@ -38,3 +38,29 @@ getElementsByTagName("input")     //not work
 
 ## Swwet Alerts
 [SweetAlerts](https://sweetalert2.github.io/)
+
+## UI/UX Componants
+
+| Library                        | Description                             | Website                                                                                    |
+| ------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **SweetAlert2**                | Modern, beautiful alerts with animation | [https://sweetalert2.github.io](https://sweetalert2.github.io)                             |
+| **Toastr**                     | Simple, non-blocking notifications      | [https://codeseven.github.io/toastr](https://codeseven.github.io/toastr)                   |
+| **Animate.css**                | Ready-to-use CSS animations             | [https://animate.style](https://animate.style)                                             |
+| **AOS (Animate on Scroll)**    | Animate elements on scroll              | [https://michalsnik.github.io/aos](https://michalsnik.github.io/aos)                       |
+| **Notyf**                      | Minimalist notification library         | [https://github.com/caroso1222/notyf](https://github.com/caroso1222/notyf)                 |
+| **VanillaTilt.js**             | 3D hover tilt effect                    | [https://micku7zu.github.io/vanilla-tilt.js/](https://micku7zu.github.io/vanilla-tilt.js/) |
+| **Particles.js / tsparticles** | Cool background particle effects        | [https://vincentgarreau.com/particles.js](https://vincentgarreau.com/particles.js)         |
+| **Shepherd.js**                | Guided user tour overlays               | [https://shepherdjs.dev](https://shepherdjs.dev)                                           |
+| **Flatpickr**                  | Lightweight date picker                 | [https://flatpickr.js.org](https://flatpickr.js.org)                                       |
+| **Swiper.js**                  | Modern mobile touch slider              | [https://swiperjs.com](https://swiperjs.com)                                               |
+
+## UI Kits (Templates)
+
+| Kit                   | Description                                  | Website                                          |
+| --------------------- | -------------------------------------------- | ------------------------------------------------ |
+| **Tailwind UI**       | Official Tailwind premium components         | [https://tailwindui.com](https://tailwindui.com) |
+| **Flowbite**          | Free Tailwind components & templates         | [https://flowbite.com](https://flowbite.com)     |
+| **DaisyUI**           | Utility-first component library for Tailwind | [https://daisyui.com](https://daisyui.com)       |
+| **UIdeck**            | Free modern HTML & Tailwind templates        | [https://uideck.com](https://uideck.com)         |
+| **Cruip**             | Modern SaaS and landing page templates       | [https://cruip.com](https://cruip.com)           |
+| **CodePen Templates** | Search "UI template", "login form", etc.     | [https://codepen.io](https://codepen.io)         |
