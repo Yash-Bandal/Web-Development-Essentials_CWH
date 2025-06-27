@@ -274,10 +274,22 @@ import express from 'express';
 import { Todo } from './models/Todo.js'
 
 
-let conn = await mongoose.connect("mongodb://localhost:27017/todo")
-.then(() => console.log("MongoDB Connected"))
-.catch((err) => console.error("Connection error", err));
+//A. Traditional without .env enironment variables
+// let conn = await mongoose.connect("mongodb://localhost:27017/todo")
+// .then(() => console.log("MongoDB Connected"))
+// .catch((err) => console.error("Connection error", err));
 
+
+//B. Connect Using .env enironment variables
+//1.  create `.env` (file not `fileName.env` just `.env`)
+//2. `.env` => MONGO_URI=mongodb://localhost:27017/todo
+
+// require('dotenv').config();    //cjs type:commonjs
+import {} from 'dotenv/config'   //emca type:module
+
+let conn = await mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("MongoDB Connected"))
+    .catch((err) => console.error("Connection error", err));
 
 const app = express()
 const port = 3000
@@ -313,6 +325,12 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 ```
+
+**`.env`**
+```env
+MONGO_URI=mongodb://localhost:27017/todo
+```
+
 
 Everytime you refresh the page on port 3000, the document is added
 - Check the database on **Compass** or **vscode** extension
