@@ -2,10 +2,11 @@
 
 <br>
 
-1. [Documentation](https://v2.tailwindcss.com/docs)
-2. [Portal](https://tailwindcss.com/)
-3. [shadcn](https://ui.shadcn.com/)
-4. [Tailwind-Play](https://play.tailwindcss.com/)
+1. [Documentation](https://v2.tailwindcss.com/docs) - v2 Docs
+2. [Portal](https://tailwindcss.com/) - Official Portal
+3. [shadcn](https://ui.shadcn.com/) - Componants
+4. [Tailwind-Play](https://play.tailwindcss.com/) - Playground
+5. [Tailblocks-cc](https://tailblocks.cc/) - Tailwind Componants
 
 <br>
 
@@ -38,21 +39,158 @@
 - Highly customizable for tailored designs
 - Promotes responsive and consistent UI
 
+<br>
+
 ### 1.2 Installation & Setup
 
-#### 1.2.1 Option 1: Using CDN (Quick Testing)
+### 1.2.1 Option 1: Using CDN (Quick Testing - Avoid this CDN for development)
 ```html
 <link href="https://cdn.tailwindcss.com" rel="stylesheet">
 ```
+if error prefer Old version
+```html
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+```
+or 
+```
+tailwindcss@3.4.0
+```
+
 Add this inside the `<head>` tag for quick prototyping.
 
-#### 1.2.2 Option 2: Using Tailwind with Node.js (Recommended for Projects)
-**Step 1: Initialize Project**
+<br>
+
+### 1.2.2 Option 2: Using Tailwind with Node.js (Recommended for Projects)
+
+### A. `Old Version Before 4`
+---
+> Note : The Tailwind css version 4 is dynamically a bit different, you may get an `npx tailwindcss init` error for latest version4 default
+
+ > So use version 3 to use `npx tailwindcss init` command
+---
+
+#### **Step 1: Initialize Project**
 ```bash
 npm init -y
-npm install -D tailwindcss
+```
+
+<br>
+
+#### **Step2: Install**
+From docs
+```bash
+npm install -D tailwindcss@3 postcss autoprefixer
+```
+```bash
+npm install -D tailwindcss@3 
+```
+
+<br>
+
+
+#### **Step3: Initialze**
+```bash
 npx tailwindcss init
 ```
+with postcss
+```bash
+npx tailwindcss init -p
+```
+
+this creates `tailwind.config.js` and `tailwind.config.js`
+
+<br>
+
+#### Step 4:  if required install vite
+```bash
+npm install vite
+```
+and add inside `package.json` &rarr; script
+```bash
+  "scripts": {
+    "start": "vite"
+  },
+```
+
+<br>
+
+### B. `New Version 4+`
+**Refer Latet Doc**
+#### 1. Using Vite
+```bash
+npm create vite@latest my-app -- --template <template_name>
+```
+
+Eg. For react
+```bash
+npm create vite@latest my-app -- --template react
+```
+
+#### 2. Enter App
+```bash
+cd my-app
+```
+
+#### 3.  Install Tailwind
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+confirm the installation via `package.json`
+```json
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+```
+
+#### 4. Add these two lines inside `vite.config.js`
+```js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'  //1. Line 1
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    tailwindcss(),   //2. Line 2
+    react()
+  ],
+})
+```
+
+and press `CTRL + s` to save
+
+#### 5. Import plugin inside React within css at top
+**project/src/index.css**
+```css
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+.
+.
+```
+
+#### 6. Start Building 
+```bash
+npm run dev
+```
+
+**Done...!**
+
+Now Check working <br>
+1. Visit `http://localhost:5173/` 
+2. Inside `project/src/assets/App.jsx` try
+   ```html
+   <h1 className='text-red-500'> Vite + React</h1>
+   ```
+3. Validate change again on `http://localhost:5173/`
+
+All Done..
+
+<br>
 
 **Step 2: Folder Structure**
 ```
