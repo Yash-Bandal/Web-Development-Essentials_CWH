@@ -162,7 +162,23 @@ module.exports = {
 ```bash
 npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 ```
+OR do this: Inside `package.json` include in script
+```json
+  "scripts": {
+    "start": "vite",
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+```
+```bash
+npm run build
+```
+
+
+
+
 <br>
+
+
 
 #### Step7: 7. Import CSS in JS (src/main.js)
 ```js
@@ -180,6 +196,31 @@ npm run start
 
 > If you want to clear the vscode suggestion that hovers over `@tailwind base;`....stay in the .css file and at the bottom right of vscode select CSS{} and select `**TailwindCSS**`
 ---
+
+
+<br>
+
+Now to run Document recommended `output.css` and not `input.css`
+
+Comment out this
+```html
+    <!-- <link rel="stylesheet" href="src/input.css"> -->
+    <link rel="stylesheet" href="src/output.css">
+```
+
+and
+
+```json
+  "scripts": {
+    "start": "vite",
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+```
+```bash
+npm run build
+```
+
+**Start the page using Liveserver of vscode `Go Live`**
 
 <br>
 
