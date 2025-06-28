@@ -79,7 +79,7 @@ npm init -y
 #### **Step2: Install**
 From docs
 ```bash
-npm install -D tailwindcss@3 postcss autoprefixer
+npm install -D tailwindcss@3 postcss autoprefixer vite
 ```
 ```bash
 npm install -D tailwindcss@3 
@@ -87,14 +87,45 @@ npm install -D tailwindcss@3
 
 <br>
 
+#### **Step3: Edit Script inside `package.json`**
+```bash
+  "scripts": {
+    "start":"vite"
+  },
+```
+<br>
 
-#### **Step3: Initialze**
+
+#### **Step4: Ensure Structure of Project**
+```
+project/
+├── src/
+│   └── input.css
+│   └── output.css //will be created after next command
+│   └── script.js //js added later
+├── index.html
+└── tailwind.config.js
+└── postcss.config.js
+```
+<br>
+
+#### **Step5: Initialze**
 ```bash
 npx tailwindcss init
 ```
 with postcss
 ```bash
 npx tailwindcss init -p
+```
+
+<br>
+
+#### **Step5: Add link to html**
+Since we are using `vite` use input.css not output.css as said in doc
+```html
+<head>
+    <link rel="stylesheet" href="src/input.css">
+</head>
 ```
 
 this creates `tailwind.config.js` and `tailwind.config.js`
@@ -105,30 +136,28 @@ this creates `tailwind.config.js` and `tailwind.config.js`
 ```
 Like this
 ```css
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["*"],
+  content: ["*.html", "./src/**/*.{js,ts}"], // This is important!
   theme: {
     extend: {},
   },
   plugins: [],
-}
-```
+};
 
+```
 
 <br>
 
-#### Step 4:  if required install vite
+#### **Step6 : Run this command**
 ```bash
-npm install vite
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 ```
-and add inside `package.json` &rarr; script
+<br>
+
+#### Step 7: Run devlopment with vite
 ```bash
-  "scripts": {
-    "start": "vite"
-  },
+npm run start
 ```
-This allows you to run server using `npm run start`
 
 <br>
 
