@@ -232,7 +232,12 @@ npm run build
 <br>
 
 ### B. `New Version 4+`
-**Refer Latet Doc**
+**Refer Latet Doc** <br>
+
+---
+> Note: Ensure using `Command Prompt CMD` Terminal and not `Powershell psl` or `Git Bash` or others.
+---
+
 #### 1. Using Vite
 ```bash
 npm create vite@latest my-app -- --template <template_name>
