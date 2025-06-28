@@ -288,9 +288,30 @@ Example:
 ## 4. Flexbox & Grid
 
 <br>
+<br>
+<br>
 <div align="center">
-  <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/93ae5c7707c5a8fc914008bee6325b8759860ccc/NodeJS/StoreRoom/FlexBox.PNG" width=600>
+
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/93ae5c7707c5a8fc914008bee6325b8759860ccc/NodeJS/StoreRoom/FlexBox.PNG?raw=true" width="350" height="400"/>
+      <br>
+      <b>FlexBox Alignment</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/551396b3a27aed724de1cdf7a2082dfc17691405/NodeJS/StoreRoom/Align-items.PNG?raw=true" width="350" height="400"/>
+      <br>
+      <b>Align Items</b>
+    </td>
+  </tr>
+</table>
+
+ 
 </div>
+
+
 <br>
 
 ### 4.1 Flexbox
