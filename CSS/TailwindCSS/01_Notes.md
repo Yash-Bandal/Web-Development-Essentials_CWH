@@ -128,6 +128,7 @@ and add inside `package.json` &rarr; script
     "start": "vite"
   },
 ```
+This allows you to run server using `npm run start`
 
 <br>
 
