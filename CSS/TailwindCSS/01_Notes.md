@@ -20,7 +20,7 @@
 7. [Backgrounds](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#7-backgrounds)
 8. [Borders & Effects](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#8-borders--effects)
 9. [Transitions & Animation](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#9-transitions--animation)
-10. [Responsive Design & Variants](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#10-responsive-design--variants)
+10. [Responsive Design & Variants - Media Queries](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#10-responsive-design--variants)
 11. [Forms](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#11-forms)
 12. [Customization](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#12-customization)
 13. [Tailwind with Frameworks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/CSS/TailwindCSS/01_Notes.md#13-tailwind-with-frameworks)
@@ -922,6 +922,24 @@ Usage:
 <br>
 
 ## 10. Responsive Design & Variants
+
+[Media-Queries](https://tailwindcss.com/docs/responsive-design)
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/67f510003e0e90469a84018ea6a44cd057d49cde/NodeJS/StoreRoom/MQ1.PNG?raw=true" width="500" height="250"/>
+      <br>
+      <b>With max-query</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/67f510003e0e90469a84018ea6a44cd057d49cde/NodeJS/StoreRoom/MQ2.PNG?raw=true" width="500" height="250"/>
+      <br>
+      <b>Without max-query</b>
+    </td>
+  </tr>
+</table>
+
 
 ### 10.1 Mobile-First Breakpoints
 Classes apply from the smallest screen and scale up.
