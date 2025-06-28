@@ -106,9 +106,11 @@ project/
 ├── index.html
 └── tailwind.config.js
 └── postcss.config.js
+└── package.json
 ```
 
 **/src/input.css**
+
 ```css
 @tailwind base;
 @tailwind components;
@@ -145,7 +147,7 @@ Like this
 ```css
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["*.html", "./src/**/*.{js,ts}"], // This is important!
+  content: ["./**/*.html", "./src/**/*.{js,ts}"], // This is important!
   theme: {
     extend: {},
   },
@@ -162,10 +164,20 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 ```
 <br>
 
-#### Step 7: Run devlopment with vite
+#### Step7: 7. Import CSS in JS (src/main.js)
+```js
+import './input.css';
+```
+
+<br>
+
+#### Step 8: Run devlopment with vite
 ```bash
 npm run start
 ```
+---
+> Note: Restart the vscode to use the extension `Tailwind Intellisense` if not working, it works again
+---
 
 <br>
 
