@@ -1105,7 +1105,54 @@ module.exports = {
 ```
 
 ### 12.2 Custom Utilities
-Define custom utilities using `@layer utilities`:
+
+### Verry Beautiful Feature
+1. You may think it looks too **messy** defining all classes within html elements
+  ```html
+  <div class="m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-slate-700">
+    <h2 class="text-base font-medium tracking-tight text-slate-900 dark:text-white">This is h1</h2>
+    <p class="mt-2 text-sm text-slate-500 dark:text-white">This is paragraph</p>
+  
+    <button id="tgggle" class="mt-8 bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+  </div>
+  ```
+
+2. Here comes this features
+3. Inside `input.css` or your css file define the classes like this
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   
+   @layer components{
+     .card {
+       @apply m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-slate-700
+     }
+     .head {
+       @apply text-base font-medium tracking-tight text-slate-900 dark:text-white
+     }
+     .para{
+       @apply mt-2 text-sm text-slate-500 dark:text-white
+     }
+     .btn{
+       @apply mt-8 bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900
+     }
+   }
+   ```
+
+4. Now apply to the element
+   ```html
+   <div class="card">
+     <h2 class="head">This is h1</h2>
+     <p class="para">This is paragraph</p>
+   
+     <button id="tgggle" class="btn" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+   </div>
+   ```
+
+
+eg: 
+Define custom utilities using `@layer utilities`: 
 ```css
 @tailwind base;
 @tailwind components;
