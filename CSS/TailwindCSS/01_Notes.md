@@ -4,9 +4,16 @@
 
 1. [Documentation](https://v2.tailwindcss.com/docs) - v2 Docs
 2. [Portal](https://tailwindcss.com/) - Official Portal
-3. [shadcn](https://ui.shadcn.com/) - Componants
-4. [Tailwind-Play](https://play.tailwindcss.com/) - Playground
-5. [Tailblocks-cc](https://tailblocks.cc/) - Tailwind Componants
+3. [Tailwind-Play](https://play.tailwindcss.com/) - Playground
+
+
+<br>
+
+### Componants and Utilities
+1. [shadcn](https://ui.shadcn.com/)
+2. [Headless UI](https://headlessui.com/)
+3. [Tailwind UI](https://tailwindcss.com/plus)
+4. [Tailblocks-cc](https://tailblocks.cc/) 
 
 <br>
 
