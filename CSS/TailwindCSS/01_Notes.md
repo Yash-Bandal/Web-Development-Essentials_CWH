@@ -99,6 +99,23 @@ npx tailwindcss init -p
 
 this creates `tailwind.config.js` and `tailwind.config.js`
 
+**Inside `tailwind.config.css` add `asterisk` to apply css to all content**
+```css
+  content: ["*"],
+```
+Like this
+```css
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["*"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+
 <br>
 
 #### Step 4:  if required install vite
