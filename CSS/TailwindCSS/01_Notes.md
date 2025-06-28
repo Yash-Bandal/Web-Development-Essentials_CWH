@@ -107,6 +107,13 @@ project/
 └── tailwind.config.js
 └── postcss.config.js
 ```
+
+**/src/input.css**
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 <br>
 
 #### **Step5: Initialze**
@@ -136,6 +143,7 @@ this creates `tailwind.config.js` and `tailwind.config.js`
 ```
 Like this
 ```css
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["*.html", "./src/**/*.{js,ts}"], // This is important!
   theme: {
