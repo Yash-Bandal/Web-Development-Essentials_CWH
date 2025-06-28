@@ -231,6 +231,78 @@ npm run build
 
 <br>
 
+
+### For React App
+
+---
+> Use Command Line Terminal avoid other powershell , gitbash
+---
+
+**1. Create Vite App**
+```bash
+npm create vite@latest my-app  -- --template react
+```
+A Vite + React app structure Created
+
+**2. Enter**
+```bash
+cd my-app
+```
+
+**3. Install version 3**
+```bash
+npm install -D tailwindcss@3 postcss autoprefixer
+```
+
+**4. Initialze Tailwind and postcss (Version 4+ Auto initialize this)**
+```bash
+npx tailwindcss init -p
+```
+
+**5. Configure tailwind.configure.js**
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./index.html", 
+          "./src/**/*.{js,ts,jsx,tsx}"], // This is important!
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+**6. Configure Index.css**
+
+**/src/index.css**
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+Clear the `App.css` 
+
+**7. Configure App.jsx** <br>
+rfc
+```jsx
+export default function App() {
+  return (
+    <h1 className='text-lg font-bold underline'>
+      YB-Tutorials
+    </h1>
+  )
+}
+```
+
+**8 Run**
+```bash
+npm run dev
+```
+
+
+<br>
+
 ### B. `New Version 4+`
 **Refer Latet Doc** <br>
 
@@ -302,6 +374,10 @@ npm run dev
 
 **Done...!**
 
+---
+> Tailwind CSS Version 4+ Latest supports auto cinfigurations, learn more about it
+---
+
 Now Check working <br>
 1. Visit `http://localhost:5173/` 
 2. Inside `project/src/assets/App.jsx` try
@@ -314,66 +390,10 @@ All Done..
 
 <br>
 
-**Step 2: Folder Structure**
-```
-project/
-├── src/
-│   └── input.css
-├── dist/
-│   └── output.css
-├── index.html
-└── tailwind.config.js
-```
 
-**Step 3: Configure input.css**
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
 
-**Step 4: Build CSS**
-```bash
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
-```
 
-**Step 5: Link in HTML**
-```html
-<link href="./dist/output.css" rel="stylesheet">
-```
-
-### 1.3 Tailwind Configuration File (tailwind.config.js)
-Generated via `npx tailwindcss init`. Used to customize:
-- Theme (colors, spacing, etc.)
-- Breakpoints
-- Plugins
-- Dark mode
-
-```js
-module.exports = {
-  content: ["./*.html"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
-
-### 1.4 Purging Unused CSS (Production)
-Tailwind removes unused CSS by scanning HTML/JSX files:
-```js
-module.exports = {
-  content: ["./*.html", "./src/**/*.{js,jsx}"],
-  // other config
-}
-```
-
-Build command for production:
-```bash
-NODE_ENV=production npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
-```
-
-### 1.5 Dark Mode Support
+### 1.3 Dark Mode Support
 Enable in config:
 ```js
 darkMode: 'class', // or 'media'
