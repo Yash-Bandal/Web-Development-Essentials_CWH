@@ -177,6 +177,8 @@ npm run start
 ```
 ---
 > Note: Restart the vscode to use the extension `Tailwind Intellisense` if not working, it works again
+
+> If you want to clear the vscode suggestion that hovers over `@tailwind base;`....stay in the .css file and at the bottom right of vscode select CSS{} and select `**TailwindCSS**`
 ---
 
 <br>
