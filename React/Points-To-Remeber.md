@@ -10,3 +10,11 @@ const PopularProductsCard = (imgURL, name, price) => {}
 //dont forget {}
  ```  
 5. Check position attributes absolute, relative, they have a huge impact
+6. Dont use "" inside **src**
+   ```jsx
+   <img src={imgURL} alt={name}
+   not
+   <img src="{imgURL}" alt="{name}"
+   or
+   <img src="imgURL" alt="name" 
+   ```
