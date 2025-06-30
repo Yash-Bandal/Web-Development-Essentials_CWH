@@ -1,3 +1,34 @@
+<h1 align="center"> React </h1>
+
+<br>
+
+### Index
+
+1. [Part 1: Introduction to React](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-1-introduction-to-react)
+2. [Part 2: Setting Up React Environment](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-2-setting-up-react-environment)
+3. [Part 3: JSX (JavaScript XML)](http://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-3-jsx-javascript-xml)
+4. [Part 4: Components (Functional & Class)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-4-components-functional--class)
+5. [Part 5: Props & PropTypes](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-5-props--proptypes)
+6. [Part 6: State & useState Hook](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-6-state--usestate-hook)
+7. [Part 7: Event Handling](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-7-event-handling)
+8. [Part 8: Conditional Rendering](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-8-conditional-rendering)
+9. [Part 9: Lists and Keys](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-9-lists-and-keys)
+10. [Part 10: Forms Handling](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-10-forms-handling)
+11. [Part 11: useEffect & useState Hooks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-11-useeffect--usestate-hooks)
+12. [Part 12: Component Lifecycle (Class-Based)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-12-component-lifecycle-class-based)
+13. [Part 13: Routing with React Router](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-13-routing-with-react-router)
+14. [Part 14: Context API](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-14-context-api)
+15. [Part 15: Refs and DOM Manipulation](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-15-refs-and-dom-manipulation)
+16. [Part 16: useReducer & useMemo Hooks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-16-usereducer--usememo-hooks)
+17. [Part 17: Custom Hooks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-17-custom-hooks)
+18. [Part 18: Lifting State Up](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-18-lifting-state-up)
+19. [Part 19: React Fragments & Portals](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-19-react-fragments--portals)
+20. [Part 20: Performance Optimization](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-20-performance-optimization)
+21. [Part 21: React with External Tools](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-21-react-with-external-tools)
+
+
+<br>
+
 ## Part 1: Introduction to React
 
 ---
