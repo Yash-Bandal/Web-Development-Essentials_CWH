@@ -2,6 +2,11 @@
 
 <br>
 
+1. [Documentation](https://react.dev/learn)
+2. [W3_Schools](https://www.w3schools.com/REACT/DEFAULT.ASP)
+
+<br>
+
 ### Index
 
 1. [Part 1: Introduction to React](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-1-introduction-to-react)
