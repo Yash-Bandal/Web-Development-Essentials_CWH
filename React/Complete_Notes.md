@@ -29,25 +29,28 @@
 
 <br>
 
+
+---
+
 ## Part 1: Introduction to React
 
 ---
 
-### What is React?
+### 1.1 What is React?
 
-* React is an open-source JavaScript library used for building user interfaces (UIs), especially for single-page applications.
-* Developed by Facebook in 2013.
-* It allows developers to create large web applications that can update and render efficiently in response to data changes.
+- React is an open-source JavaScript library used for building user interfaces (UIs), especially for single-page applications.
+- Developed by Facebook in 2013.
+- It allows developers to create large web applications that can update and render efficiently in response to data changes.
 
-### Why React?
+### 1.2 Why React?
 
-* **Component-Based Architecture**: Build encapsulated components that manage their own state.
-* **Declarative Syntax**: Describe UI with readable code.
-* **Reusable Components**: Write once, reuse anywhere.
-* **Virtual DOM**: Efficient rendering using diff algorithms.
-* **Strong Ecosystem**: Supported by tools like Redux, React Router, Next.js.
+- **Component-Based Architecture**: Build encapsulated components that manage their own state.
+- **Declarative Syntax**: Describe UI with readable code.
+- **Reusable Components**: Write once, reuse anywhere.
+- **Virtual DOM**: Efficient rendering using diff algorithms.
+- **Strong Ecosystem**: Supported by tools like Redux, React Router, Next.js.
 
-### React vs Other Frameworks
+### 1.3 React vs Other Frameworks
 
 | Feature        | React            | Angular    | Vue              |
 | -------------- | ---------------- | ---------- | ---------------- |
@@ -57,15 +60,15 @@
 | Data Binding   | One-way          | Two-way    | Two-way          |
 | DOM            | Virtual DOM      | Real DOM   | Virtual DOM      |
 
-### Key Concepts
+### 1.4 Key Concepts
 
-* **JSX**: JavaScript XML, a syntax extension to JavaScript.
-* **Components**: Independent, reusable pieces of UI.
-* **Props**: Short for properties; data passed from parent to child.
-* **State**: Internal data maintained by a component.
-* **Hooks**: Functions that let you use state and other features in functional components.
+- **JSX**: JavaScript XML, a syntax extension to JavaScript.
+- **Components**: Independent, reusable pieces of UI.
+- **Props**: Short for properties; data passed from parent to child.
+- **State**: Internal data maintained by a component.
+- **Hooks**: Functions that let you use state and other features in functional components.
 
-### React Application Structure
+### 1.5 React Application Structure
 
 Typical `create-react-app` project folder:
 
@@ -80,57 +83,51 @@ my-app/
 └── README.md
 ```
 
-### React Popular Use-Cases
+### 1.6 React Popular Use-Cases
 
-* Dashboards and Admin Panels
-* E-commerce Frontends
-* Social Media Feeds
-* Real-time Chat Applications
-* Interactive Forms
-
-
-<br>
+- Dashboards and Admin Panels
+- E-commerce Frontends
+- Social Media Feeds
+- Real-time Chat Applications
+- Interactive Forms
 
 ---
-
-<br>
 
 ## Part 2: Setting Up React Environment
 
 ---
 
-### Prerequisites
+### 2.1 Prerequisites
 
-* **Basic knowledge of JavaScript and HTML/CSS**
-* **Node.js and npm installed**
+- **Basic knowledge of JavaScript and HTML/CSS**
+- **Node.js and npm installed**
+  - Check with: `node -v` and `npm -v`
+  - Download from [https://nodejs.org](https://nodejs.org)
 
-  * Check with: `node -v` and `npm -v`
-  * Download from [https://nodejs.org](https://nodejs.org)
+<br>
 
----
+### 2.2 Installing React (Using create-react-app)
 
-### Installing React (Using create-react-app)
-
-#### Step 1: Create a New React App
+#### 2.2.1 Step 1: Create a New React App
 
 ```bash
 npx create-react-app my-app
 ```
 
-* This sets up everything (Webpack, Babel, ESLint) automatically.
+- This sets up everything (Webpack, Babel, ESLint) automatically.
 
-#### Step 2: Navigate and Start the Server
+#### 2.2.2 Step 2: Navigate and Start the Server
 
 ```bash
 cd my-app
 npm start
 ```
 
-* Opens the app in your browser at `http://localhost:3000`
+- Opens the app in your browser at `http://localhost:3000`
 
----
+<br>
 
-### Folder Structure (Default)
+### 2.3 Folder Structure (Default)
 
 ```
 my-app/
@@ -144,17 +141,17 @@ my-app/
 └── README.md
 ```
 
----
+<br>
 
-### Important Files
+### 2.4 Important Files
 
-* **index.js**: Entry point that renders the App component into DOM
-* **App.js**: Root component containing UI
-* **package.json**: Lists dependencies, scripts, project metadata
+- **index.js**: Entry point that renders the App component into DOM
+- **App.js**: Root component containing UI
+- **package.json**: Lists dependencies, scripts, project metadata
 
----
+<br>
 
-### Useful Scripts
+### 2.5 Useful Scripts
 
 | Script          | Purpose                        |
 | --------------- | ------------------------------ |
@@ -163,9 +160,9 @@ my-app/
 | `npm test`      | Runs test suite                |
 | `npm run eject` | Exposes full config (rare use) |
 
----
+<br>
 
-### Alternative Tool: Vite (Faster Build Tool)
+### 2.6 Alternative Tool: Vite (Faster Build Tool)
 
 ```bash
 npm create vite@latest my-app
@@ -174,88 +171,83 @@ npm install
 npm run dev
 ```
 
-* Much faster startup and hot reload
-
-
-<br>
+- Much faster startup and hot reload
 
 ---
-
-<br>
 
 ## Part 3: JSX (JavaScript XML)
 
 ---
 
-### What is JSX?
+### 3.1 What is JSX?
 
-* JSX stands for **JavaScript XML**.
-* It allows writing HTML-like syntax in JavaScript.
-* JSX is transformed into `React.createElement()` calls by Babel.
+- JSX stands for **JavaScript XML**.
+- It allows writing HTML-like syntax in JavaScript.
+- JSX is transformed into `React.createElement()` calls by Babel.
 
----
+<br>
 
-### Why Use JSX?
+### 3.2 Why Use JSX?
 
-* Makes code **more readable and expressive**.
-* Allows mixing of **HTML structure** and **JavaScript logic**.
-* Enables full power of JavaScript inside the UI code.
+- Makes code **more readable and expressive**.
+- Allows mixing of **HTML structure** and **JavaScript logic**.
+- Enables full power of JavaScript inside the UI code.
 
----
+<br>
 
-### Basic JSX Syntax
+### 3.3 Basic JSX Syntax
 
 ```jsx
 const element = <h1>Hello, React!</h1>;
 ```
 
-* JSX expressions must have **one parent element**.
-* Can use fragments (`<>...</>`) if you don't want a wrapper.
+- JSX expressions must have **one parent element**.
+- Can use fragments (`<>...</>`) if you don't want a wrapper.
 
----
+<br>
 
-### Embedding JavaScript in JSX
+### 3.4 Embedding JavaScript in JSX
 
 ```jsx
 const name = 'Shiva';
 const element = <h1>Hello, {name}!</h1>;
 ```
 
-* You can embed any JS expression inside `{}`.
-* Can use functions, conditionals, expressions.
+- You can embed any JS expression inside `{}`.
+- Can use functions, conditionals, expressions.
 
----
+<br>
 
-### JSX Rules
+### 3.5 JSX Rules
 
-* Use `className` instead of `class`
-* Use `htmlFor` instead of `for`
-* All tags must be closed: `<img />`, `<input />`
+- Use `className` instead of `class`
+- Use `htmlFor` instead of `for`
+- All tags must be closed: `<img />`, `<input />`
 
----
+<br>
 
-### Using JavaScript Logic
+### 3.6 Using JavaScript Logic
 
 ```jsx
 const isLoggedIn = true;
 const message = <h1>{isLoggedIn ? 'Welcome back!' : 'Please log in'}</h1>;
 ```
 
-* Conditional rendering with ternary, `&&`, or separate functions.
+- Conditional rendering with ternary, `&&`, or separate functions.
 
----
+<br>
 
-### JSX Is Not a String
+### 3.7 JSX Is Not a String
 
-* JSX is not HTML or string — it's syntactic sugar for:
+- JSX is not HTML or string — it's syntactic sugar for:
 
 ```jsx
 const element = React.createElement('h1', null, 'Hello');
 ```
 
----
+<br>
 
-### Nesting Elements
+### 3.8 Nesting Elements
 
 ```jsx
 const element = (
@@ -266,17 +258,17 @@ const element = (
 );
 ```
 
-* You can group multiple tags inside a single parent or fragment.
+- You can group multiple tags inside a single parent or fragment.
 
----
+<br>
 
-### Expressions vs Statements
+### 3.9 Expressions vs Statements
 
-* JSX allows **expressions** only (e.g. `{1 + 2}`), not statements (like `if`, `for`).
+- JSX allows **expressions** only (e.g. `{1 + 2}`), not statements (like `if`, `for`).
 
----
+<br>
 
-### Summary Table
+### 3.10 Summary Table
 
 | Concept       | JSX Equivalent                            |
 | ------------- | ----------------------------------------- |
@@ -286,34 +278,27 @@ const element = (
 | JS inside JSX | `{...}`                                   |
 | Close tags    | Always required                           |
 
-
-
-<br>
-
 ---
-
-<br>
-
 
 ## Part 4: Components (Functional & Class)
 
 ---
 
-### What is a Component?
+### 4.1 What is a Component?
 
-* A **Component** is an independent, reusable piece of UI in a React application.
-* Each component returns JSX which is rendered to the DOM.
+- A **Component** is an independent, reusable piece of UI in a React application.
+- Each component returns JSX which is rendered to the DOM.
 
----
+<br>
 
-### Types of Components
+### 4.2 Types of Components
 
 1. **Functional Components** (Modern, preferred)
 2. **Class Components** (Older, still used in legacy code)
 
----
+<br>
 
-### Functional Component (Using ES6 Functions)
+### 4.3 Functional Component (Using ES6 Functions)
 
 ```jsx
 function Welcome(props) {
@@ -321,9 +306,9 @@ function Welcome(props) {
 }
 ```
 
-* Simple JavaScript function
-* Takes `props` as argument
-* Returns JSX
+- Simple JavaScript function
+- Takes `props` as argument
+- Returns JSX
 
 Using Arrow Function:
 
@@ -331,9 +316,9 @@ Using Arrow Function:
 const Welcome = (props) => <h1>Hello, {props.name}!</h1>;
 ```
 
----
+<br>
 
-### Class Component
+### 4.4 Class Component
 
 ```jsx
 import React, { Component } from 'react';
@@ -345,13 +330,13 @@ class Welcome extends Component {
 }
 ```
 
-* Must extend `React.Component`
-* Uses `render()` method to return JSX
-* Access props using `this.props`
+- Must extend `React.Component`
+- Uses `render()` method to return JSX
+- Access props using `this.props`
 
----
+<br>
 
-### Rendering a Component
+### 4.5 Rendering a Component
 
 ```jsx
 import Welcome from './Welcome';
@@ -365,23 +350,23 @@ function App() {
 }
 ```
 
----
+<br>
 
-### Component Naming Rules
+### 4.6 Component Naming Rules
 
-* Component names must start with **a capital letter**.
-* File name should ideally match component name.
-* Export components to reuse:
+- Component names must start with **a capital letter**.
+- File name should ideally match component name.
+- Export components to reuse:
 
 ```jsx
 export default Welcome;
 ```
 
----
+<br>
 
-### Composing Components
+### 4.7 Composing Components
 
-* Components can contain other components:
+- Components can contain other components:
 
 ```jsx
 function App() {
@@ -395,9 +380,9 @@ function App() {
 }
 ```
 
----
+<br>
 
-### Summary Table
+### 4.8 Summary Table
 
 | Feature      | Functional Component      | Class Component             |
 | ------------ | ------------------------- | --------------------------- |
@@ -406,27 +391,21 @@ function App() {
 | Use of Hooks | Yes                       | No (uses lifecycle methods) |
 | Boilerplate  | Minimal                   | More code                   |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 5: Props & PropTypes
 
 ---
 
-### What are Props?
+### 5.1 What are Props?
 
-* **Props** (short for "properties") are used to pass data from parent to child components.
-* Props are **read-only**.
-* Think of them as **function parameters** for components.
+- **Props** (short for "properties") are used to pass data from parent to child components.
+- Props are **read-only**.
+- Think of them as **function parameters** for components.
 
----
+<br>
 
-### Using Props in Functional Components
+### 5.2 Using Props in Functional Components
 
 ```jsx
 function Greeting(props) {
@@ -436,11 +415,11 @@ function Greeting(props) {
 <Greeting name="Shiva" />
 ```
 
-* `props.name` will output "Shiva"
+- `props.name` will output "Shiva"
 
----
+<br>
 
-### Destructuring Props
+### 5.3 Destructuring Props
 
 ```jsx
 function Greeting({ name }) {
@@ -448,11 +427,11 @@ function Greeting({ name }) {
 }
 ```
 
-* Cleaner syntax using object destructuring
+- Cleaner syntax using object destructuring
 
----
+<br>
 
-### Using Props in Class Components
+### 5.4 Using Props in Class Components
 
 ```jsx
 class Greeting extends React.Component {
@@ -462,11 +441,11 @@ class Greeting extends React.Component {
 }
 ```
 
----
+<br>
 
-### Default Props
+### 5.5 Default Props
 
-* Used to define default values for props if not provided
+- Used to define default values for props if not provided
 
 ```jsx
 function Button({ label }) {
@@ -478,11 +457,11 @@ Button.defaultProps = {
 };
 ```
 
----
+<br>
 
-### children Prop
+### 5.6 children Prop
 
-* Special prop used to pass nested elements/components
+- Special prop used to pass nested elements/components
 
 ```jsx
 function Wrapper(props) {
@@ -494,11 +473,11 @@ function Wrapper(props) {
 </Wrapper>
 ```
 
----
+<br>
 
-### PropTypes for Type Checking
+### 5.7 PropTypes for Type Checking
 
-* Helps catch bugs by validating the props type
+- Helps catch bugs by validating the props type
 
 ```bash
 npm install prop-types
@@ -516,11 +495,11 @@ Greeting.propTypes = {
 };
 ```
 
-* Common types: `string`, `number`, `bool`, `array`, `object`, `func`, `node`, `element`
+- Common types: `string`, `number`, `bool`, `array`, `object`, `func`, `node`, `element`
 
----
+<br>
 
-### Summary Table
+### 5.8 Summary Table
 
 | Feature       | Description                                |
 | ------------- | ------------------------------------------ |
@@ -530,27 +509,21 @@ Greeting.propTypes = {
 | children Prop | Allows nesting content inside components   |
 | PropTypes     | Runtime type-checking for props (optional) |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 6: State & useState Hook
 
 ---
 
-### What is State?
+### 6.1 What is State?
 
-* State is a built-in object used to **store data** that changes over time.
-* When state changes, React **re-renders** the component.
-* Unlike props, **state is mutable** and local to the component.
+- State is a built-in object used to **store data** that changes over time.
+- When state changes, React **re-renders** the component.
+- Unlike props, **state is mutable** and local to the component.
 
----
+<br>
 
-### Using `useState` in Functional Components
+### 6.2 Using `useState` in Functional Components
 
 ```jsx
 import React, { useState } from 'react';
@@ -567,48 +540,48 @@ function Counter() {
 }
 ```
 
-* `useState(0)` initializes state with 0
-* `setCount()` updates state and triggers re-render
+- `useState(0)` initializes state with 0
+- `setCount()` updates state and triggers re-render
 
----
+<br>
 
-### State Structure
+### 6.3 State Structure
 
-* Can be of any type: number, string, array, object
+- Can be of any type: number, string, array, object
 
 ```jsx
 const [user, setUser] = useState({ name: '', age: 0 });
 ```
 
----
+<br>
 
-### Updating State
+### 6.4 Updating State
 
-* Always use the **state updater function** (e.g., `setCount`)
-* Do **not** mutate state directly
+- Always use the **state updater function** (e.g., `setCount`)
+- Do **not** mutate state directly
 
 ```jsx
-//  Correct
+// Correct
 setUser({ ...user, name: 'Shiva' });
 
-//  Wrong
+// Wrong
 user.name = 'Shiva'; // no re-render
 ```
 
----
+<br>
 
-### Multiple State Variables
+### 6.5 Multiple State Variables
 
 ```jsx
 const [name, setName] = useState('');
 const [age, setAge] = useState(0);
 ```
 
-* You can declare multiple states in the same component
+- You can declare multiple states in the same component
 
----
+<br>
 
-### State in Class Components
+### 6.6 State in Class Components
 
 ```jsx
 class Counter extends React.Component {
@@ -632,9 +605,9 @@ class Counter extends React.Component {
 }
 ```
 
----
+<br>
 
-### Difference: Props vs State
+### 6.7 Difference: Props vs State
 
 | Feature    | Props            | State                  |
 | ---------- | ---------------- | ---------------------- |
@@ -642,35 +615,29 @@ class Counter extends React.Component {
 | Scope      | Passed by parent | Local to component     |
 | Purpose    | Configuration    | Dynamic data           |
 
----
-
-### Summary
-
-* State holds dynamic data
-* `useState` is used in functional components
-* Changing state updates the UI
-* Always use updater function
-
-
-
 <br>
 
----
+### 6.8 Summary
 
-<br>
+- State holds dynamic data
+- `useState` is used in functional components
+- Changing state updates the UI
+- Always use updater function
+
+---
 
 ## Part 7: Event Handling
 
 ---
 
-### What is Event Handling in React?
+### 7.1 What is Event Handling in React?
 
-* Just like in HTML/JavaScript, React allows handling user events such as clicks, typing, form submissions, etc.
-* React events are **synthetic events**, which wrap native events for cross-browser compatibility.
+- Just like in HTML/JavaScript, React allows handling user events such as clicks, typing, form submissions, etc.
+- React events are **synthetic events**, which wrap native events for cross-browser compatibility.
 
----
+<br>
 
-### Handling Events in Functional Components
+### 7.2 Handling Events in Functional Components
 
 ```jsx
 function ClickButton() {
@@ -682,12 +649,12 @@ function ClickButton() {
 }
 ```
 
-* Event names use **camelCase**: `onClick`, `onChange`, `onSubmit`
-* Event handlers are passed as **functions** (not strings like in HTML)
+- Event names use **camelCase**: `onClick`, `onChange`, `onSubmit`
+- Event handlers are passed as **functions** (not strings like in HTML)
 
----
+<br>
 
-### Passing Arguments to Event Handlers
+### 7.3 Passing Arguments to Event Handlers
 
 ```jsx
 <button onClick={() => handleClick('Shiva')}>Greet</button>
@@ -697,11 +664,11 @@ function handleClick(name) {
 }
 ```
 
-* Wrap the call in an arrow function to pass parameters
+- Wrap the call in an arrow function to pass parameters
 
----
+<br>
 
-### Handling Input Events
+### 7.4 Handling Input Events
 
 ```jsx
 function InputBox() {
@@ -717,12 +684,12 @@ function InputBox() {
 }
 ```
 
-* Use `event.target.value` to access input field value
-* Make the input a **controlled component** using `value` prop
+- Use `event.target.value` to access input field value
+- Make the input a **controlled component** using `value` prop
 
----
+<br>
 
-### Handling Form Submission
+### 7.5 Handling Form Submission
 
 ```jsx
 function FormExample() {
@@ -739,11 +706,11 @@ function FormExample() {
 }
 ```
 
-* Use `event.preventDefault()` to stop default form submission
+- Use `event.preventDefault()` to stop default form submission
 
----
+<br>
 
-### Event Handling in Class Components
+### 7.6 Event Handling in Class Components
 
 ```jsx
 class ClickButton extends React.Component {
@@ -757,12 +724,12 @@ class ClickButton extends React.Component {
 }
 ```
 
-* Use class methods with `this.`
-* Arrow functions help preserve `this` context
+- Use class methods with `this.`
+- Arrow functions help preserve `this` context
 
----
+<br>
 
-### Common React Events
+### 7.7 Common React Events
 
 | Event        | Description             |
 | ------------ | ----------------------- |
@@ -774,32 +741,26 @@ class ClickButton extends React.Component {
 
 ---
 
-### Summary
+### 7.8 Summary
 
-* Use camelCase for event names
-* Use functions (not strings) as handlers
-* Handle forms and inputs with `event` objects
-* Prefer arrow functions to avoid `this` binding issues
-
-
-
-<br>
+- Use camelCase for event names
+- Use functions (not strings) as handlers
+- Handle forms and inputs with `event` objects
+- Prefer arrow functions to avoid `this` binding issues
 
 ---
-
-<br>
 
 ## Part 8: Conditional Rendering
 
 ---
 
-### What is Conditional Rendering?
+### 8.1 What is Conditional Rendering?
 
-* Conditional rendering in React allows components to render different outputs based on certain conditions (just like `if` statements in JavaScript).
+- Conditional rendering in React allows components to render different outputs based on certain conditions (just like `if` statements in JavaScript).
 
----
+<br>
 
-### Using `if` Statements (outside JSX)
+### 8.2 Using `if` Statements (outside JSX)
 
 ```jsx
 function Greeting({ isLoggedIn }) {
@@ -810,11 +771,11 @@ function Greeting({ isLoggedIn }) {
 }
 ```
 
-* Use normal `if/else` outside the `return` statement.
+- Use normal `if/else` outside the `return` statement.
 
----
+<br>
 
-### Using Ternary Operator (inline)
+### 8.3 Using Ternary Operator (inline)
 
 ```jsx
 function Greeting({ isLoggedIn }) {
@@ -824,11 +785,11 @@ function Greeting({ isLoggedIn }) {
 }
 ```
 
-* Commonly used for short conditional rendering inside JSX
+- Commonly used for short conditional rendering inside JSX
 
----
+<br>
 
-### Using Logical `&&` Operator
+### 8.4 Using Logical `&&` Operator
 
 ```jsx
 function Mailbox({ unreadMessages }) {
@@ -843,11 +804,11 @@ function Mailbox({ unreadMessages }) {
 }
 ```
 
-* If the condition is `true`, JSX after `&&` is rendered
+- If the condition is `true`, JSX after `&&` is rendered
 
----
+<br>
 
-### Conditional Rendering with Functions
+### 8.5 Conditional Rendering with Functions
 
 ```jsx
 function getGreeting(isLoggedIn) {
@@ -859,11 +820,11 @@ function Greeting({ isLoggedIn }) {
 }
 ```
 
-* Useful for complex logic extraction
+- Useful for complex logic extraction
 
----
+<br>
 
-### Returning `null`
+### 8.6 Returning `null`
 
 ```jsx
 function Warning({ show }) {
@@ -872,22 +833,22 @@ function Warning({ show }) {
 }
 ```
 
-* Returning `null` from a component hides its output
+- Returning `null` from a component hides its output
 
----
+<br>
 
-### Inline Style for Conditional Display
+### 8.7 Inline Style for Conditional Display
 
 ```jsx
 const style = isVisible ? {} : { display: 'none' };
 <div style={style}>Content</div>
 ```
 
-* Hides elements via style instead of conditionally skipping rendering
+- Hides elements via style instead of conditionally skipping rendering
 
----
+<br>
 
-### Summary
+### 8.8 Summary
 
 | Technique        | Use Case                     |
 | ---------------- | ---------------------------- |
@@ -897,22 +858,16 @@ const style = isVisible ? {} : { display: 'none' };
 | Function Extract | Clean up rendering logic     |
 | Return `null`    | Skip rendering conditionally |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 9: Lists and Keys
 
 ---
 
-### Rendering Lists in React
+### 9.1 Rendering Lists in React
 
-* Use JavaScript's `map()` function to render lists of elements.
-* Each item should return a JSX element.
+- Use JavaScript's `map()` function to render lists of elements.
+- Each item should return a JSX element.
 
 ```jsx
 const users = ['Shiva', 'Amit', 'Neha'];
@@ -928,19 +883,19 @@ function UserList() {
 }
 ```
 
----
+<br>
 
-### Why Use Keys?
+### 9.2 Why Use Keys?
 
-* Keys help React identify which items have changed, are added, or removed.
-* Keys **must be unique** among siblings.
-* Helps optimize rendering performance.
+- Keys help React identify which items have changed, are added, or removed.
+- Keys **must be unique** among siblings.
+- Helps optimize rendering performance.
 
----
+<br>
 
-### Best Practices for Keys
+### 9.3 Best Practices for Keys
 
-* Prefer using a unique ID from data (not array index):
+- Prefer using a unique ID from data (not array index):
 
 ```jsx
 const users = [
@@ -951,11 +906,11 @@ const users = [
 {users.map(user => <li key={user.id}>{user.name}</li>)}
 ```
 
-* Avoid using `index` as key when list can change (reordering, filtering, etc.)
+- Avoid using `index` as key when list can change (reordering, filtering, etc.)
 
----
+<br>
 
-### Rendering a List of Components
+### 9.4 Rendering a List of Components
 
 ```jsx
 function User({ name }) {
@@ -973,11 +928,11 @@ function UserList({ users }) {
 }
 ```
 
----
+<br>
 
-### Lists with Fragments
+### 9.5 Lists with Fragments
 
-* Use React Fragments (`<>...</>`) when you don't want an extra DOM node:
+- Use React Fragments (`<>...</>`) when you don't want an extra DOM node:
 
 ```jsx
 users.map(user => (
@@ -988,9 +943,9 @@ users.map(user => (
 ))
 ```
 
----
+<br>
 
-### Summary
+### 9.6 Summary
 
 | Concept     | Explanation                                 |
 | ----------- | ------------------------------------------- |
@@ -1000,28 +955,22 @@ users.map(user => (
 | Component   | Can render a list of components             |
 | Fragment    | Used to group multiple tags without wrapper |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 10: Forms Handling
 
 ---
 
-### What is Form Handling in React?
+### 10.1 What is Form Handling in React?
 
-* Forms collect user input.
-* In React, forms are typically **controlled components**, meaning React manages the form state.
+- Forms collect user input.
+- In React, forms are typically **controlled components**, meaning React manages the form state.
 
----
+<br>
 
-### Controlled Components
+### 10.2 Controlled Components
 
-* React controls the input via `value` and `onChange`
+- React controls the input via `value` and `onChange`
 
 ```jsx
 function LoginForm() {
@@ -1035,12 +984,12 @@ function LoginForm() {
 }
 ```
 
-* Input is bound to state
-* Updates to input update the state, and vice versa
+- Input is bound to state
+- Updates to input update the state, and vice versa
 
----
+<br>
 
-### Handling Multiple Inputs
+### 10.3 Handling Multiple Inputs
 
 ```jsx
 function ProfileForm() {
@@ -1062,11 +1011,11 @@ function ProfileForm() {
 }
 ```
 
-* Use computed property names (`[e.target.name]`) to update fields dynamically
+- Use computed property names (`[e.target.name]`) to update fields dynamically
 
----
+<br>
 
-### Handling Form Submission
+### 10.4 Handling Form Submission
 
 ```jsx
 function ContactForm() {
@@ -1086,13 +1035,13 @@ function ContactForm() {
 }
 ```
 
-* `e.preventDefault()` prevents default form refresh behavior
+- `e.preventDefault()` prevents default form refresh behavior
 
----
+<br>
 
-### Uncontrolled Components
+### 10.5 Uncontrolled Components
 
-* Use **Refs** to access DOM elements directly
+- Use **Refs** to access DOM elements directly
 
 ```jsx
 const inputRef = useRef();
@@ -1112,11 +1061,11 @@ function UncontrolledForm() {
 }
 ```
 
-* Less common in React; used when you don’t need state
+- Less common in React; used when you don’t need state
 
----
+<br>
 
-### Form Validation (Basic Example)
+### 10.6 Form Validation (Basic Example)
 
 ```jsx
 function SignupForm() {
@@ -1142,9 +1091,9 @@ function SignupForm() {
 }
 ```
 
----
+<br>
 
-### Summary
+### 10.7 Summary
 
 | Concept              | Description                                    |
 | -------------------- | ---------------------------------------------- |
@@ -1154,42 +1103,35 @@ function SignupForm() {
 | Uncontrolled         | Uses `ref` to access input value               |
 | Validation           | Ensure form fields meet criteria before submit |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 11: useEffect & useState Hooks
 
 ---
 
-### React Hooks Introduction
+### 11.1 React Hooks Introduction
 
-* Hooks are functions that let you use **React state** and **lifecycle features** in **functional components**.
-* Introduced in **React 16.8**.
+- Hooks are functions that let you use **React state** and **lifecycle features** in **functional components**.
+- Introduced in **React 16.8**.
 
 Two most used hooks:
-
 1. `useState` – for managing state
 2. `useEffect` – for handling side effects (API calls, timers, subscriptions)
 
----
+<br>
 
-### useState Recap
+### 11.2 useState Recap
 
 ```jsx
 const [count, setCount] = useState(0);
 ```
 
-* Initializes state `count` with `0`
-* `setCount` updates the state and re-renders the component
+- Initializes state `count` with `0`
+- `setCount` updates the state and re-renders the component
 
----
+<br>
 
-### useEffect Syntax
+### 11.3 useEffect Syntax
 
 ```jsx
 useEffect(() => {
@@ -1200,11 +1142,11 @@ useEffect(() => {
 }, [dependencies]);
 ```
 
-* Runs **after the first render** and after **every update** if dependencies change
+- Runs **after the first render** and after **every update** if dependencies change
 
----
+<br>
 
-### useEffect Without Dependencies
+### 11.4 useEffect Without Dependencies
 
 ```jsx
 useEffect(() => {
@@ -1212,11 +1154,11 @@ useEffect(() => {
 });
 ```
 
-* Runs on **every render** (not recommended for most cases)
+- Runs on **every render** (not recommended for most cases)
 
----
+<br>
 
-### useEffect with Empty Dependency Array `[]`
+### 11.5 useEffect with Empty Dependency Array `[]`
 
 ```jsx
 useEffect(() => {
@@ -1224,12 +1166,12 @@ useEffect(() => {
 }, []);
 ```
 
-* Runs **only once** after the initial render
-* Similar to `componentDidMount`
+- Runs **only once** after the initial render
+- Similar to `componentDidMount`
 
----
+<br>
 
-### useEffect with Dependencies
+### 11.6 useEffect with Dependencies
 
 ```jsx
 useEffect(() => {
@@ -1237,12 +1179,12 @@ useEffect(() => {
 }, [count]);
 ```
 
-* Runs when `count` value **changes**
-* Acts like `componentDidUpdate`
+- Runs when `count` value **changes**
+- Acts like `componentDidUpdate`
 
----
+<br>
 
-### useEffect Cleanup (componentWillUnmount)
+### 11.7 useEffect Cleanup (componentWillUnmount)
 
 ```jsx
 useEffect(() => {
@@ -1251,20 +1193,20 @@ useEffect(() => {
 }, []);
 ```
 
-* Cleanup runs **before** component unmounts
+- Cleanup runs **before** component unmounts
 
----
+<br>
 
-### Common useEffect Use Cases
+### 11.8 Common useEffect Use Cases
 
-* Fetching data from APIs
-* Subscribing/unsubscribing to streams
-* Setting up and clearing timers
-* Updating page title or triggering animations
+- Fetching data from APIs
+- Subscribing/unsubscribing to streams
+- Setting up and clearing timers
+- Updating page title or triggering animations
 
----
+<br>
 
-### Example: API Fetch with useEffect
+### 11.9 Example: API Fetch with useEffect
 
 ```jsx
 import { useEffect, useState } from 'react';
@@ -1286,9 +1228,9 @@ function UserList() {
 }
 ```
 
----
+<br>
 
-### Multiple useEffects
+### 11.10 Multiple useEffects
 
 ```jsx
 useEffect(() => {
@@ -1300,18 +1242,18 @@ useEffect(() => {
 }, [count]);
 ```
 
-* You can use **multiple useEffect hooks** to separate concerns
+- You can use **multiple useEffect hooks** to separate concerns
 
----
+<br>
 
-### Rules of Hooks
+### 11.11 Rules of Hooks
 
-* Only call hooks **at the top level** (not inside loops/conditions)
-* Only call hooks from **React functions** (components or custom hooks)
+- Only call hooks **at the top level** (not inside loops/conditions)
+- Only call hooks from **React functions** (components or custom hooks)
 
----
+<br>
 
-### Summary Table
+### 11.12 Summary Table
 
 | Hook        | Purpose                                    | Runs When?              |
 | ----------- | ------------------------------------------ | ----------------------- |
@@ -1321,34 +1263,28 @@ useEffect(() => {
 | `[dep]`     | Effect runs when dependency changes        | On mount and dep change |
 | Cleanup     | Teardown before unmount or dep change      | On unmount / re-run     |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 12: Component Lifecycle (Class-based)
 
 ---
 
-### What is a Component Lifecycle?
+### 12.1 What is a Component Lifecycle?
 
-* Lifecycle methods allow you to **run code at specific points** in a component's life.
-* Only applicable to **class components** (in functional components, useEffect is used instead).
+- Lifecycle methods allow you to **run code at specific points** in a component's life.
+- Only applicable to **class components** (in functional components, useEffect is used instead).
 
----
+<br>
 
-### Lifecycle Phases
+### 12.2 Lifecycle Phases
 
 1. **Mounting** – Component is inserted into the DOM
 2. **Updating** – Component is re-rendered due to changes in state or props
 3. **Unmounting** – Component is removed from the DOM
 
----
+<br>
 
-### Mounting Methods
+### 12.3 Mounting Methods
 
 | Method                            | Description                             |
 | --------------------------------- | --------------------------------------- |
@@ -1374,9 +1310,9 @@ class MyComponent extends React.Component {
 }
 ```
 
----
+<br>
 
-### Updating Methods
+### 12.4 Updating Methods
 
 | Method                            | Description                              |
 | --------------------------------- | ---------------------------------------- |
@@ -1394,9 +1330,9 @@ componentDidUpdate(prevProps, prevState) {
 }
 ```
 
----
+<br>
 
-### Unmounting Method
+### 12.5 Unmounting Method
 
 | Method               | Description                     |
 | -------------------- | ------------------------------- |
@@ -1408,9 +1344,9 @@ componentWillUnmount() {
 }
 ```
 
----
+<br>
 
-### Summary Table
+### 12.6 Summary Table
 
 | Phase   | Method                | Usage                                    |
 | ------- | --------------------- | ---------------------------------------- |
@@ -1420,9 +1356,9 @@ componentWillUnmount() {
 | Update  | componentDidUpdate    | React to updates                         |
 | Unmount | componentWillUnmount  | Cleanup timers, subscriptions, listeners |
 
----
+<br>
 
-### Functional Equivalent
+### 12.7 Functional Equivalent
 
 | Class Component      | Functional Component (Hook)  |
 | -------------------- | ---------------------------- |
@@ -1430,35 +1366,29 @@ componentWillUnmount() {
 | componentDidUpdate   | useEffect(() => {}, \[dep])  |
 | componentWillUnmount | return () => {} in useEffect |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 13: Routing with React Router
 
 ---
 
-### What is React Router?
+### 13.1 What is React Router?
 
-* A standard library for routing in React.
-* Enables navigation among views of various components.
-* Keeps the UI in sync with the URL.
+- A standard library for routing in React.
+- Enables navigation among views of various components.
+- Keeps the UI in sync with the URL.
 
----
+<br>
 
-### Installing React Router
+### 13.2 Installing React Router
 
 ```bash
 npm install react-router-dom
 ```
 
----
+<br>
 
-### Core Components of React Router
+### 13.3 Core Components of React Router
 
 | Component         | Description                           |
 | ----------------- | ------------------------------------- |
@@ -1468,9 +1398,9 @@ npm install react-router-dom
 | `<Link>`          | Navigation without full page reload   |
 | `<Navigate>`      | Programmatic navigation (redirection) |
 
----
+<br>
 
-### Basic Setup
+### 13.4 Basic Setup
 
 ```jsx
 import {
@@ -1497,15 +1427,15 @@ function App() {
 }
 ```
 
----
+<br>
 
-### Route Parameters
+### 13.5 Route Parameters
 
 ```jsx
 <Route path="/user/:id" element={<User />} />
 ```
 
-* Access with `useParams()`:
+- Access with `useParams()`:
 
 ```jsx
 import { useParams } from 'react-router-dom';
@@ -1516,9 +1446,9 @@ function User() {
 }
 ```
 
----
+<br>
 
-### Redirects with `<Navigate />`
+### 13.6 Redirects with `<Navigate />`
 
 ```jsx
 import { Navigate } from 'react-router-dom';
@@ -1528,9 +1458,9 @@ function ProtectedRoute({ isLoggedIn }) {
 }
 ```
 
----
+<br>
 
-### Nested Routes
+### 13.7 Nested Routes
 
 ```jsx
 <Route path="/dashboard" element={<Dashboard />}>
@@ -1538,7 +1468,7 @@ function ProtectedRoute({ isLoggedIn }) {
 </Route>
 ```
 
-* Use `<Outlet />` in parent to render nested child
+- Use `<Outlet />` in parent to render nested child
 
 ```jsx
 import { Outlet } from 'react-router-dom';
@@ -1552,9 +1482,9 @@ function Dashboard() {
 }
 ```
 
----
+<br>
 
-### useNavigate() – Programmatic Navigation
+### 13.8 useNavigate() – Programmatic Navigation
 
 ```jsx
 import { useNavigate } from 'react-router-dom';
@@ -1566,9 +1496,9 @@ function Login() {
 }
 ```
 
----
+<br>
 
-### Summary Table
+### 13.9 Summary Table
 
 | Feature       | Component/Hook           |
 | ------------- | ------------------------ |
@@ -1580,36 +1510,29 @@ function Login() {
 | Navigate      | `useNavigate()`          |
 | Nesting       | `<Outlet />`             |
 
-
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 14: Context API
 
 ---
 
-### What is the Context API?
+### 14.1 What is the Context API?
 
-* React Context provides a way to **pass data through the component tree** without manually passing props down at every level.
-* Useful for **global state** like themes, user data, authentication, etc.
+- React Context provides a way to **pass data through the component tree** without manually passing props down at every level.
+- Useful for **global state** like themes, user data, authentication, etc.
 
----
+<br>
 
-### When to Use Context
+### 14.2 When to Use Context
 
-* When multiple components at different nesting levels need access to the same data
-* Avoids "prop drilling"
+- When multiple components at different nesting levels need access to the same data
+- Avoids "prop drilling"
 
----
+<br>
 
-### Steps to Use Context
+### 14.3 Steps to Use Context
 
-#### 1. Create Context
+#### 14.3.1 Create Context
 
 ```jsx
 import { createContext } from 'react';
@@ -1617,7 +1540,7 @@ import { createContext } from 'react';
 const UserContext = createContext();
 ```
 
-#### 2. Provide Context
+#### 14.3.2 Provide Context
 
 ```jsx
 function App() {
@@ -1631,10 +1554,10 @@ function App() {
 }
 ```
 
-* Wrap the component tree with the provider
-* Pass shared state via `value`
+- Wrap the component tree with the provider
+- Pass shared state via `value`
 
-#### 3. Consume Context (with useContext)
+#### 14.3.3 Consume Context (with useContext)
 
 ```jsx
 import { useContext } from 'react';
@@ -1645,11 +1568,11 @@ function Dashboard() {
 }
 ```
 
-* `useContext` is the hook to consume context inside functional components
+- `useContext` is the hook to consume context inside functional components
 
----
+<br>
 
-### Using Context in Class Components
+### 14.4 Using Context in Class Components
 
 ```jsx
 Dashboard.contextType = UserContext;
@@ -1661,11 +1584,11 @@ class Dashboard extends React.Component {
 }
 ```
 
-* `contextType` is the older way for class components
+- `contextType` is the older way for class components
 
----
+<br>
 
-### Updating Context Value
+### 14.5 Updating Context Value
 
 ```jsx
 const ThemeContext = createContext();
@@ -1690,16 +1613,16 @@ function Page() {
 }
 ```
 
----
+<br>
 
-### Context Best Practices
+### 14.6 Context Best Practices
 
-* Use **multiple contexts** for separation of concerns (AuthContext, ThemeContext, etc.)
-* Do **not overuse** for data that doesn't need to be global
+- Use **multiple contexts** for separation of concerns (AuthContext, ThemeContext, etc.)
+- Do **not overuse** for data that doesn't need to be global
 
----
+<br>
 
-### Summary Table
+### 14.7 Summary Table
 
 | Step           | Method                        |
 | -------------- | ----------------------------- |
@@ -1708,34 +1631,28 @@ function Page() {
 | Consume Data   | `useContext(Context)`         |
 | Class Usage    | `Class.contextType = Context` |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 15: Refs and DOM Manipulation
 
 ---
 
-### What are Refs?
+### 15.1 What are Refs?
 
-* Refs provide a way to **access DOM nodes or React elements** directly.
-* Created using `useRef()` in functional components or `React.createRef()` in class components.
+- Refs provide a way to **access DOM nodes or React elements** directly.
+- Created using `useRef()` in functional components or `React.createRef()` in class components.
 
----
+<br>
 
-### When to Use Refs
+### 15.2 When to Use Refs
 
-* Managing focus, text selection, or media playback
-* Triggering imperative animations
-* Integrating with third-party DOM libraries (e.g., jQuery)
+- Managing focus, text selection, or media playback
+- Triggering imperative animations
+- Integrating with third-party DOM libraries (e.g., jQuery)
 
----
+<br>
 
-### Creating and Using Refs (Functional Components)
+### 15.3 Creating and Using Refs (Functional Components)
 
 ```jsx
 import { useRef } from 'react';
@@ -1756,11 +1673,11 @@ function FocusInput() {
 }
 ```
 
-* `inputRef.current` holds the actual DOM element
+- `inputRef.current` holds the actual DOM element
 
----
+<br>
 
-### Creating Refs in Class Components
+### 15.4 Creating Refs in Class Components
 
 ```jsx
 class MyComponent extends React.Component {
@@ -1784,12 +1701,12 @@ class MyComponent extends React.Component {
 }
 ```
 
----
+<br>
 
-### Manipulating the DOM
+### 15.5 Manipulating the DOM
 
-* Refs allow you to bypass React's declarative approach
-* Should be used **sparingly** and only when necessary
+- Refs allow you to bypass React's declarative approach
+- Should be used **sparingly** and only when necessary
 
 Example: Scroll into view
 
@@ -1810,18 +1727,18 @@ function ScrollBox() {
 }
 ```
 
----
+<br>
 
-### useRef vs createRef
+### 15.6 useRef vs createRef
 
 | Feature     | useRef (Functional)        | createRef (Class)              |
 | ----------- | -------------------------- | ------------------------------ |
 | Recreates?  | Same object on each render | New ref on each render         |
 | Performance | Better for stable refs     | Used in older/class components |
 
----
+<br>
 
-### Summary Table
+### 15.7 Summary Table
 
 | Concept       | Usage                                    |
 | ------------- | ---------------------------------------- |
@@ -1831,35 +1748,28 @@ function ScrollBox() {
 | Focus, Scroll | Use ref to trigger DOM actions           |
 | Best Practice | Use only when DOM manipulation is needed |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 16: useReducer & useMemo Hooks
 
+---
 
+### 16.1 `useReducer` Hook
 
-###  `useReducer` Hook
+#### 16.1.1 What is `useReducer`?
 
-#### What is `useReducer`?
+- An alternative to `useState` for complex state logic
+- Suitable when:
+  - Next state depends on previous state
+  - Multiple sub-values or nested objects
 
-* An alternative to `useState` for complex state logic
-* Suitable when:
-
-  * Next state depends on previous state
-  * Multiple sub-values or nested objects
-
-#### Syntax
+#### 16.1.2 Syntax
 
 ```jsx
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
-#### Example
+#### 16.1.3 Example
 
 ```jsx
 const initialState = { count: 0 };
@@ -1887,27 +1797,27 @@ function Counter() {
 }
 ```
 
-#### When to Use
+#### 16.1.4 When to Use
 
-* Complex state logic
-* Shared state logic between components
+- Complex state logic
+- Shared state logic between components
 
----
+<br>
 
-###  `useMemo` Hook
+### 16.2 `useMemo` Hook
 
-#### What is `useMemo`?
+#### 16.2.1 What is `useMemo`?
 
-* Memoizes a **computed value** to avoid unnecessary recalculations on each render.
-* Similar to caching a value until dependencies change.
+- Memoizes a **computed value** to avoid unnecessary recalculations on each render.
+- Similar to caching a value until dependencies change.
 
-#### Syntax
+#### 16.2.2 Syntax
 
 ```jsx
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
-#### Example
+#### 16.2.3 Example
 
 ```jsx
 function ExpensiveComponent({ num }) {
@@ -1923,51 +1833,44 @@ function ExpensiveComponent({ num }) {
 }
 ```
 
-* `slowSquare` runs only when `num` changes
+- `slowSquare` runs only when `num` changes
 
-#### When to Use
+#### 16.2.4 When to Use
 
-* Expensive calculations in render
-* Avoid recomputing values unnecessarily
+- Expensive calculations in render
+- Avoid recomputing values unnecessarily
 
 ---
 
-### Summary Table
+### 16.3 Summary Table
 
 | Hook         | Purpose                        | When to Use                      |
 | ------------ | ------------------------------ | -------------------------------- |
 | `useReducer` | State management via reducer   | Complex state, dependent updates |
 | `useMemo`    | Memoize expensive computations | Heavy computation on rerender    |
 
-
-
-
-<br>
-
----
-
 <br>
 
 ## Part 17: Custom Hooks
 
----
+<br>
 
-### What are Custom Hooks?
+### 17.1 What are Custom Hooks?
 
-* A **custom hook** is a JavaScript function whose name starts with `use` and can call other hooks.
-* They allow you to **reuse stateful logic** between components without repeating code.
+- A **custom hook** is a JavaScript function whose name starts with `use` and can call other hooks.
+- They allow you to **reuse stateful logic** between components without repeating code.
 
----
+<br>
 
-### Why Use Custom Hooks?
+### 17.2 Why Use Custom Hooks?
 
-* Encapsulate logic cleanly
-* Improve readability and reusability
-* Separate concerns (e.g., fetch logic, form handling, toggles)
+- Encapsulate logic cleanly
+- Improve readability and reusability
+- Separate concerns (e.g., fetch logic, form handling, toggles)
 
----
+<br>
 
-### Creating a Custom Hook
+### 17.3 Creating a Custom Hook
 
 ```jsx
 import { useState } from 'react';
@@ -1981,7 +1884,7 @@ function useToggle(initialValue = false) {
 }
 ```
 
-### Using a Custom Hook
+### 17.4 Using a Custom Hook
 
 ```jsx
 function ToggleButton() {
@@ -1991,9 +1894,9 @@ function ToggleButton() {
 }
 ```
 
----
+<br>
 
-### Example: useFetch Hook
+### 17.5 Example: useFetch Hook
 
 ```jsx
 import { useEffect, useState } from 'react';
@@ -2021,20 +1924,19 @@ Usage:
 const { data, loading } = useFetch('https://jsonplaceholder.typicode.com/users');
 ```
 
----
+<br>
 
-### Rules for Custom Hooks
+### 17.6 Rules for Custom Hooks
 
-* Must start with the word `use`
-* Can call other hooks inside
-* Must follow the **Rules of Hooks**:
+- Must start with the word `use`
+- Can call other hooks inside
+- Must follow the **Rules of Hooks**:
+  - Top-level only
+  - Only inside functional components or other hooks
 
-  * Top-level only
-  * Only inside functional components or other hooks
+<br>
 
----
-
-### Summary Table
+### 17.7 Summary Table
 
 | Feature     | Description                            |
 | ----------- | -------------------------------------- |
@@ -2043,26 +1945,20 @@ const { data, loading } = useFetch('https://jsonplaceholder.typicode.com/users')
 | Purpose     | Encapsulate and reuse logic            |
 | Reusability | Share between multiple components      |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 18: Lifting State Up
 
 ---
 
-### What is Lifting State Up?
+### 18.1 What is Lifting State Up?
 
-* In React, **state is lifted up** to the nearest common ancestor to allow **shared access** between sibling components.
-* Helps maintain a **single source of truth**.
+- In React, **state is lifted up** to the nearest common ancestor to allow **shared access** between sibling components.
+- Helps maintain a **single source of truth**.
 
----
+<br>
 
-### Problem: Sibling Components Can't Share State Directly
+### 18.2 Problem: Sibling Components Can't Share State Directly
 
 ```jsx
 function Parent() {
@@ -2075,11 +1971,11 @@ function Parent() {
 }
 ```
 
-* ChildA and ChildB are siblings and cannot share state directly.
+- ChildA and ChildB are siblings and cannot share state directly.
 
----
+<br>
 
-### Solution: Move State to Parent
+### 18.3 Solution: Move State to Parent
 
 ```jsx
 function Parent() {
@@ -2102,35 +1998,35 @@ function ChildB({ text }) {
 }
 ```
 
-* State `text` is now **shared** between ChildA and ChildB via props
+- State `text` is now **shared** between ChildA and ChildB via props
 
----
+<br>
 
-### Benefits of Lifting State
+### 18.4 Benefits of Lifting State
 
-* Ensures consistent state across components
-* Avoids redundant or conflicting local state
-* Encourages thinking in terms of **data flow**
+- Ensures consistent state across components
+- Avoids redundant or conflicting local state
+- Encourages thinking in terms of **data flow**
 
----
+<br>
 
-### When to Lift State
+### 18.5 When to Lift State
 
-* Two or more components need to **view or modify** the same state
-* Components must **react to changes** in shared data
+- Two or more components need to **view or modify** the same state
+- Components must **react to changes** in shared data
 
----
+<br>
 
-### Lifting State vs Context
+### 18.6 Lifting State vs Context
 
 | Technique     | Use When                              |
 | ------------- | ------------------------------------- |
 | Lifting State | Few components share data (locally)   |
 | Context API   | Global or deeply nested state sharing |
 
----
+<br>
 
-### Summary Table
+### 18.7 Summary Table
 
 | Concept           | Description                             |
 | ----------------- | --------------------------------------- |
@@ -2139,30 +2035,24 @@ function ChildB({ text }) {
 | Single Source     | Keeps one consistent state copy         |
 | Avoid Duplication | Prevents multiple unsynced states       |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 19: React Fragments & Portals
 
 ---
 
-### React Fragments
+### 19.1 React Fragments
 
-#### What is a Fragment?
+#### 19.1.1 What is a Fragment?
 
-* A Fragment lets you group a list of children **without adding extra nodes** to the DOM.
+- A Fragment lets you group a list of children **without adding extra nodes** to the DOM.
 
-#### Why Use It?
+#### 19.1.2 Why Use It?
 
-* Avoid unnecessary `<div>` wrappers
-* Useful when returning **multiple elements** from a component
+- Avoid unnecessary `<div>` wrappers
+- Useful when returning **multiple elements** from a component
 
-#### Syntax
+#### 19.1.3 Syntax
 
 ```jsx
 return (
@@ -2186,10 +2076,10 @@ return (
 );
 ```
 
-#### When to Use Fragments
+#### 19.1.4 When to Use Fragments
 
-* Returning multiple sibling elements
-* Table rows or list items inside loops
+- Returning multiple sibling elements
+- Table rows or list items inside loops
 
 ```jsx
 function Table() {
@@ -2208,16 +2098,16 @@ function Table() {
 }
 ```
 
----
+<br>
 
-### React Portals
+### 19.2 React Portals
 
-#### What is a Portal?
+#### 19.2.1 What is a Portal?
 
-* A Portal lets you render children **into a DOM node** outside the root DOM hierarchy.
-* Used for **modals, tooltips, popups** that need to break out of layout/container constraints.
+- A Portal lets you render children **into a DOM node** outside the root DOM hierarchy.
+- Used for **modals, tooltips, popups** that need to break out of layout/container constraints.
 
-#### Syntax
+#### 19.2.2 Syntax
 
 ```jsx
 import { createPortal } from 'react-dom';
@@ -2239,46 +2129,39 @@ In HTML:
 </body>
 ```
 
-#### When to Use Portals
+#### 19.2.3 When to Use Portals
 
-* Modals
-* Tooltips
-* Toasts/Notifications
-* Dropdowns that break CSS layout
+- Modals
+- Tooltips
+- Toasts/Notifications
+- Dropdowns that break CSS layout
 
----
+<br>
 
-### Summary Table
+### 19.3 Summary Table
 
 | Feature  | Purpose                                     | Syntax Example                       |
 | -------- | ------------------------------------------- | ------------------------------------ |
 | Fragment | Group elements without extra DOM nodes      | `<></>` or `<React.Fragment>`        |
 | Portal   | Render component outside root DOM hierarchy | `createPortal(component, container)` |
 
-
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 20: Performance Optimization
 
 ---
 
-### Why Optimize React Apps?
+### 20.1 Why Optimize React Apps?
 
-* Improve app speed and responsiveness
-* Reduce unnecessary renders
-* Enhance user experience, especially for large applications
+- Improve app speed and responsiveness
+- Reduce unnecessary renders
+- Enhance user experience, especially for large applications
 
----
+<br>
 
-### 1. Memoization with `React.memo`
+### 20.2 1. Memoization with `React.memo`
 
-* Prevents unnecessary re-renders of functional components if props haven't changed
+- Prevents unnecessary re-renders of functional components if props haven't changed
 
 ```jsx
 const MyComponent = React.memo(function MyComponent({ name }) {
@@ -2286,25 +2169,25 @@ const MyComponent = React.memo(function MyComponent({ name }) {
 });
 ```
 
-* Use when component output is pure and only depends on props
+- Use when component output is pure and only depends on props
 
----
+<br>
 
-### 2. `useMemo` for Expensive Computations
+### 20.3 2. `useMemo` for Expensive Computations
 
-* Caches calculated results between renders
+- Caches calculated results between renders
 
 ```jsx
 const expensiveValue = useMemo(() => computeHeavyTask(data), [data]);
 ```
 
-* Use when calculations are CPU-intensive or complex
+- Use when calculations are CPU-intensive or complex
 
----
+<br>
 
-### 3. `useCallback` for Stable Functions
+### 20.4 3. `useCallback` for Stable Functions
 
-* Memoizes callback functions to prevent re-creation on each render
+- Memoizes callback functions to prevent re-creation on each render
 
 ```jsx
 const handleClick = useCallback(() => {
@@ -2312,13 +2195,13 @@ const handleClick = useCallback(() => {
 }, []);
 ```
 
-* Especially useful when passing callbacks to child components
+- Especially useful when passing callbacks to child components
 
----
+<br>
 
-### 4. Code Splitting with `React.lazy` & `Suspense`
+### 20.5 4. Code Splitting with `React.lazy` & `Suspense`
 
-* Loads components **only when needed**
+- Loads components **only when needed**
 
 ```jsx
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
@@ -2332,9 +2215,9 @@ function App() {
 }
 ```
 
----
+<br>
 
-### 5. Avoid Anonymous Functions in JSX
+### 20.6 5. Avoid Anonymous Functions in JSX
 
 Bad:
 
@@ -2349,18 +2232,18 @@ const handleClickMemo = useCallback(() => handleClick(id), [id]);
 <button onClick={handleClickMemo}>Click</button>
 ```
 
----
+<br>
 
-### 6. Avoid Unnecessary State and Props
+### 20.7 6. Avoid Unnecessary State and Props
 
-* Minimize component state
-* Avoid deep prop chains (lift state or use context wisely)
+- Minimize component state
+- Avoid deep prop chains (lift state or use context wisely)
 
----
+<br>
 
-### 7. Virtualize Long Lists
+### 20.8 7. Virtualize Long Lists
 
-* Use libraries like `react-window` or `react-virtualized`
+- Use libraries like `react-window` or `react-virtualized`
 
 ```jsx
 import { FixedSizeList as List } from 'react-window';
@@ -2375,9 +2258,9 @@ import { FixedSizeList as List } from 'react-window';
 </List>
 ```
 
----
+<br>
 
-### Summary Table
+### 20.9 Summary Table
 
 | Technique            | Purpose                                  |
 | -------------------- | ---------------------------------------- |
@@ -2388,30 +2271,24 @@ import { FixedSizeList as List } from 'react-window';
 | Virtualized Lists    | Render only visible items in large lists |
 | Minimize State/Props | Keep components focused and optimized    |
 
-
-
-<br>
-
 ---
-
-<br>
 
 ## Part 21: React with External Tools
 
 ---
 
-### Integrating React with External Libraries & Tools
+### 21.1 Integrating React with External Libraries & Tools
 
 React can work seamlessly with external tools for routing, HTTP requests, state management, styling, and more. Below are common categories and tools used alongside React:
 
----
+<br>
 
-### 1. **State Management**
+### 21.2 1. State Management
 
-#### Redux
+#### 21.2.1 Redux
 
-* Manages complex global state outside of components
-* Uses `store`, `actions`, and `reducers`
+- Manages complex global state outside of components
+- Uses `store`, `actions`, and `reducers`
 
 ```bash
 npm install redux react-redux
@@ -2426,16 +2303,16 @@ import store from './store';
 </Provider>
 ```
 
-#### Zustand, Jotai, Recoil
+#### 21.2.2 Zustand, Jotai, Recoil
 
-* Simpler, more modern state managers
-* Hooks-based, minimal boilerplate
+- Simpler, more modern state managers
+- Hooks-based, minimal boilerplate
 
----
+<br>
 
-### 2. **HTTP Requests**
+### 21.3 2. HTTP Requests
 
-#### Axios
+#### 21.3.1 Axios
 
 ```bash
 npm install axios
@@ -2450,9 +2327,9 @@ useEffect(() => {
 }, []);
 ```
 
-#### Fetch API
+#### 21.3.2 Fetch API
 
-* Native JavaScript option
+- Native JavaScript option
 
 ```jsx
 fetch('/api/data')
@@ -2460,13 +2337,13 @@ fetch('/api/data')
   .then(data => setData(data));
 ```
 
----
+<br>
 
-### 3. **Styling Tools**
+### 21.4 3. Styling Tools
 
-#### Tailwind CSS
+#### 21.4.1 Tailwind CSS
 
-* Utility-first CSS framework
+- Utility-first CSS framework
 
 ```bash
 npm install -D tailwindcss
@@ -2478,9 +2355,9 @@ npx tailwindcss init
 content: ['./src/**/*.{js,jsx}']
 ```
 
-#### Styled Components
+#### 21.4.2 Styled Components
 
-* CSS-in-JS library
+- CSS-in-JS library
 
 ```bash
 npm install styled-components
@@ -2495,44 +2372,44 @@ const Button = styled.button`
 `;
 ```
 
----
+<br>
 
-### 4. **Routing Libraries**
+### 21.5 4. Routing Libraries
 
-* `react-router-dom` (covered previously)
-* Integrates seamlessly with React SPA architecture
+- `react-router-dom` (covered previously)
+- Integrates seamlessly with React SPA architecture
 
----
+<br>
 
-### 5. **Form Libraries**
+### 21.6 5. Form Libraries
 
-#### Formik + Yup
+#### 21.6.1 Formik + Yup
 
-* Manage form state and validation
+- Manage form state and validation
 
 ```bash
 npm install formik yup
 ```
 
-#### React Hook Form
+#### 21.6.2 React Hook Form
 
-* Lightweight, performant form handling
+- Lightweight, performant form handling
 
 ```bash
 npm install react-hook-form
 ```
 
+<br>
+
+### 21.7 6. Testing Tools
+
+- **Jest**: Unit testing framework
+- **React Testing Library**: For testing React components via the DOM
+- **Cypress**: End-to-end testing
+
 ---
 
-### 6. **Testing Tools**
-
-* **Jest**: Unit testing framework
-* **React Testing Library**: For testing React components via the DOM
-* **Cypress**: End-to-end testing
-
----
-
-### Summary Table
+### 21.8 Summary Table
 
 | Category         | Tool(s)                     | Purpose                     |
 | ---------------- | --------------------------- | --------------------------- |
@@ -2543,11 +2420,4 @@ npm install react-hook-form
 | Testing          | Jest, RTL, Cypress          | Unit and end-to-end testing |
 | Routing          | React Router                | SPA routing                 |
 
-
-
 <br>
-
----
-
-<br>
-
