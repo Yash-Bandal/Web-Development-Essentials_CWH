@@ -739,7 +739,7 @@ class ClickButton extends React.Component {
 | onMouseEnter | Mouse enters an element |
 | onKeyDown    | Keyboard key pressed    |
 
----
+<br>
 
 ### 7.8 Summary
 
@@ -1840,7 +1840,7 @@ function ExpensiveComponent({ num }) {
 - Expensive calculations in render
 - Avoid recomputing values unnecessarily
 
----
+<br>
 
 ### 16.3 Summary Table
 
@@ -2407,7 +2407,7 @@ npm install react-hook-form
 - **React Testing Library**: For testing React components via the DOM
 - **Cypress**: End-to-end testing
 
----
+<br>
 
 ### 21.8 Summary Table
 
