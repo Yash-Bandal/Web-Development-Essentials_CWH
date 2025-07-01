@@ -1152,7 +1152,7 @@ function SignupForm() {
 
 ---
 
-## Part 11: useEffect & useState Hooks
+## Part 11: useEffect & useState Hooks - 🏷
 
 ---
 
@@ -1257,7 +1257,7 @@ useEffect(() => {
 
 <br>
 
-### d) useEffect Cleanup (componentWillUnmount)
+### d) useEffect Cleanup (componentWillUnmount) - used Less
 
 ```jsx
 useEffect(() => {
@@ -1288,15 +1288,11 @@ useEffect(() => {
 //useEffect is used to run code after the component has been rendered
 export default function App() {
   const [navele, setNavele] = useState("Leetcode")  //updated first
-  
-  //Case 1: Run only on first load..first Render
-  useEffect(() => {
-    alert("Welcome to the app!");  //2
-  }, [])
 
-//Case 2 : Run whenever change takes place
+
+//Case 3 : Run whenever change takes place
   useEffect(() => {
-    alert("Nav updated again")  //3 
+    alert("Nav updated again")    //4
     setNavele("Codechef") //updated second
   }, [])
 
@@ -1310,20 +1306,50 @@ export default function App() {
 ```jsx
 const Nav = ({navele}) => {
 
+   //Case 1: Run only on first load..first Render
+   useEffect(() => {
+     alert("Welcome to the app!");  //1
+   }, [])
+
+   //Case 2: Run every render..used generally for debugging..logging purposes
     useEffect(() => {
-      alert("Navele changed inside nav to " + navele);  //1 4
+        alert("Run on every render");  //2 5
+    })
+
+    //Case 4: Run when change take place (Here inside componant)
+    useEffect(() => {
+      alert("Navele changed inside nav to " + navele);    //3 6
     }, [navele])
+
+    //Case 5: example of cleanup - Run when unmount (Try uncommenting the nav component in App.jsx)
+    useEffect(() => {
+        return () => {
+            alert("Nav unmounted successfully");
+        }
+    }, [])
 
     return (
     <li>{navELe}</li>
   )
+
+```
 ```
 1. Here on page load - screen Leetcode
-   - alert1 - Navele changed inside nav to Leetcode / Nav.jsx
-   - alert2 - Welcome to the app /App.jsx
-   - alert3  Nav updated again / App.jsx
-2. screen Codechef
-   - alert4 - Navele changed inside nav to Codechef / Nav.jsx
+   - alert1 - Welcome to the app                          / Nav.jsx
+   - alert2 - Run on every render                         / Nav.jsx
+   - alert3 - Navele changed inside nav to Leetcode       / Nav.jsx
+   - alert4 -  Nav updating again                         / App.jsx
+3. screen Codechef
+   - alert5 - Run on every render (Here its running on change of navele )  / Nav.jsx
+   - alert6 - Navele changed inside nav to Codechef                        / Nav.jsx
+
+
+Navbar Commented inside App.jsx..Unmounting/ Removing componant simulation  (Conditional Rendering..showing on condition)
+used very less, 
+   - alert7 - Nav unmounted successfully
+  ```
+  
+     
 ###  Example 2: API Fetch with useEffect
 
 ```jsx
