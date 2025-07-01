@@ -288,7 +288,7 @@ rfc
 ```jsx
 export default function App() {
   return (
-    <h1 className='text-lg font-bold underline'>
+    <h1 className='text-lg font-bold underline text-red-500'>
       YB-Tutorials
     </h1>
   )
@@ -324,6 +324,11 @@ npm create vite@latest my-app -- --template react
 ```bash
 cd my-app
 ```
+
+```bash
+code -r my-app
+```
+opens the app in another vscode window
 
 #### 3.  Install Tailwind
 ```bash
