@@ -96,6 +96,11 @@ my-app/
 - Real-time Chat Applications
 - Interactive Forms
 
+
+<br>
+<br>
+
+
 ---
 
 ## Part 2: Setting Up React Environment
@@ -177,6 +182,11 @@ npm run dev
 ```
 
 - Much faster startup and hot reload
+
+
+<br>
+<br>
+
 
 ---
 
@@ -282,6 +292,10 @@ const element = (
 | Attributes    | `camelCase` (e.g., `onClick`, `tabIndex`) |
 | JS inside JSX | `{...}`                                   |
 | Close tags    | Always required                           |
+
+
+<br>
+<br>
 
 ---
 
@@ -395,6 +409,10 @@ function App() {
 | Access Props | `props`                   | `this.props`                |
 | Use of Hooks | Yes                       | No (uses lifecycle methods) |
 | Boilerplate  | Minimal                   | More code                   |
+
+<br>
+<br>
+
 
 ---
 
@@ -514,6 +532,10 @@ Greeting.propTypes = {
 | children Prop | Allows nesting content inside components   |
 | PropTypes     | Runtime type-checking for props (optional) |
 
+<br>
+<br>
+
+
 ---
 
 ## Part 6: State & useState Hook
@@ -628,6 +650,10 @@ class Counter extends React.Component {
 - `useState` is used in functional components
 - Changing state updates the UI
 - Always use updater function
+
+<br>
+<br>
+
 
 ---
 
@@ -753,6 +779,10 @@ class ClickButton extends React.Component {
 - Handle forms and inputs with `event` objects
 - Prefer arrow functions to avoid `this` binding issues
 
+<br>
+<br>
+
+
 ---
 
 ## Part 8: Conditional Rendering
@@ -863,6 +893,10 @@ const style = isVisible ? {} : { display: 'none' };
 | Function Extract | Clean up rendering logic     |
 | Return `null`    | Skip rendering conditionally |
 
+<br>
+<br>
+
+
 ---
 
 ## Part 9: Lists and Keys
@@ -959,6 +993,10 @@ users.map(user => (
 | `index` key | Avoid if items may change in order          |
 | Component   | Can render a list of components             |
 | Fragment    | Used to group multiple tags without wrapper |
+
+<br>
+<br>
+
 
 ---
 
@@ -1107,6 +1145,10 @@ function SignupForm() {
 | `onSubmit`           | Handles form submission                        |
 | Uncontrolled         | Uses `ref` to access input value               |
 | Validation           | Ensure form fields meet criteria before submit |
+
+<br>
+<br>
+
 
 ---
 
@@ -1445,6 +1487,10 @@ componentWillUnmount() {
 | componentDidUpdate   | useEffect(() => {}, \[dep])  |
 | componentWillUnmount | return () => {} in useEffect |
 
+<br>
+<br>
+
+
 ---
 
 ## Part 13: Routing with React Router
@@ -1589,6 +1635,10 @@ function Login() {
 | Navigate      | `useNavigate()`          |
 | Nesting       | `<Outlet />`             |
 
+<br>
+<br>
+
+
 ---
 
 ## Part 14: Context API
@@ -1710,6 +1760,10 @@ function Page() {
 | Consume Data   | `useContext(Context)`         |
 | Class Usage    | `Class.contextType = Context` |
 
+<br>
+<br>
+
+
 ---
 
 ## Part 15: Refs and DOM Manipulation
@@ -1827,6 +1881,10 @@ function ScrollBox() {
 | Focus, Scroll | Use ref to trigger DOM actions           |
 | Best Practice | Use only when DOM manipulation is needed |
 
+<br>
+<br>
+
+
 ---
 
 ## Part 16: useReducer & useMemo Hooks
@@ -1929,6 +1987,10 @@ function ExpensiveComponent({ num }) {
 | `useMemo`    | Memoize expensive computations | Heavy computation on rerender    |
 
 <br>
+<br>
+
+
+<br>
 
 ## Part 17: Custom Hooks
 
@@ -2024,6 +2086,10 @@ const { data, loading } = useFetch('https://jsonplaceholder.typicode.com/users')
 | Purpose     | Encapsulate and reuse logic            |
 | Reusability | Share between multiple components      |
 
+<br>
+<br>
+
+
 ---
 
 ## Part 18: Lifting State Up
@@ -2113,6 +2179,10 @@ function ChildB({ text }) {
 | Props Down        | Pass state and setters via props        |
 | Single Source     | Keeps one consistent state copy         |
 | Avoid Duplication | Prevents multiple unsynced states       |
+
+<br>
+<br>
+
 
 ---
 
@@ -2223,6 +2293,10 @@ In HTML:
 | -------- | ------------------------------------------- | ------------------------------------ |
 | Fragment | Group elements without extra DOM nodes      | `<></>` or `<React.Fragment>`        |
 | Portal   | Render component outside root DOM hierarchy | `createPortal(component, container)` |
+
+<br>
+<br>
+
 
 ---
 
@@ -2349,6 +2423,10 @@ import { FixedSizeList as List } from 'react-window';
 | `React.lazy`         | Code splitting for dynamic imports       |
 | Virtualized Lists    | Render only visible items in large lists |
 | Minimize State/Props | Keep components focused and optimized    |
+
+<br>
+<br>
+
 
 ---
 
