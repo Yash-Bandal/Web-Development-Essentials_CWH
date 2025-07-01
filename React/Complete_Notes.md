@@ -792,6 +792,15 @@ class ClickButton extends React.Component {
 ### 8.1 What is Conditional Rendering?
 
 - Conditional rendering in React allows components to render different outputs based on certain conditions (just like `if` statements in JavaScript).
+- Main two widely used are `**Ternary Operator**` and `**&&**`
+
+```jsx
+{showBtn ? <button className='bg-yellow-300' >I will be visible if True</button>: "I was here"}
+
+{showBtn && <button className='bg-yellow-300'>I will be visible if true</button>}
+
+<button className='btn bg-purple-600' onClick={() =>  setshowBtn(!showBtn)}>Toggle</button>
+```
 
 <br>
 
@@ -980,6 +989,102 @@ users.map(user => (
     <dd>{user.email}</dd>
   </React.Fragment>
 ))
+```
+
+
+`**/src/constants/index.jx**`
+```js
+export const products = [
+    {
+        stars: "4.5",
+        imgURL: "shoe4",
+        name: "Nike Air Jordan-01",
+        price: "$200.20",
+    },
+    {
+        stars: "5.0",
+        imgURL: "shoe5",
+        name: "Nike Air Jordan-10",
+        price: "$210.20",
+    },
+    {
+        stars: "4.8",
+        imgURL: "shoe6",
+        name: "Nike Air Jordan-100",
+        price: "$220.20",
+    },
+    {
+        stars: "4.6",
+        imgURL: "shoe7",
+        name: "Nike Air Jordan-001",
+        price: "$230.20",
+    },
+];
+
+export const shoes = [
+    {
+        thumbnail: "thumbnailShoe1",
+        bigShoe: "bigShoe1",
+    },
+    {
+        thumbnail: "thumbnailShoe",
+        bigShoe: "bigShoe2",
+    }, 
+    {
+        thumbnail: "thumbnailShoe3",
+        bigShoe: "bigShoe3",
+    },
+];
+
+```
+
+
+For a big list, use `...` spread operator and pass as  **`props`** to **another componant**
+```jsx
+import { products, shoes} from '../constants';
+
+
+{/*Another componant*/}
+const ProductCard = ({ stars, imgURL, name, price }) => {
+  return (
+    <div>
+      {stars} {imgURL} {name} {price}
+      <br />
+    </div>
+  );
+};
+
+{/*Rendering the big dictionary list..pass key and spread  other as props*/}
+<ul>
+  {products.map((product) => (
+    <ProductCard key={product.name} {...product} />
+  ))}
+</ul>
+
+```
+```
+4.5 shoe4 Nike Air Jordan-01 $200.20
+5.0 shoe5 Nike Air Jordan-10 $210.20
+4.8 shoe6 Nike Air Jordan-100 $220.20
+4.6 shoe7 Nike Air Jordan-001 $230.20
+```
+
+
+**Small Lists**
+```jsx
+
+<ul>
+{
+    shoes.map((shoe) => (
+        <li key ={shoe.thumbnail} >{shoe.bigShoe}</li>
+    ))
+}
+</ul>
+```
+```
+bigShoe1
+bigShoe2
+bigShoe3
 ```
 
 <br>
