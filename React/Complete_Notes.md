@@ -1796,10 +1796,12 @@ function Page() {
 
 ## Part 15: Refs and DOM Manipulation
 [useRef Documentation](https://react.dev/reference/react/useRef)
+- Refs provide a way to **access DOM nodes or React elements** directly.
+- Created using `useRef()` in functional components or `React.createRef()` in class components.
 
 #### Usecase - A
 ---
-
+**useRef** is a React Hook that lets you reference a value that’s not needed for rendering.
 - Everytime change takes place inside a componant (eg. counter increment) the entire componant is re-rendered
 - As a result, the reference variable declared in that componant that is spposed to update is reset to default value(eg. using let ..let cnt = 0)..
 - Thus we use `useRef` to sustain value on rerender
@@ -1885,7 +1887,11 @@ You Clicked Button 5 times
 
 <br>
 
-#### Usecase - B
+#### Usecase - B -  Manipulating the DOM and referencing
+
+
+- Refs allow you to bypass React's declarative approach
+- Should be used **sparingly** and only when necessary
 1. We avoid DOM manipulation in react
 2. Here without DOM manip we use `ref` to reference variables from anywhere in componant
 3. So to access a `DOM element` we use refVar.current
@@ -1930,14 +1936,50 @@ Click on `Hide Red Button`  that references the redButton to vanish it
 
 <br>
 
-### 15.1 What are Refs?
+### Pitfalls
+1. Reading or writing a ref during rendering breaks these expectations.
 
-- Refs provide a way to **access DOM nodes or React elements** directly.
-- Created using `useRef()` in functional components or `React.createRef()` in class components.
+```jsx
+function MyComponent() {
+  // ...
+  // 🚩 Don't write a ref during rendering
+  myRef.current = 123;
+  // ...
+  // 🚩 Don't read a ref during rendering
+  return <h1>{myOtherRef.current}</h1>;
+}
+```
+
 
 <br>
 
-### 15.2 When to Use Refs
+2. You can read or write refs from event handlers or effects instead.
+
+```jsx
+function MyComponent() {
+  // ...
+  useEffect(() => {
+    // ✅ You can read or write refs in effects
+    myRef.current = 123;
+  });
+  // ...
+  function handleClick() {
+    // ✅ You can read or write refs in event handlers
+    doSomething(myOtherRef.current);
+  }
+  // ...
+}
+```
+
+<br>
+
+
+
+
+
+
+
+### When to Use Refs
 
 - Managing focus, text selection, or media playback
 - Triggering imperative animations
@@ -1945,7 +1987,7 @@ Click on `Hide Red Button`  that references the redButton to vanish it
 
 <br>
 
-### 15.3 Creating and Using Refs (Functional Components)
+### Eg. Creating and Using Refs (Functional Components) - FOcus
 
 ```jsx
 import { useRef } from 'react';
@@ -1968,38 +2010,12 @@ function FocusInput() {
 
 - `inputRef.current` holds the actual DOM element
 
-<br>
 
-### 15.4 Creating Refs in Class Components
 
-```jsx
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.inputRef = React.createRef();
-  }
-
-  focusInput = () => {
-    this.inputRef.current.focus();
-  };
-
-  render() {
-    return (
-      <>
-        <input ref={this.inputRef} />
-        <button onClick={this.focusInput}>Focus</button>
-      </>
-    );
-  }
-}
-```
 
 <br>
 
-### 15.5 Manipulating the DOM
 
-- Refs allow you to bypass React's declarative approach
-- Should be used **sparingly** and only when necessary
 
 Example: Scroll into view
 
@@ -2019,27 +2035,6 @@ function ScrollBox() {
   );
 }
 ```
-
-<br>
-
-### 15.6 useRef vs createRef
-
-| Feature     | useRef (Functional)        | createRef (Class)              |
-| ----------- | -------------------------- | ------------------------------ |
-| Recreates?  | Same object on each render | New ref on each render         |
-| Performance | Better for stable refs     | Used in older/class components |
-
-<br>
-
-### 15.7 Summary Table
-
-| Concept       | Usage                                    |
-| ------------- | ---------------------------------------- |
-| `useRef()`    | Functional component ref                 |
-| `createRef()` | Class component ref                      |
-| `ref.current` | Access the DOM node                      |
-| Focus, Scroll | Use ref to trigger DOM actions           |
-| Best Practice | Use only when DOM manipulation is needed |
 
 <br>
 <br>
