@@ -62,3 +62,16 @@ const PopularProductsCard = (imgURL, name, price) => {}
   <Button label="View Details" />
   ``` 
 **Explanation:** If element has `imgURL then only share image with it, else not
+
+8. Be careful while returning a functional compoannt
+   ```
+   return (<>
+      ✅
+   </>)
+   ```
+      ```
+   return
+    (<>
+      ❌ Not work, because it return ` ` space
+   </>)
+   ```
