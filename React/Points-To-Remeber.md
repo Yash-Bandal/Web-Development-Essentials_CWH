@@ -75,3 +75,4 @@ const PopularProductsCard = (imgURL, name, price) => {}
       ❌ Not work, because it return ` ` space
    </>)
    ```
+9. While using cards from a website, ensure copying their tailwind config also, because they may have custom css defined 
