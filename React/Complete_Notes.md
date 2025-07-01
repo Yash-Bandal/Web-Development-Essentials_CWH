@@ -1114,10 +1114,19 @@ function SignupForm() {
 
 ---
 
-### 11.1 React Hooks Introduction
 
+
+### React Hooks Introduction
 - Hooks are functions that let you use **React state** and **lifecycle features** in **functional components**.
 - Introduced in **React 16.8**.
+
+
+---
+> Whenever there is **state change** , react re renders the whole App (App.jsx) along with its componants everytime state changes
+
+> The `<strictmode> ` inside `main.jsx` runs the app twice during **Development** (not during Production) ..once to check..second time to execute..to stop it ..comment it out (Not recommended)
+---
+
 
 Two most used hooks:
 1. `useState` – for managing state
@@ -1125,10 +1134,24 @@ Two most used hooks:
 
 <br>
 
-### 11.2 useState Recap
+### A) useState Recap
 
 ```jsx
 const [count, setCount] = useState(0);
+```
+```jsx
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </>
+  );
+}
 ```
 
 - Initializes state `count` with `0`
@@ -1136,52 +1159,9 @@ const [count, setCount] = useState(0);
 
 <br>
 
-### 11.3 useEffect 
-Useeffect is a hook that executes everytime update / change occurs within props(updated inside ,main app.jsx before passing when they are elems..props never change in childred) 
+### B) useEffect 
+Useeffect is a hook that executes everytime update / change occurs within props(updated inside ,main app.jsx before passing when they are elems..props never change in children) 
 
-**/App.jsx**
-```jsx
-//useEffect is used to run code after the component has been rendered
-export default function App() {
-  const [navele, setNavele] = useState("Leetcode")  //updated first
-  
-  //single time run on load
-  useEffect(() => {
-    alert("Welcome to the app!");
-  }, [])
-
-  useEffect(() => {
-    alert("Nav updated again")
-    setNavele("Codechef") //updated second
-  }, [navele])
-
-  //send prop
-  return (
-        <Nav  navele={navele}/>
-  }
-```
-
-**componant/Nav.jsx**
-```jsx
-const Nav = ({navele}) => {
-
-    useEffect(() => {
-      alert("Navele changed inside nav to " + navele);
-    }, [navele])
-
-    return (
-    <li>{navELe}</li>
-  )
-```
-1. Here on page load - screen Leetcode
-   - alert1 - Navele changed inside nav to Leetcode / Nav.jsx
-   - alert2 - Welcome to the app /App.jsx
-   - alert3  Nav updated again / App.jsx
-2. screen Codechef
-   - alert4 - Navele changed inside nav to Codechef / Nav.jsx
-   - alert5 - Navbar updated again / App.jsx
-
-<br>
 
 Syntax : use snippet
 ```jsx
@@ -1197,9 +1177,9 @@ useEffect(() => {
 
 <br>
 
-### 11.4 useEffect Without Dependencies
-
+### a) useEffect Without Dependencies
 ```jsx
+//Run every render..used generally for debugging..logging purposes..here we dont use []
 useEffect(() => {
   console.log('Component rendered or updated');
 });
@@ -1209,7 +1189,7 @@ useEffect(() => {
 
 <br>
 
-### 11.5 useEffect with Empty Dependency Array `[]`
+### b) useEffect with Empty Dependency Array `[]`
 
 ```jsx
 useEffect(() => {
@@ -1222,7 +1202,7 @@ useEffect(() => {
 
 <br>
 
-### 11.6 useEffect with Dependencies
+### c) useEffect with Dependencies
 
 ```jsx
 useEffect(() => {
@@ -1235,7 +1215,7 @@ useEffect(() => {
 
 <br>
 
-### 11.7 useEffect Cleanup (componentWillUnmount)
+### d) useEffect Cleanup (componentWillUnmount)
 
 ```jsx
 useEffect(() => {
@@ -1248,7 +1228,7 @@ useEffect(() => {
 
 <br>
 
-### 11.8 Common useEffect Use Cases
+### Common useEffect Use Cases
 
 - Fetching data from APIs
 - Subscribing/unsubscribing to streams
@@ -1257,7 +1237,52 @@ useEffect(() => {
 
 <br>
 
-### 11.9 Example: API Fetch with useEffect
+
+
+### Example 1 : Prop change alert
+
+**/App.jsx**
+```jsx
+//useEffect is used to run code after the component has been rendered
+export default function App() {
+  const [navele, setNavele] = useState("Leetcode")  //updated first
+  
+  //Case 1: Run only on first load..first Render
+  useEffect(() => {
+    alert("Welcome to the app!");  //2
+  }, [])
+
+//Case 2 : Run whenever change takes place
+  useEffect(() => {
+    alert("Nav updated again")  //3 
+    setNavele("Codechef") //updated second
+  }, [])
+
+  //send prop
+  return (
+        <Nav  navele={navele}/>
+  }
+```
+
+**componant/Nav.jsx**
+```jsx
+const Nav = ({navele}) => {
+
+    useEffect(() => {
+      alert("Navele changed inside nav to " + navele);  //1 4
+    }, [navele])
+
+    return (
+    <li>{navELe}</li>
+  )
+```
+1. Here on page load - screen Leetcode
+   - alert1 - Navele changed inside nav to Leetcode / Nav.jsx
+   - alert2 - Welcome to the app /App.jsx
+   - alert3  Nav updated again / App.jsx
+2. screen Codechef
+   - alert4 - Navele changed inside nav to Codechef / Nav.jsx
+###  Example 2: API Fetch with useEffect
 
 ```jsx
 import { useEffect, useState } from 'react';
@@ -1281,7 +1306,7 @@ function UserList() {
 
 <br>
 
-### 11.10 Multiple useEffects
+### e) Multiple useEffects
 
 ```jsx
 useEffect(() => {
@@ -1297,14 +1322,14 @@ useEffect(() => {
 
 <br>
 
-### 11.11 Rules of Hooks
+### Rules of Hooks
 
 - Only call hooks **at the top level** (not inside loops/conditions)
 - Only call hooks from **React functions** (components or custom hooks)
 
 <br>
 
-### 11.12 Summary Table
+### Summary Table
 
 | Hook        | Purpose                                    | Runs When?              |
 | ----------- | ------------------------------------------ | ----------------------- |
@@ -1313,6 +1338,9 @@ useEffect(() => {
 | `[]`        | Effect runs once on mount                  | On mount                |
 | `[dep]`     | Effect runs when dependency changes        | On mount and dep change |
 | Cleanup     | Teardown before unmount or dep change      | On unmount / re-run     |
+
+<br>
+<br>
 
 ---
 
