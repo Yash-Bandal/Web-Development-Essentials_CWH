@@ -1459,24 +1459,63 @@ used very less,
      
 ###  Example 2: API Fetch with useEffect
 
+---
+> Use tailwind css config of YB-sneakerstudio
+---
+
 ```jsx
-import { useEffect, useState } from 'react';
+import { data } from "autoprefixer";
+import { useEffect, useState } from "react";
 
-function UserList() {
-  const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => res.json())
-      .then(data => setUsers(data));
-  }, []);
+
+export default function ApiCard() {
+
+    // const Card = ({userID , id, title , body}) => {
+    //     return (
+    //         <>
+    //             {userID} {id} {title} {body} 
+    //             <br />
+    //         </>
+    //     )
+    // }
+
+    const Card = ({ userID, id, title, body }) => {
+        return (
+            <div className='flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-[20px] shadow-3xl px-10 py-16'>
+                <div className='w-11 h-11 flex justify-center items-center bg-coral-red rounded-full'>
+                   {id} {userID}
+                </div>
+                <h3 className='mt-5 font-palanquin text-3xl leading-normal font-bold'>
+                    {title}
+                </h3>
+                <p className='mt-3 break-words font-montserrat text-lg leading-normal text-slate-gray'>
+                    {body}
+                </p>
+            </div>
+        );
+    };
+
+    const [datalist, setDatalist] = useState([])
+
+    useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/posts")
+            .then(response => response.json()) // Convert response to JSON
+            .then(data => setDatalist(data)) // Output the ingredient list
+            .catch(error => console.log("Error fetching ingredients:", error));
+    }, [])
 
   return (
-    <ul>
-      {users.map(user => <li key={user.id}>{user.name}</li>)}
-    </ul>
-  );
+      <section className='max-container flex justify-center flex-wrap gap-9'>
+            {
+                datalist.map((obj) => (
+                    <Card key = {obj.id} {...obj}/>
+                ))
+            }
+      </section>
+  )
 }
+
 ```
 
 <br>
