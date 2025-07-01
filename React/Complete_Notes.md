@@ -1795,7 +1795,7 @@ function Page() {
 ---
 
 ## Part 15: Refs and DOM Manipulation
-
+[useRef Documentation](https://react.dev/reference/react/useRef)
 
 #### Usecase - A
 ---
@@ -1811,7 +1811,44 @@ function Page() {
 > But when `state` is changed, (eg. counter inc), `ref` does not re-render
 ---
 
-**Reference Update on Re-render / Not reinitialized**
+**A) Reference Reinitialized / Without useRef**
+```jsx
+import { useState, useRef, useEffect } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    let cntLog = 0  //dont use const
+    // const ref = useRef(0)
+
+    useEffect(() => {
+        cntLog = cntLog + 1
+        // ref.current = ref.current + 1
+
+        console.log("Counter has been updated " + cntLog + " times");
+        // console.log("Counter has been updated " + ref.current + " times");
+    },)
+
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button className='btn btn-primary' onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+```
+You Clicked Button 5 times
+
+(5) Counter has been updated 1 times - reinitialized to 0 everytime
+```
+
+<br>
+
+**B) Reference Update on Re-render / Not reinitialized**
 ```jsx
 import { useState, useRef, useEffect } from 'react';
 
@@ -1819,14 +1856,14 @@ function Counter() {
     const [count, setCount] = useState(0);
 
     // let cntLog = 0  //dont use const
-    const cntLog = useRef(0)
+    const ref = useRef(0)
 
     useEffect(() => {
         // cntLog = cntLog + 1
-        cntLog.current = cntLog.current + 1
+        ref.current = ref.current + 1
 
         // console.log("Counter has been updated " + cntLog + " times");
-        console.log("Counter has been updated " + cntLog.current + " times");
+        console.log("Counter has been updated " + ref.current + " times");
     },)
 
 
@@ -1846,29 +1883,41 @@ You Clicked Button 5 times
 (5) Counter has been updated 5 times - Not reinitialized to 0 
 ```
 
-**Reference Reinitialized / Without useRef**
+<br>
+
+#### Usecase - B
+1. We avoid DOM manipulation in react
+2. Here without DOM manip we use `ref` to reference variables from anywhere in componant
+3. So to access a `DOM element` we use refVar.current
+4. Thus, when we want to access an element lot of times, we create its ref and use it with ref.current 
+
 ```jsx
 import { useState, useRef, useEffect } from 'react';
 
 function Counter() {
     const [count, setCount] = useState(0);
 
-    let cntLog = 0  //dont use const
-    // const cntLog = useRef(0)
+
+    const refBtn = useRef(null);
+
 
     useEffect(() => {
-        cntLog = cntLog + 1
-        // cntLog.current = cntLog.current + 1
-
-        console.log("Counter has been updated " + cntLog + " times");
-        // console.log("Counter has been updated " + cntLog.current + " times");
-    },)
+        refBtn.current.style.backgroundColor = "red"
+        console.log("First Rendering usedEffect component"); 
+    },[ ])
 
 
     return (
         <div>
             <p>You clicked {count} times</p>
-            <button className='btn btn-primary' onClick={() => setCount(count + 1)}>Click me</button>
+            <button ref = {refBtn} className='btn btn-primary' onClick={() => setCount(count + 1)}>Click me</button>
+            
+
+            <br/>
+            {/* Referencing the above button to vanish */}
+            <button className='btn btn-secondary' onClick={() => refBtn.current.style.display = "none"}>Hide Red Button</button>
+            
+            {/* <button className='btn btn-secondary' onClick={() => refBtn.current.style.backgroundColor = "blue"}>Change Color</button> */}
         </div>
     );
 }
@@ -1876,12 +1925,10 @@ function Counter() {
 export default Counter;
 ```
 ```
-You Clicked Button 5 times
-
-(5) Counter has been updated 1 times - reinitialized to 0 evertime
+Click on `Hide Red Button`  that references the redButton to vanish it
 ```
 
-
+<br>
 
 ### 15.1 What are Refs?
 
