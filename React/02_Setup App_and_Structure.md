@@ -15,20 +15,24 @@ There are **2 popular ways** to set up a new React project:
     npm create vite@latest
     ```
 3. Give your project a name (e.g., `my-react-app`)
-4. Select **React** and then **JavaScript** (or TypeScript if you're using TS)
-5. Go into your project folder:
+4. Or simply
+    ```bash
+    npm create vite@latest my-app  -- --template react
+    ```
+5. Select **React** and then **JavaScript** (or TypeScript if you're using TS)
+6. Go into your project folder:
     ```bash
     cd my-react-app
     ```
-6. Install dependencies:
+7. Install dependencies:
     ```bash
     npm install
     ```
-7. Run the development server:
+8. Run the development server:
     ```bash
     npm run dev
     ```
-8. Open browser and go to `http://localhost:5173`
+9. Open browser and go to `http://localhost:5173`
 
 > You now have a working React project using Vite!
 
