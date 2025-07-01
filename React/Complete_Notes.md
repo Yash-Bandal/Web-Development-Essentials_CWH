@@ -2,8 +2,21 @@
 
 <br>
 
+## References 
+
 1. [Documentation](https://react.dev/learn)
 2. [W3_Schools](https://www.w3schools.com/REACT/DEFAULT.ASP)
+
+<br>
+
+## Tools
+1. [Framer motion](https://motion.dev/)
+ - Like this navbar [Hamburger-close](https://examples.motion.dev/react/variants)
+2. [daisyUI](https://daisyui.com/components)
+- Like the darkmode [switch](https://daisyui.com/components/theme-controller/)
+
+
+
 
 <br>
 
