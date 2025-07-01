@@ -79,5 +79,24 @@ function App() {
         </div>
    ```
 
+## Pat 3
+1. **StritMode**
+/src/main.jsx
+```jsx
+  <StrictMode>
+    <App />
+  </StrictMode>,
+```
+You may observe sometimes useEffect ,alerts run twice when you reload page, this happends because in **development** mode , strctmode runs the development 2 times, not in **production**
+  - once to check
+  - second time run actually
+To stop this, comment it out..not recommended
+```jsx
+createRoot(document.getElementById('root')).render(
+  // <StrictMode>
+    <App />
+  // </StrictMode>,
+)
+```
 
-
+2. You may set the value of the var/elem you want inside the componant using useState..but you cant modify prop
