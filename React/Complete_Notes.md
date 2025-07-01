@@ -1136,8 +1136,54 @@ const [count, setCount] = useState(0);
 
 <br>
 
-### 11.3 useEffect Syntax
+### 11.3 useEffect 
+Useeffect is a hook that executes everytime update / change occurs within props(updated inside ,main app.jsx before passing when they are elems..props never change in childred) 
 
+**/App.jsx**
+```jsx
+//useEffect is used to run code after the component has been rendered
+export default function App() {
+  const [navele, setNavele] = useState("Leetcode")  //updated first
+  
+  //single time run on load
+  useEffect(() => {
+    alert("Welcome to the app!");
+  }, [])
+
+  useEffect(() => {
+    alert("Nav updated again")
+    setNavele("Codechef") //updated second
+  }, [navele])
+
+  //send prop
+  return (
+        <Nav  navele={navele}/>
+  }
+```
+
+**componant/Nav.jsx**
+```jsx
+const Nav = ({navele}) => {
+
+    useEffect(() => {
+      alert("Navele changed inside nav to " + navele);
+    }, [navele])
+
+    return (
+    <li>{navELe}</li>
+  )
+```
+1. Here on page load - screen Leetcode
+   - alert1 - Navele changed inside nav to Leetcode / Nav.jsx
+   - alert2 - Welcome to the app /App.jsx
+   - alert3  Nav updated again / App.jsx
+2. screen Codechef
+   - alert4 - Navele changed inside nav to Codechef / Nav.jsx
+   - alert5 - Navbar updated again / App.jsx
+
+<br>
+
+Syntax : use snippet
 ```jsx
 useEffect(() => {
   // effect logic
