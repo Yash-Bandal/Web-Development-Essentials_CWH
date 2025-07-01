@@ -19,7 +19,7 @@
 8. [Part 8: Conditional Rendering](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-8-conditional-rendering)
 9. [Part 9: Lists and Keys](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-9-lists-and-keys)
 10. [Part 10: Forms Handling](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-10-forms-handling)
-11. [Part 11: useEffect & useState Hooks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-11-useeffect--usestate-hooks)
+11. [Part 11: useEffect & useState Hooks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-11-useeffect--usestate-hooks---)
 12. [Part 12: Component Lifecycle (Class-Based)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-12-component-lifecycle-class-based)
 13. [Part 13: Routing with React Router](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-13-routing-with-react-router)
 14. [Part 14: Context API](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-14-context-api)
@@ -1207,6 +1207,8 @@ Useeffect is a hook that executes everytime update / change occurs within props(
 
 Syntax : use snippet
 ```jsx
+useEffect( () = {} )
+
 useEffect(() => {
   // effect logic
   return () => {
@@ -1794,7 +1796,92 @@ function Page() {
 
 ## Part 15: Refs and DOM Manipulation
 
+
+#### Usecase - A
 ---
+
+- Everytime change takes place inside a componant (eg. counter increment) the entire componant is re-rendered
+- As a result, the reference variable declared in that componant that is spposed to update is reset to default value(eg. using let ..let cnt = 0)..
+- Thus we use `useRef` to sustain value on rerender
+
+
+---
+> When we change `ref` value, useEffect is not triggered..that is, componant, `state` dont re-render
+
+> But when `state` is changed, (eg. counter inc), `ref` does not re-render
+---
+
+**Reference Update on Re-render / Not reinitialized**
+```jsx
+import { useState, useRef, useEffect } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    // let cntLog = 0  //dont use const
+    const cntLog = useRef(0)
+
+    useEffect(() => {
+        // cntLog = cntLog + 1
+        cntLog.current = cntLog.current + 1
+
+        // console.log("Counter has been updated " + cntLog + " times");
+        console.log("Counter has been updated " + cntLog.current + " times");
+    },)
+
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button className='btn btn-primary' onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+```
+You Clicked Button 5 times
+
+(5) Counter has been updated 5 times - Not reinitialized to 0 
+```
+
+**Reference Reinitialized / Without useRef**
+```jsx
+import { useState, useRef, useEffect } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    let cntLog = 0  //dont use const
+    // const cntLog = useRef(0)
+
+    useEffect(() => {
+        cntLog = cntLog + 1
+        // cntLog.current = cntLog.current + 1
+
+        console.log("Counter has been updated " + cntLog + " times");
+        // console.log("Counter has been updated " + cntLog.current + " times");
+    },)
+
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button className='btn btn-primary' onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+```
+You Clicked Button 5 times
+
+(5) Counter has been updated 1 times - reinitialized to 0 evertime
+```
+
+
 
 ### 15.1 What are Refs?
 
