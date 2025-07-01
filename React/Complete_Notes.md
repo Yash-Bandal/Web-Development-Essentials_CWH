@@ -23,7 +23,7 @@
 12. [Part 12: Component Lifecycle (Class-Based)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-12-component-lifecycle-class-based)
 13. [Part 13: Routing with React Router](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-13-routing-with-react-router)
 14. [Part 14: Context API](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-14-context-api)
-15. [Part 15: Refs and DOM Manipulation](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-15-refs-and-dom-manipulation)
+15. [Part 15: Refs and DOM Manipulation - useRef](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-15-refs-and-dom-manipulation)
 16. [Part 16: useReducer & useMemo Hooks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-16-usereducer--usememo-hooks)
 17. [Part 17: Custom Hooks](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-17-custom-hooks)
 18. [Part 18: Lifting State Up](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Complete_Notes.md#part-18-lifting-state-up)
