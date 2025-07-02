@@ -1643,6 +1643,55 @@ componentWillUnmount() {
 
 ---
 
+
+---
+> Note: Return Entire `Router`, Not as a seperate componant componant inside any other componant
+---
+
+❌ Don’t
+```jsx
+export default function App() {
+  return (
+    <main className="relative">
+
+    {/* Inside */}
+      <Router>
+        <Nav /> {/* Always visible */}
+        <Routes>
+          <Route path="/" element={<div className="p-10 text-xl">Home Page</div>} />
+          <Route path="/card" element={<ApiCard />} />
+        </Routes>
+     </Router>
+
+   </main>
+  );
+}
+
+```
+
+✅ instead:
+```jsx
+export default function App() {
+  return (
+{/* Outside*/}
+    <Router>
+
+      <main className="relative">
+        <Nav /> {/* Always visible */}
+        <Routes>
+          <Route path="/" element={<div className="p-10 text-xl">Home Page</div>} />
+          <Route path="/card" element={<ApiCard />} />
+        </Routes>
+      </main>
+
+    </Router>
+  );
+}
+
+```
+
+<br>
+
 ### 13.1 What is React Router?
 
 - A standard library for routing in React.
@@ -1671,7 +1720,7 @@ npm install react-router-dom
 
 <br>
 
-### 13.4 Basic Setup
+###  Basic Setup
 
 ```jsx
 import {
@@ -1700,7 +1749,7 @@ function App() {
 
 <br>
 
-### 13.5 Route Parameters
+### Route Parameters
 
 ```jsx
 <Route path="/user/:id" element={<User />} />
@@ -1719,7 +1768,7 @@ function User() {
 
 <br>
 
-### 13.6 Redirects with `<Navigate />`
+### Redirects with `<Navigate />`
 
 ```jsx
 import { Navigate } from 'react-router-dom';
@@ -1731,7 +1780,7 @@ function ProtectedRoute({ isLoggedIn }) {
 
 <br>
 
-### 13.7 Nested Routes
+###  Nested Routes
 
 ```jsx
 <Route path="/dashboard" element={<Dashboard />}>
@@ -1755,7 +1804,7 @@ function Dashboard() {
 
 <br>
 
-### 13.8 useNavigate() – Programmatic Navigation
+###  useNavigate() – Programmatic Navigation
 
 ```jsx
 import { useNavigate } from 'react-router-dom';
@@ -1769,17 +1818,111 @@ function Login() {
 
 <br>
 
-### 13.9 Summary Table
+### Example 1 : With `<Router>` Method
 
-| Feature       | Component/Hook           |
-| ------------- | ------------------------ |
-| Routing Setup | `<BrowserRouter>`        |
-| Define Route  | `<Route path element />` |
-| Navigation    | `<Link to="" />`         |
-| Params        | `useParams()`            |
-| Redirect      | `<Navigate />`           |
-| Navigate      | `useNavigate()`          |
-| Nesting       | `<Outlet />`             |
+```jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Login from './components/Login';
+import Home from './components/Home';
+import ApiCard from "./components/ApiCard";
+import Nav from "./components/Nav";
+import User from './components/User';
+
+
+
+export default function App() {
+
+  return (
+
+    <Router>
+      <main className="relative">
+        <Nav /> {/* Always visible */}
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/Login" element={<Login/>} />
+          <Route path="/card" element={<ApiCard />} />
+          <Route path="/user/:username" element={<User />} />
+        </Routes>
+      </main>
+    </Router>
+
+  );
+}
+
+```
+
+
+### Example 2 : With `createBrowserRouter` Method (v6+)
+
+```jsx
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+
+import Login from './components/Login';
+import Home from './components/Home';
+import ApiCard from "./components/ApiCard";
+import Nav from "./components/Nav";
+import User from './components/User';
+
+
+
+export default function App() {
+
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <><Nav /><Home /></>
+    },
+    {
+      path: "/Login",
+      element: <><Nav /><Login /></>
+    },
+    {
+      path: "/card",
+      element: <><Nav /><ApiCard /></>
+    },
+   {
+      path: "/user/:username",
+      element: <><Nav /><User /></>
+    },
+  ])
+  
+  return (
+      <main>
+        <RouterProvider router={router}/>
+      </main>
+
+}
+
+```
+
+**/components/user.jsx** - use of Use Params
+```jsx
+import { useParams } from "react-router-dom"
+
+const User = () => {
+
+const params = useParams()
+
+  return (
+    <section className="w-full absolute mt-20">
+    <h1 className="text-center font-bold text-[50px]">
+        Hello {params.username}
+    </h1>
+    </section>
+  )
+}
+
+export default User
+```
+As you click on user in nav and type user/Yash you see 
+```
+Hello Yash
+```
+
+
 
 <br>
 <br>
