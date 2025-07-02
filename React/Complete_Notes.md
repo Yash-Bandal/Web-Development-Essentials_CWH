@@ -3013,7 +3013,7 @@ In HTML:
 
 ---
 
-### 20.1 Why Optimize React Apps?
+### Why Optimize React Apps?
 
 - Improve app speed and responsiveness
 - Reduce unnecessary renders
@@ -3021,9 +3021,20 @@ In HTML:
 
 <br>
 
-### 20.2 1. Memoization with `React.memo`
+### A) Memoization with `React.memo`
 
+- memo is used to `memoze` **componant**
 - Prevents unnecessary re-renders of functional components if props haven't changed
+
+---
+> Note : In React, everytime state Changes, all the componants in App.jsx associated with state, changes
+
+> This also causes some other components having no relation with that state to re render
+
+> As a result they are also re rendered
+
+> So we use `memo` to avoid  re-render and render only on props change
+---
 
 ```jsx
 const MyComponent = React.memo(function MyComponent({ name }) {
@@ -3033,10 +3044,107 @@ const MyComponent = React.memo(function MyComponent({ name }) {
 
 - Use when component output is pure and only depends on props
 
+Eg With and Without Memo
+**/App.jsx**
+
+```
+// App.jsx
+import { useState } from 'react';
+import Child from './Child';
+
+function App() {
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => setCount(prev => prev + 1);
+
+    return (
+        <div>
+            <h1>Parent Count: {count}</h1>
+            <button onClick={handleClick}>Increment</button>
+
+            {/* Even though label doesn't change, Child re-renders every time */}
+            <Child label="I never change" />
+        </div>
+    );
+}
+
+export default App;
+```
+#### First: Without `memo`
+**Child.jsx**
+```jsx
+// Child.jsx
+function Child({ label }) {
+    console.log("Child rendered");
+    return <h2>Child Component: {label}</h2>;
+}
+
+export default Child;
+```
+```
+Parent Count: 0
+Child rendered
+// click ➜
+Parent Count: 1
+Child rendered
+
+// click ➜
+Parent Count: 2
+Child rendered
+
+// click ➜
+Parent Count: 3
+Child rendered
+
+// click ➜
+Parent Count: 5
+Child rendered
+```
+
+
+#### With `memo`
+**Child.jsx**
+```jsx
+// Child.jsx
+import { memo } from 'react';
+
+function Child({ label }) {
+    console.log("Child rendered");
+    return <h2>Child Component: {label}</h2>;
+}
+
+export default memo(Child); //  Wrapped with memo
+
+```
+
+```
+Parent Count: 0
+Child rendered
+
+// click ➜
+Parent Count: 1
+(no Child render) 
+
+// click ➜
+Parent Count: 2
+(no Child render) 
+
+// click ➜
+Parent Count: 3
+(no Child render) 
+
+// click ➜
+Parent Count: 4
+(no Child render) 
+```
+
+
+
+
 <br>
 
-### 20.3 2. `useMemo` for Expensive Computations
-
+### B) `useMemo` for Expensive Computations
+- Memoize a **value**
 - Caches calculated results between renders
 
 ```jsx
@@ -3047,9 +3155,9 @@ const expensiveValue = useMemo(() => computeHeavyTask(data), [data]);
 
 <br>
 
-### 20.4 3. `useCallback` for Stable Functions
+### C) `useCallback` for Stable Functions
 
-- Memoizes callback functions to prevent re-creation on each render
+- Memoizes **callback functions** to prevent re-creation on each render
 
 ```jsx
 const handleClick = useCallback(() => {
@@ -3059,9 +3167,79 @@ const handleClick = useCallback(() => {
 
 - Especially useful when passing callbacks to child components
 
+
+**Eg: App.jsx**
+```jsx
+// App.jsx
+import { useState, useCallback } from 'react';
+import Child from './components/Child';
+
+function App() {
+    const [count, setCount] = useState(0);
+
+    // // 🔴 This function is recreated on every render!
+    // const handleClick = () => {
+    //     console.log("Clicked from child");
+    // };
+
+    // ✅ Memoized function — won't change across renders
+    const handleClick = useCallback(() => {
+        console.log("Clicked from child");
+    }, []); // empty dependency → stable reference
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <Child onClick={handleClick} />
+        </div>
+    );
+}
+
+export default App;
+
+```
+
+**Child.jsx**
+```jsx
+// Child.jsx
+import { memo } from "react";
+
+function Child({ onClick }) {
+    console.log("Child rendered");
+    return <button onClick={onClick}>Child Button</button>;
+}
+
+export default memo(Child); // memoized to avoid unnecessary renders
+
+```
+
+
+#### Without `useCallback()`
+- App re-renders on increment
+- handleClick gets recreated every time 
+- Since Child receives a new function prop, it re-renders — even though it's memoized!
+
+#### With `useCallback()`
+- handleClick is memoized and stays the same function between renders
+- Child receives same props, so it doesn’t re-render unless necessary
+  
 <br>
 
-### 20.5 4. Code Splitting with `React.lazy` & `Suspense`
+
+
+Thus
+
+| Tool          | Purpose                 | Used On          | Prevents unnecessary...         |
+| ------------- | ----------------------- | ---------------- | ------------------------------- |
+| `memo`        | Memoize a **component** | React Component  | Re-renders (if props unchanged) |
+| `useMemo`     | Memoize a **value**     | Inside Component | Expensive recalculations        |
+| `useCallback` | Memoize a **function**  | Inside Component | Re-creation of functions        |
+
+
+<br>
+
+### D) Code Splitting with `React.lazy` & `Suspense`
 
 - Loads components **only when needed**
 
@@ -3079,7 +3257,7 @@ function App() {
 
 <br>
 
-### 20.6 5. Avoid Anonymous Functions in JSX
+### E) Avoid Anonymous Functions in JSX
 
 Bad:
 
@@ -3096,14 +3274,14 @@ const handleClickMemo = useCallback(() => handleClick(id), [id]);
 
 <br>
 
-### 20.7 6. Avoid Unnecessary State and Props
+### F) Avoid Unnecessary State and Props
 
 - Minimize component state
 - Avoid deep prop chains (lift state or use context wisely)
 
 <br>
 
-### 20.8 7. Virtualize Long Lists
+### G) Virtualize Long Lists
 
 - Use libraries like `react-window` or `react-virtualized`
 
@@ -3122,7 +3300,7 @@ import { FixedSizeList as List } from 'react-window';
 
 <br>
 
-### 20.9 Summary Table
+###  Summary Table
 
 | Technique            | Purpose                                  |
 | -------------------- | ---------------------------------------- |
