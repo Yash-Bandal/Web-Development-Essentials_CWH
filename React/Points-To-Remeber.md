@@ -75,4 +75,21 @@ const PopularProductsCard = (imgURL, name, price) => {}
       ❌ Not work, because it return ` ` space
    </>)
    ```
-9. While using cards from a website, ensure copying their tailwind config also, because they may have custom css defined 
+9. While using cards from a website, ensure copying their tailwind config also, because they may have custom css defined
+10. Install
+    ```bash
+    npm install react-router-dom
+    ```
+    You forget this and get error, you think syntax correct and waste time in it
+11. Dont use `a href` , it will cause your page to reload, for SPAs we use `Link to ` <br>
+    ❌ Don’t use:
+    ```jsx
+    <a href="/about">About</a>
+    ```
+
+    ✅ Use instead:
+    ```jsx
+    import { Link } from 'react-router-dom';
+
+    <Link to="/about">About</Link>
+    ```
