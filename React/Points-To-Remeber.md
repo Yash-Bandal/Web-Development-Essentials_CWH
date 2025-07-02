@@ -82,6 +82,7 @@ const PopularProductsCard = (imgURL, name, price) => {}
     ```
     You forget this and get error, you think syntax correct and waste time in it
 11. Dont use `a href` , it will cause your page to reload, for SPAs we use `Link to ` <br>
+    - Link is not a new tag, on Runtime its converted to anchor tag 
     ❌ Don’t use:
     ```jsx
     <a href="/about">About</a>
@@ -93,3 +94,5 @@ const PopularProductsCard = (imgURL, name, price) => {}
 
     <Link to="/about">About</Link>
     ```
+12. If `text-center` `center` not able to use, ensure `w-full` in parent
+13. Intreview jargon questions -> Context-api -> to acoid props drilling
