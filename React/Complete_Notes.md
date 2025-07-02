@@ -3218,12 +3218,18 @@ export default memo(Child); // memoized to avoid unnecessary renders
 #### Without `useCallback()`
 - App re-renders on increment
 - handleClick gets recreated every time 
-- Since Child receives a new function prop, it re-renders — even though it's memoized!
+- Since Child receives a new function prop, it re-renders — even though it's memoized! because it thinks new prop recieved 
 
 #### With `useCallback()`
+- The function() handleClick gets **Freezed ❄**
 - handleClick is memoized and stays the same function between renders
 - Child receives same props, so it doesn’t re-render unless necessary
-  
+
+#### Remember
+-  Dont use `useCallback()` on working functions that operate a dynamic value (eg. a counting function) as it will be freezed on first return output
+-  Use on constant value operating functions like this one aboce performing just `console.log()`
+
+
 <br>
 
 
