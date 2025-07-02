@@ -2589,13 +2589,79 @@ function Counter() {
 #### 16.2.1 What is `useMemo`?
 
 - Memoizes a **computed value** to avoid unnecessary recalculations on each render.
-- Similar to caching a value until dependencies change.
+- Similar to **`caching`** a value until dependencies change.
 
 #### 16.2.2 Syntax
 
 ```jsx
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
+
+**Eg: Lets consider a Heavy Find Operation simulation, that finds num 10000 from an array of 20000**
+ - Without usememo() everytime the componant rendered, the heavy find operation runs again
+ - With usememo() a value is **memoized**
+
+
+**Counter2**
+
+
+```jsx
+import { useState, useMemo } from 'react';
+
+// Simulate a medium-sized array
+const nums = new Array(20_000).fill(0).map((_, i) => ({
+    index: i,
+    isMagical: i === 10_000
+}));
+
+function Counter2() {
+    const [count, setCount] = useState(0);
+
+    // // ❌ Expensive find() runs on every render..that is componant render everytime and find runs everytime
+    // const magical = nums.find(item => {
+    //     console.log("Running heavy find()...");
+    //     return item.isMagical === true;
+    // });
+
+    // ✅ Expensive find() is now memoized — runs only once..that is componant render everytime and find runs once and stores value like cache
+    const magical = useMemo(() => {
+        console.log("Running heavy find()...");
+        return nums.find(item => item.isMagical === true);
+    }, []); // Empty dependency: runs only on first render
+
+
+    const handleClick = () => {
+        setCount(count => count + 1);
+    };
+
+    return (
+        <>
+            <div>
+                <h2>No useMemo: Moderate Computation Each Render</h2>
+                <p>Magical number is <strong>{magical?.index}</strong></p>
+            </div>
+
+            <div className="card">
+                <button onClick={handleClick}>
+                    Count is {count}
+                </button>
+            </div>
+        </>
+    );
+}
+
+export default Counter2;
+```
+```
+Without usememo(), the counter works very slowly as the heavy operation is performed everytime
+```
+```
+With usememo() counter workds fluently, as no recalculation is to be performed
+```
+
+#### Thus 
+- With usememo your app workds without lag and performance is optimized
+   
 
 #### 16.2.3 Example
 
