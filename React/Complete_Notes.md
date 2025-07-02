@@ -1962,6 +1962,212 @@ export default Navbar
 
 <br>
 
+<div align = "center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/5e9b7971dfd10059f8484c7d784539f033451aaf/NodeJS/StoreRoom/ContextApi_magic.png?raw=true"/>
+      <br>
+      <b>Context-Api Tree Drill</b>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<br>
+
+### Lets Consider an Example
+Here Child1 is Called inside App.jsx and same further
+```
+App.jsx
+   └── Child1.jsx
+         └── Child2.jsx
+               └── Child3.jsx
+```
+
+### Without Context API - Props Drilling at each Child as parent
+Here, **AppGenes** prop is passed from **`App → Child1 → Child2 → Child3`**. This is props drilling.
+
+**App.jsx**
+```jsx
+import Child1 from './components/Child1';
+
+import { useState} from "react";
+
+
+export default function App() {
+//Create a prop inside Parent
+  const [genes, setGenes] = useState("AppGenes")
+
+  return (
+    <>
+    {/*Pass the Prop*/}
+     <Child1 genes = {genes}/>
+    </>
+  );
+}
+```
+
+
+**components/Child1.jsx**
+```jsx
+
+import Child2 from "./Child2"
+
+const Child1 = ({genes}) => {
+  return (
+      <section className="w-full absolute mt-20">
+          <h1 className="text-center font-bold text-[50px]">
+              Hello I am <span className="text-green-400">Child1 </span> called inside <span className="text-red-500">App.jsx </span> Received {genes}
+                   <Child2 genes2 = {genes}/>
+          </h1>
+      </section>
+  )
+}
+
+export default Child1
+```
+
+**components/Child2.jsx**
+```jsx
+import Child3 from "./Child3"
+
+const Child2 = ({genes2}) => {
+  return (
+      <section className="w-full absolute mt-20">
+          <h1 className="text-center font-bold text-[50px]">
+              Hello I am <span className="text-yellow-500">Child2 </span> called inside <span className="text-green-400">Child1 </span>  Received {genes2}
+              <Child3 genes3 = {genes2} />
+          </h1>
+      </section>
+  )
+}
+
+export default Child2
+```
+
+**components/Child3.jsx**
+```jsx
+const Child3 = ({genes3}) => {
+  return (
+      <section className="w-full absolute mt-20">
+          <h1 className="text-center font-bold text-[50px]">
+              Hello I am <span className="text-blue-600">Child3 </span> called inside <span className="text-yellow-500">Child2 </span> Received {genes3}
+          </h1>
+      </section>
+  )
+}
+
+export default Child3
+```
+<div align = "center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/8ddea087c44d70ae3a5274dbb25fd385dda83cd1/NodeJS/StoreRoom/Without.PNG?raw=true" width = 600/>
+      <br>
+      <b>Props Drilling</b>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<br>
+
+---
+> **You can create Context of Any Number of Props that will Be defines inside App.jsx using useState**
+---
+
+### With Context Api
+
+**1. Create `context/context.js**`
+```js
+import { createContext, useContext } from "react";
+
+export const AppGenesContext = createContext("ApppGenes")
+
+// use me inside App.jsx as reference
+```
+
+
+**2. Use This inside Parent from where you want to pass Prop to all componants and their Children**
+ - Here App.jsx is the parent
+
+**App.jsx**
+```jsx
+import { AppGenesContext } from './context/context';
+
+import Child1 from './components/Child1';
+import Nav from "./components/Nav";
+
+import { useState} from "react";
+
+
+export default function App() {
+  //You can pass this to all the componants and their nested componants wrapped inside AppGenesContext
+  //eg. Child1 and its further Child even Nav can use this prop with context
+  const [genes, setGenes] = useState("AppGenes") 
+
+  return (
+    <>
+    <AppGenesContext.Provider value={genes}>
+
+        <Nav />
+
+       <Child1/>
+
+    </AppGenesContext.Provider>
+    </>
+  );
+}
+
+```
+
+
+`/componant/Child3.jsx` <br>
+**3. Now Use this context in any componant or its nest**
+```jsx
+import { useContext } from "react"
+import { AppGenesContext } from "../context/context"
+
+const Child3 = ({genes3}) => {
+const receivedFromContext = useContext(AppGenesContext)
+
+  return (
+      <section className="w-full absolute mt-20">
+          <h1 className="text-center font-bold text-[50px]">
+              Hello I am <span className="text-blue-600">Child3 </span> called inside <span className="text-yellow-500">Child2 </span> Received {receivedFromContext} directly from context
+          </h1>
+      </section>
+  )
+}
+
+export default Child3
+```
+
+<div align = "center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/8654dacdced2a85c42160ff86b1110c56143bcd6/NodeJS/StoreRoom/WithContext.PNG?raw=true" width = 600/>
+      <br>
+      <b>Context API</b>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+
+
+
+<br>
+
 ### 14.2 When to Use Context
 
 - When multiple components at different nesting levels need access to the same data
