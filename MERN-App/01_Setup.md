@@ -43,7 +43,35 @@ npm create vite@latest frontend  -- --template react
 npm install react-hook-form
 ```
 4. Ensure correct Frontend Structure, setups , installations
-5. After proper setup
+
+### Backend
+1. setup `backend` folder
+```bash
+mkdir backend
+```
+```bash
+cd backend
+```
+
+2. set package,json
+```bash
+npm init -y
+```
+```
+"type":"module"
+```
+
+3. create `server.js`
+4. fill template below, ensure all installations CORS, body-parser, mongoose, express, nodemon
+5. Run server
+```bash
+nodemon server.js
+```
+[Express notes](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/NodeJS/Notes/01_NodeJS.md#9-expressjs-framework)
+
+<br>
+   
+After proper setup
 ```
 MERN-app/
 │
@@ -51,6 +79,7 @@ MERN-app/
 ├── frontend/
 ```
 
+<br>
 
 #### frontend/src/App.jsx
 ```jsx
@@ -281,8 +310,65 @@ app.listen(port, () => {
 ```
 
 #### backend/servermongo.js - Mongo connection
+```jsx
+// servermongo.js
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import { FormMongo } from "./models/FormMongo.js";  //this is designed schema
 
+const app = express();
+const port = 3000;
 
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+// Connect to MongoDB (same DB name is fine, just the model name is updated)..chk form username and pass ids same as here
+mongoose
+    .connect("mongodb://localhost:27017/FormMongoDB") 
+    .then(() => console.log(" Connected to FormMongoDB"))
+    .catch((err) => console.error(" Connection error:", err));
+
+// Root route
+app.get("/", (req, res) => {
+    res.send("Backend Connected to MongoDB!");
+});
+
+// Submit form data and save to MongoDB
+app.post("/submit", async (req, res) => {
+    try {
+        const { username, password } = req.body;
+
+        const newForm = new FormMongo({ username, password });
+        await newForm.save();
+
+        console.log("Saved to MongoDB:", newForm);
+        res.json({ success: true, message: "Saved to DB", data: newForm });
+    } catch (err) {
+        console.error(" Save failed:", err);
+        res.status(500).json({ success: false, message: "Error saving data" });
+    }
+});
+
+//  Fetch all submissions from MongoDB
+app.get("/submissions", async (req, res) => {
+    try {
+        const data = await FormMongo.find();
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ success: false, message: "Fetch error" });
+    }
+});
+
+// Start server
+app.listen(port, () => {
+    console.log(` Server running at http://localhost:${port}`);
+});
+```
+
+<br>
 
 
 create two **seperate terminals `backend` `frontend`** **`CMD`** to handle both backend and frontend seperately  
