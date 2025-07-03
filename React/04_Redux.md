@@ -3,8 +3,10 @@
 <br>
 
 1. [Documentation](https://react-redux.js.org/)
+2. [Main](https://react-redux.js.org/tutorials/quick-start)
 
 <br>
+
 
 
 ### Index
@@ -20,6 +22,31 @@
 
 
 <br>
+
+---
+> It simply is a single store where all states and other things are stored
+
+> All apps do not communicate with each other, they simply talk with `redux store` for what they want
+
+---
+
+<br>
+
+<div align = "center"> 
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/9f666861ebe09e0d19e445deae8b209f3f7790d6/NodeJS/StoreRoom/reduxgif.gif" width = 500/>
+      <br>
+      <b>YB-Productions</b>
+    </td>
+  </tr>
+</table>
+  
+</div>
+
+<br>
+
 
 ## Part 1: Redux Basics (Core Concepts)
 
