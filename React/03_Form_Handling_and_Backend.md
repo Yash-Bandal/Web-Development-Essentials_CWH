@@ -1,5 +1,7 @@
 ## React Form Handling 
 
+1. [Documentation](https://www.react-hook-form.com/get-started/)
+
 ---
 
 ### Part 1: Why Native Form Handling is Hard in React
@@ -417,6 +419,15 @@ const onSubmit = (data) => {
 | react-hook-form | Most practical, scalable, and fast        |
 | Formik + Yup    | Heavier forms, complex validation schemas |
 
+<br>
+
+### Points to Remember
+1. Simulate network delay while submission
+2. Disable submit button after submit to avoid multiple submits: provided utilility inside formState
+   ```
+   formState: { errors, isSubmitting }
+   ```
+3. Use `seterror` to define custom errors
 
 
 ### Final Tip
