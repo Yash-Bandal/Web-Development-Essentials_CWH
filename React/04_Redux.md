@@ -1,36 +1,63 @@
 <h1 align="center"> <b>React-Redux</b></h1>
 
+<br>
+
+1. [Documentation](https://react-redux.js.org/)
+
+<br>
+
+
+### Index
+
+1. [Part 1: Redux Basics (Core Concepts)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-1-redux-basics-core-concepts)
+2. [Part 2: Setting Up Redux in React Without Redux Toolkit](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-2-setting-up-redux-in-react-without-redux-toolkit)
+3. [Part 3: React-Redux Hooks](http://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-3-react-redux-hooks)
+4. [Part 4: Redux Toolkit (Modern Redux Approach)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-4-redux-toolkit-modern-redux-approach)
+5. [Part 5: Redux Toolkit with Async Logic (createAsyncThunk)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-5-redux-toolkit-with-async-logic-createasyncthunk)
+6. [Part 6: Redux Middleware](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-6-redux-middleware)
+7. [Part 7: Folder Structure and Best Practices](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-7-folder-structure-and-best-practices)
+8. [Part 8: Interview Prep (Redux vs Context API, Key Questions)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/04_Redux.md#part-8-interview-prep-redux-vs-context-api-key-questions)
+
+
+<br>
 
 ## Part 1: Redux Basics (Core Concepts)
 
 ###  What is Redux?
-
 Redux is a **predictable state container** for JavaScript apps. It helps manage application state in a **centralized** and **structured** way, especially useful in complex apps with many components.
+
+<br>
 
 ### Why Use Redux with React?
 
 React handles local component state well. But for **global state** (e.g., user data, theme, cart), Redux helps:
-
 * Centralize state in one place
 * Share state easily between components
 * Debug using Redux DevTools
 * Make state updates predictable via reducers
 
-### Three Core Principles of Redux
+<br>
 
+
+### Three Core Principles of Redux
 1. **Single Source of Truth**: One global store holds the entire state of your app.
 2. **State is Read-Only**: You can’t modify state directly; use actions to describe changes.
 3. **Changes via Pure Functions**: Reducers specify how state changes in response to actions.
 
-### Key Terminologies
+<br>
 
+
+### Key Terminologies
 * **Store**: The single object that holds application state.
 * **Action**: A plain JS object with a `type` property. Describes **what happened**.
 * **Reducer**: A function that takes previous state and an action, returns new state.
 * **Dispatch**: A method to send actions to the reducer.
 
-### Basic Redux Flow
 
+<br>
+
+
+### Basic Redux Flow
 1. Component dispatches an **action**
 2. **Reducer** receives current state and action, returns new state
 3. **Store** updates and notifies subscribed components
@@ -56,6 +83,8 @@ const store = createStore(counterReducer);
 // Dispatching
 store.dispatch(incrementAction);
 ```
+
+<br>
 
 ### Summary Table
 
