@@ -14,7 +14,8 @@
  - Like this navbar [Hamburger-close](https://examples.motion.dev/react/variants)
 2. [daisyUI](https://daisyui.com/components)
 - Like the darkmode [switch](https://daisyui.com/components/theme-controller/)
-
+3. [Rechars](https://recharts.org/en-US)
+4. [lucide-UI-ICONS](https://lucide.dev/)
 
 
 
