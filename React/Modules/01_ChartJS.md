@@ -2,20 +2,27 @@
 
 <br>
 
+1. [Documentation](https://react-chartjs-2.js.org/)
+
+<br>
+
+
 # React Chart.js Notes
 
 ## Index
 
-1. [Introduction & Setup](#part-1-introduction--setup)
-2. [Line Chart & Customization](#part-2-line-chart--customization)
-3. [Pie & Doughnut Charts](#part-3-pie--doughnut-charts)
-4. [Chart Interactions & Tooltips](#part-4-chart-interactions--tooltips)
-5. [Responsive Charts & Styling with CSS](#part-5-responsive-charts--styling-with-css)
-6. [Chart.js Plugins & Extensions](#part-6-chartjs-plugins--extensions)
-7. [Using Multiple Datasets](#part-7-using-multiple-datasets)
-8. [Dynamic Data (e.g., from API or props)](#part-8-dynamic-data-eg-from-api-or-props)
-9. [Chart Updates with useEffect & useState](#part-9-chart-updates-with-useeffect--usestate)
-10. [Exporting Chart as Image / Download Feature (Optional)](#part-10-exporting-chart-as-image--download-feature-optional)
+
+
+1. [Introduction & Setup](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-1-introduction--setup)
+2. [Line Chart & Customization](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-2-line-chart--customization)
+3. [Pie & Doughnut Charts](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-3-pie--doughnut-charts)
+4. [Chart Interactions & Tooltips](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-4-chart-interactions--tooltips)
+5. [Responsive Charts & Styling with CSS](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-5-responsive-charts--styling-with-css)
+6. [Chart.js Plugins & Extensions](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-6-chartjs-plugins--extensions)
+7. [Using Multiple Datasets](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-7-using-multiple-datasets)
+8. [Dynamic Data (e.g., from API or props)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-8-dynamic-data-eg-from-api-or-props)
+9. [Chart Updates with useEffect & useState](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-9-chart-updates-with-useeffect--usestate)
+10. [Exporting Chart as Image / Download Feature (Optional)](https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/main/React/Modules/01_ChartJS.md#part-10-exporting-chart-as-image--download-feature-optional)
 
 
 <br>
