@@ -97,4 +97,11 @@ const PopularProductsCard = (imgURL, name, price) => {}
 12. If `text-center` `center` not able to use, ensure `w-full` in parent
 13. Intreview jargon questions -> Context-api -> to acoid props drilling
 14. Hooks Error, ensure hooks like  `usestate` and other are useedd inside the function beefore return, nor outside,  nor inside return
-
+14. **Buttons** : Ensure to use a arrow functions while using **onClick**
+```js
+ <button onClick= { () => dispatch(increment())}>+</button>
+```
+not
+```js
+ <button onClick = {dispatch(increment())}>+</button>
+```
