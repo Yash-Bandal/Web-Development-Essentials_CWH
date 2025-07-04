@@ -1,5 +1,8 @@
 # Redux (Without Toolkit) - Basics Overview
 
+1. [Documentation](https://redux-toolkit.js.org/tutorials/quick-start)
+2. [Stack overflow](https://stackoverflow.com/questions/54385323/what-is-a-difference-between-action-reducer-and-store-in-redux)
+
 ## 1. What is Redux?
 
 Redux is a **JavaScript state management library** used to manage the global state of an application. It is commonly used with React.
@@ -93,9 +96,71 @@ export default App;
 
 # Redux Toolkit (RTK) - Part 1: Introduction and Core Concepts
 
+---
+> First you create store (Bank) where you can store states
+
+> Then you create its sub departments/slices that handle different specific states..counterSlice, fetcherSlice...
+
+> Then you get employees that will perform and derive a specific task ..that is define `reducers` to perform **increment, decrement  and operraations**
+
+> Then you call reducers in store
+```js
+ reducer: {
+    counter: counterReducer,
+    fetcher : fetcherReducer
+},
+```
+
+
+> Then you make actions to employees to execute their skill/ action..that is , we **dispatch actions** / **give order** to reducers to perform action..increment/decrement
+```js
+dispatch(action)
+
+ dispatch(increment())
+ dispatch(decrement())
+```
+> This can by done in 2 steps
+
+> 1. call actions
+```js
+import { increment, decrement, multiply} from './redux/counter/counterSlice';
+```
+
+> 2. define useDispatch()
+```js
+const dispatch = useDispatch()
+```
+
+> Now to use state in nested componants/ other componants instead of passing props via drilling , use `useSelectior()`
+
+Redux is seperate library from react, and not a part of react, but used with react
+-  its rules are different, you can update / set value without using useState here like state.value=2
+
+
+
+---
+
+
 ## 1. Why Redux Toolkit?
 
 Redux Toolkit (RTK) is the **official, recommended** way to write Redux logic. It simplifies Redux by reducing boilerplate and improving code readability.
+
+<br>
+
+<div align = "center"> 
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Yash-Bandal/Web-Development-Essentials_CWH/blob/5875ebacb87a4233da67d8fe8e61ea7b993661c8/NodeJS/StoreRoom/redux-toolkit-2.gif" width = 500/>
+      <br>
+      <b>YB-Productions</b>
+    </td>
+  </tr>
+</table>
+  
+</div>
+
+<br>
 
 ### Key Benefits:
 
