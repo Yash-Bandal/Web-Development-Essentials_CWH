@@ -76,3 +76,9 @@ getElementsByTagName("input")     //not work
 | **UIdeck**            | Free modern HTML & Tailwind templates        | [https://uideck.com](https://uideck.com)         |
 | **Cruip**             | Modern SaaS and landing page templates       | [https://cruip.com](https://cruip.com)           |
 | **CodePen Templates** | Search "UI template", "login form", etc.     | [https://codepen.io](https://codepen.io)         |
+
+
+## Backend FrontEnd Connection
+- Its simple, just prrocess datta at backend and create/parse into a JSON format and create a **POST** request from backend -JSONIFY
+- On the frontend, fetch the api sent from backend
+- Use CORS library
