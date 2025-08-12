@@ -5,6 +5,8 @@ Node.js provides built-in modules to work with files and directories. The most i
 * `fs` (File System): to read/write files, create/delete directories and manage file operations.
 * `path`: to handle and transform file and directory paths in a cross-platform way.
 
+<br>
+
 ---
 
 ### 1. fs Module (File System)
