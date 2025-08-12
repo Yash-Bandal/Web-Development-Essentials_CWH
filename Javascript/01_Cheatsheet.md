@@ -1,5 +1,5 @@
 <h1 align="center"><b> JavaScript Cheatsheet </b></h1>
-
+ 
 By YB-Productions
 Updated: 4 June 2025
 
