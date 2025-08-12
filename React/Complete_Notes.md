@@ -2087,7 +2087,7 @@ export default Child3
 
 ### With Context Api
 
-**1. Create `context/context.js**`
+**1. Create `context/context.js`**
 ```js
 import { createContext, useContext } from "react";
 
