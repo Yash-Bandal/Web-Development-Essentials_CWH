@@ -4,20 +4,25 @@ AJAX is the art of exchanging data with a server, and updating parts of a web pa
 
 In short; AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.
 
-# 🚀 Lesson 7: jQuery AJAX
+<br>
 
-## 📌 Introduction to AJAX
+
+#  Lesson 7: jQuery AJAX
+
+##  Introduction to AJAX
 AJAX (**Asynchronous JavaScript and XML**) allows web pages to be updated asynchronously by exchanging small amounts of data with a server in the background. This means you can update parts of a web page **without reloading the whole page**.
 
-## 🔹 Why Use jQuery for AJAX?
+##  Why Use jQuery for AJAX?
 - Simplifies AJAX requests with concise syntax.
 - Cross-browser compatibility.
 - Built-in methods like `$.get()`, `$.post()`, and `$.ajax()`.
 
----
+
+<br>
 
 
-## 📖 1. Basic AJAX Syntax
+
+##  1. Basic AJAX Syntax
 ```js
 $.ajax({
     url: 'https://api.example.com/data', // API endpoint
@@ -33,7 +38,7 @@ $.ajax({
 ```
 
 ---
-## 📖 B. jQuery load() Method
+##  A. jQuery load() Method
 The load() method loads data from a server and puts the returned data into the selected element.
 ```js
 $(selector).load(URL,data);
@@ -43,16 +48,17 @@ $(selector).load(URL,data,callback);
 
 
 
-## 📖 B. `get()` and `post()`
+##  B. `get()` and `post()`
 HTTP Request: GET vs. POST
 
 Two commonly used methods for a request-response between a client and server are: GET and POST.
-
  - `GET` - Requests data from a specified resource
  - ```
    $.get(URL,callback);
    ```
    see https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_get
+
+
    
  - `POST` - Submits data to be processed to a specified resource
  - ```
@@ -61,15 +67,19 @@ Two commonly used methods for a request-response between a client and server are
    see https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_post
    
 
-   
-### 🔹 `$.get()` (Fetching Data)
+
+
+<br>
+
+
+###  2. `$.get()` (Fetching Data)
 ```js
 $.get('https://jsonplaceholder.typicode.com/posts/1', function(data) {
     console.log(data);
 });
 ```
 
-### 🔹 `$.post()` (Sending Data)
+###  `$.post()` (Sending Data)
 ```js
 $.post('https://jsonplaceholder.typicode.com/posts', {
     title: 'New Post',
@@ -80,10 +90,13 @@ $.post('https://jsonplaceholder.typicode.com/posts', {
 });
 ```
 
----
 
-## 📖 3. Handling Responses
-### 🔹 Success and Error Handling
+<br>
+
+
+
+##  3. Handling Responses
+### Success and Error Handling
 ```js
 $.ajax({
     url: 'https://jsonplaceholder.typicode.com/users',
@@ -97,9 +110,12 @@ $.ajax({
 });
 ```
 
----
 
-## 📖 4. Loading JSON Data and Displaying It
+<br>
+
+
+
+##  4. Loading JSON Data and Displaying It
 ```js
 $.getJSON('https://jsonplaceholder.typicode.com/users', function(data) {
     data.forEach(user => {
@@ -108,10 +124,13 @@ $.getJSON('https://jsonplaceholder.typicode.com/users', function(data) {
 });
 ```
 
----
 
-## 📖 5. Using AJAX with Forms
-### 🔹 Sending Form Data via AJAX
+<br>
+
+
+
+##  5. Using AJAX with Forms
+###  Sending Form Data via AJAX
 ```js
 $('#myForm').submit(function(event) {
     event.preventDefault(); // Prevent default form submission
@@ -129,9 +148,12 @@ $('#myForm').submit(function(event) {
 });
 ```
 
----
 
-## 📖 6. Fetch API vs jQuery AJAX (Comparison)
+<br>
+
+
+
+##  6. Fetch API vs jQuery AJAX (Comparison)
 | Feature          | Fetch API | jQuery AJAX |
 |----------------|------------|-------------|
 | Syntax Complexity | Moderate | Easy |
@@ -147,19 +169,22 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     .catch(error => console.log('Error:', error));
 ```
 
+
+<br>
+
+
+
+##  Summary
+- AJAX enables asynchronous data exchange without reloading the page.
+- jQuery simplifies AJAX requests with `$.ajax()`, `$.get()`, and `$.post()`.
+- Handling responses properly ensures smooth user experience.
+- Forms can be submitted via AJAX to avoid page refresh.
+- Consider using **Fetch API** for modern JavaScript projects.
+
+
+<br>
+
+
 ---
 
-## 📌 Summary
-✅ AJAX enables asynchronous data exchange without reloading the page.
-
-✅ jQuery simplifies AJAX requests with `$.ajax()`, `$.get()`, and `$.post()`.
-
-✅ Handling responses properly ensures smooth user experience.
-
-✅ Forms can be submitted via AJAX to avoid page refresh.
-
-✅ Consider using **Fetch API** for modern JavaScript projects.
-
----
-
-🔗 **Next Chapter: [Lesson 8 - jQuery Forms Handling](./8_jQuery_Forms.md)**
+ **Next Chapter: [Lesson 8 - jQuery Forms Handling](./8_jQuery_Forms.md)**
