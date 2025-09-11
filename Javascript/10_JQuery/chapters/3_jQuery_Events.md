@@ -1,15 +1,15 @@
-# 📌 Chapter 3: jQuery Events
+#  Chapter 3: jQuery Events
 
-## 🚀 Introduction
+##  Introduction
 Events in jQuery allow us to execute code in response to user interactions such as clicking, hovering, or typing.
 jQuery simplifies event handling, making it easy to add interactivity to web applications.
 The term "fires/fired" is often used with events. Example: "The keypress event is fired, the moment you press a key".
 
----
+<br>
 
-## 📖 Topics Covered
+##  Topics Covered
 
-### 🔹 1. Handling Events in jQuery
+###  1. Handling Events in jQuery
 jQuery provides event methods to respond to user interactions.
 - **Common event methods:**
   - `click()` – When an element is clicked
@@ -109,7 +109,7 @@ $("input").blur(function(){
 
 revise : The `$(document).ready()` method allows us to execute a function when the document is fully loaded.
 
-### 🔹 2. Event Binding & Delegation
+###  2. Event Binding & Delegation
 ### The on Method
 The `on()` method attaches one or more event handlers for the selected elements.
 Attach a click event to a <p> element:
@@ -134,7 +134,7 @@ Binding events dynamically using `on()` improves performance and allows handling
   });
   ```
 
-### 🔹 3. Preventing Default Behavior
+###  3. Preventing Default Behavior
 Use `preventDefault()` to stop default browser actions.
 - **Example:**
   ```javascript
@@ -144,14 +144,14 @@ Use `preventDefault()` to stop default browser actions.
   });
   ```
 
----
+<br>
 
-## 🎯 Real-World Applications
+##  Real-World Applications
 - **Form Validations:** Prevent form submission on invalid input.
 - **Dynamic Content:** Handle events for dynamically added elements.
 - **Interactive UI:** Add animations and effects on user interaction.
 
 ---
 
-📌 **Next Chapter:** [Manipulating the DOM →](./4_jQuery_DOM.md)
+ **Next Chapter:** [Manipulating the DOM →](./4_jQuery_DOM.md)
 
