@@ -1,42 +1,48 @@
 # jQuery Best Practices & Performance Optimization
 
-## 🚀 Introduction
+##  Introduction
 Writing efficient and maintainable jQuery code is crucial for performance and scalability. This lesson covers best practices and optimization techniques to improve jQuery performance and ensure better user experience.
 
----
 
-## 🔹 1. Use `on()` for Event Delegation
+<br>
 
-### ❌ Bad Practice:
+
+
+##  1. Use `on()` for Event Delegation
+
+###  Bad Practice:
 ```js
 $("button").click(function() {
     alert("Button clicked!");
 });
 ```
 
-### ✅ Good Practice:
+###  Good Practice:
 ```js
 $(document).on("click", "button", function() {
     alert("Button clicked!");
 });
 ```
 
-### 📌 Why?
+###  Why?
 - Direct event binding does not work for dynamically added elements.
 - `on()` allows event delegation, meaning it works on future elements.
 
----
 
-## 🔹 2. Minimize DOM Manipulations
+<br>
 
-### ❌ Bad Practice:
+
+
+##  2. Minimize DOM Manipulations
+
+###  Bad Practice:
 ```js
 $("#box").css("background", "blue");
 $("#box").css("color", "white");
 $("#box").css("border", "1px solid black");
 ```
 
-### ✅ Good Practice:
+###  Good Practice:
 ```js
 $("#box").css({
     "background": "blue",
@@ -45,99 +51,124 @@ $("#box").css({
 });
 ```
 
-### 📌 Why?
+### Why?
 - Making multiple changes separately causes unnecessary reflows and repaints.
 - Using an object literal reduces performance overhead.
 
----
 
-## 🔹 3. Cache Selectors for Better Performance
+<br>
 
-### ❌ Bad Practice:
+
+
+##  3. Cache Selectors for Better Performance
+
+###  Bad Practice:
 ```js
 $("#title").text("Hello");
 $("#title").addClass("highlight");
 $("#title").fadeIn();
 ```
 
-### ✅ Good Practice:
+###  Good Practice:
 ```js
 let $title = $("#title");
 $title.text("Hello").addClass("highlight").fadeIn();
 ```
 
-### 📌 Why?
+###  Why?
 - Every time `$("#title")` is used, jQuery searches the DOM again.
 - Caching it into a variable improves performance.
 
----
 
-## 🔹 4. Use `find()` Instead of Nested Selectors
+<br>
 
-### ❌ Bad Practice:
+
+
+##  4. Use `find()` Instead of Nested Selectors
+
+###  Bad Practice:
 ```js
 $("#container div p").text("Updated text");
 ```
 
-### ✅ Good Practice:
+###  Good Practice:
 ```js
 $("#container").find("p").text("Updated text");
 ```
 
-### 📌 Why?
+###  Why?
 - Reduces the depth of the DOM tree traversal, improving speed.
 
----
+<br>
 
-## 🔹 5. Use Native JavaScript When Possible
 
-### ❌ Bad Practice (jQuery for simple tasks):
+
+##  5. Use Native JavaScript When Possible
+
+###  Bad Practice (jQuery for simple tasks):
 ```js
 $("#element").hide();
 $("#element").show();
 ```
 
-### ✅ Good Practice (Native JavaScript):
+###  Good Practice (Native JavaScript):
 ```js
 document.getElementById("element").style.display = "none";
 document.getElementById("element").style.display = "block";
 ```
 
-### 📌 Why?
+###  Why?
 - jQuery adds overhead for simple tasks.
 - Vanilla JS is faster for basic DOM manipulations.
 
----
+<br>
 
-## 🔹 6. Remove Unused jQuery Libraries
+
+
+## 6. Remove Unused jQuery Libraries
 - Avoid loading large jQuery plugins that are not used.
 - Use **lightweight alternatives** for performance improvements.
 
----
 
-## 🔹 7. Optimize Animations & Effects
+<br>
 
-### ✅ Best Practices:
+
+
+##  7. Optimize Animations & Effects
+
+###  Best Practices:
 - Use **CSS animations** instead of `.animate()` where possible.
 - Avoid animating large numbers of elements simultaneously.
 - Use `.stop()` to prevent animation queue buildup.
 
----
 
-## 🔹 8. When to Use Vanilla JS vs. jQuery
+<br>
+
+
+
+##  8. When to Use Vanilla JS vs. jQuery
 
 | Feature                 | Use jQuery | Use Vanilla JS |
 |-------------------------|------------|----------------|
-| Complex animations      | ✅         | ❌             |
-| Simple DOM selection   | ❌         | ✅             |
-| AJAX requests          | ✅         | ✅             |
-| Event delegation       | ✅         | ✅             |
-| Form validation        | ✅         | ✅             |
+| Complex animations      | Yes         | No            |
+| Simple DOM selection   | No       | Yes         |
+| AJAX requests          | Yes     | Yes             |
+| Event delegation       | Yes        | Yes            |
+| Form validation        | Yes        | Yes            |
 
----
 
-## 🎯 Conclusion
+<br>
+
+
+
+##  Conclusion
 By following these best practices, you can write **faster, cleaner, and more maintainable** jQuery code. 
 Always consider if **vanilla JavaScript** is a better alternative for your use case!
 
-🔗 [Next Lesson: jQuery vs. Vanilla JavaScript](./11_jQuery_vs_VanillaJS.md)
+
+<br>
+
+
+---
+
+ [Next Lesson: jQuery vs. Vanilla JavaScript](./11_jQuery_vs_VanillaJS.md)
