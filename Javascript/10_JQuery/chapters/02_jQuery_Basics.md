@@ -1,4 +1,4 @@
-# 📌 Chapter 2: jQuery Basics
+#  Chapter 2: jQuery Basics
 
 ## JQuery UseCase
 The jQuery library contains the following features:
@@ -38,14 +38,14 @@ $(selector).action( function{} )
 
 
 
-## 🚀 Introduction
+##  Introduction
 jQuery simplifies JavaScript programming by providing an easy-to-use syntax for DOM manipulation, event handling, and AJAX interactions. Understanding the basics of jQuery is crucial for building interactive and responsive web applications efficiently.
 
----
+<br>
 
-## 📖 Topics Covered
+##  Topics Covered
 
-### 🔹 1. jQuery Syntax & Selecting Elements
+###  1. jQuery Syntax & Selecting Elements
 - **Using the `$()` function**
 - **Selecting by ID, Class, and Tag Name**
 - **Attribute-based selection**
@@ -58,7 +58,7 @@ jQuery simplifies JavaScript programming by providing an easy-to-use syntax for 
   $("[type='text']").val("Hello"); // Select input elements with type text
   ```
 
-### 🔹 2. The `document.ready()` Function
+###  2. The `document.ready()` Function
 - Ensures jQuery runs only after the DOM is fully loaded.
 - **Example:**
   ```javascript
@@ -75,7 +75,7 @@ jQuery simplifies JavaScript programming by providing an easy-to-use syntax for 
   });
   ```
 
-### 🔹 3. Basic Selectors in jQuery
+###  3. Basic Selectors in jQuery
 | Selector | Description | Example |
 |----------|------------|---------|
 | `object` | Select element by object | `$(object)` eg `$(document)` |
@@ -85,21 +85,21 @@ jQuery simplifies JavaScript programming by providing an easy-to-use syntax for 
 | `*` | Select all elements | `$("*")` |
 | `[attr]` | Select elements with an attribute | `$("[type='text']")`  or `$("[href]")`selects all href atributes elems |
 
-### 🔹 4. Chaining Methods
+### 4. Chaining Methods
 - Apply multiple methods in a single line.
 - **Example:**
   ```javascript
   $("#box").css("color", "blue").slideUp(1000).slideDown(1000);
   ```
 
----
+<br>
 
-## 🎯 Real-World Applications
+##  Real-World Applications
 - **Interactive UI:** Use jQuery to create smooth transitions and effects.
 - **Form Enhancements:** Auto-fill fields dynamically.
 - **Content Manipulation:** Change webpage elements dynamically.
 
 ---
 
-📌 **Next Chapter:** [jQuery Events →](./3_jQuery_Events.md)
+ **Next Chapter:** [jQuery Events →](./3_jQuery_Events.md)
 
