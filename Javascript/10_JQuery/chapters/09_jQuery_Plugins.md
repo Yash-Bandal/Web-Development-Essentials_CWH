@@ -248,7 +248,9 @@ $("p").highlight("lightblue");
 ```
 This will change the background color of all `<p>` elements to **light blue**.
 
----
+
+<br>
+
 
 ##  Summary
 - **jQuery plugins** extend functionality with minimal code.
