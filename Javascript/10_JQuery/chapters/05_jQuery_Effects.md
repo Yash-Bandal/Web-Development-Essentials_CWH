@@ -1,9 +1,9 @@
-# Chapter 5: 💫 Effects and Animations in jQuery
+# Chapter 5:  Effects and Animations in jQuery
 
-## 📌 Introduction
+##  Introduction
 
 One of the most powerful features of jQuery is its ability to create smooth effects and animations with minimal code. jQuery provides built-in methods to manipulate the visibility and appearance of elements dynamically.
-## 🎯 Topics Covered
+##  Topics Covered
 - Hiding and showing elements
 - Fading effects
 - Sliding effects
@@ -11,7 +11,9 @@ One of the most powerful features of jQuery is its ability to create smooth effe
 - Stopping animations
 - Callback functions
 
----
+
+<br>
+
 
 # jQuery Effects 
 
@@ -35,6 +37,13 @@ $("#show").click(function(){
   $("p").show();
 });
 ```
+
+
+<br>
+
+
+
+
 ## 2.jQuery toggle()
 ```
 $(selector).toggle(speed,callback);
@@ -45,6 +54,9 @@ $("button").click(function(){
   $("p").toggle();
 });
 ```
+
+<br>
+
 
 ### 3. jQuery Fading Methods
 With jQuery you can fade an element in and out of visibility.
@@ -110,6 +122,9 @@ $("button").click(function(){
 See : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadeto
 
 
+<br>
+
+
 ### 4. jQuery Sliding Methods
 With jQuery you can create a sliding effect on elements.
 
@@ -157,6 +172,9 @@ $("#flip").click(function(){
 See : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_toggle
 
 
+<br>
+
+
 ### 5. jQuery Animations - The animate() Method
 The jQuery animate() method is used to create custom animations.
 
@@ -186,6 +204,9 @@ see : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation1
 
 see2 : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation1_multicss
 
+<br>
+
+
 ### 6. jQuery stop() Method
 The jQuery `stop()` method is used to stop an animation or effect before it is finished
 
@@ -205,6 +226,9 @@ $(document).ready(function(){
 ```
 see : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_stop_slide
 
+<br>
+
+
 ### 7. jQuery Callback Functions [Imp]
 A callback function is executed after `the current effect` is 100% finished.
 JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.
@@ -222,6 +246,9 @@ $("button").click(function(){
 ```
 
 see : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide_callback
+
+<br>
+
 
 ## jQuery - Chaining
 Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.
@@ -244,7 +271,7 @@ jQuery is not very strict on the syntax; you can format it like you want, includ
 
 
 
-## 🎯 Summary
+##  Summary
 - `hide()` / `show()` / `toggle()` → Basic visibility control.
 - `fadeIn()` / `fadeOut()` / `fadeToggle()` → Smooth fade effects.
 - `slideUp()` / `slideDown()` / `slideToggle()` → Vertical animations.
@@ -252,7 +279,13 @@ jQuery is not very strict on the syntax; you can format it like you want, includ
 - `stop()` → Stops an ongoing animation.
 - **Callback functions** → Execute logic after animations finish.
 
-📌 Next Chapter: [jQuery Traversing](./6_jQuery_Traversing.md)
+
+<br>
+
+
+---
+
+ Next Chapter: [jQuery Traversing](./6_jQuery_Traversing.md)
 
 
 
