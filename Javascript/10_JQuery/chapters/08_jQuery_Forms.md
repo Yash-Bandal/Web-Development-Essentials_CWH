@@ -3,18 +3,24 @@
 ## Introduction
 Form handling is a crucial aspect of web development, allowing users to input data, submit forms, and receive feedback. jQuery simplifies form handling by providing easy-to-use methods for retrieving and modifying form values, handling events, and validating inputs.
 
----
 
-## 📌 Topics Covered
+<br>
+
+
+
+## Topics Covered
 - Getting form values
 - Setting form values
 - Handling form submission
 - Validating forms
 - Preventing default behavior
 
----
 
-## 📝 Getting Form Values
+<br>
+
+
+
+##  Getting Form Values
 To retrieve user input values from form fields, jQuery provides the `.val()` method.
 
 ### Example:
@@ -40,9 +46,11 @@ document.getElementById('getValueBtn').addEventListener('click', function() {
 });
 ```
 
----
 
-## 📝 Setting Form Values
+<br>
+
+
+##  Setting Form Values
 You can use `.val(value)` to set a new value for an input field.
 
 ### Example:
@@ -56,9 +64,12 @@ $('#setValueBtn').click(function() {
 <button id="setValueBtn">Set Value</button>
 ```
 
----
 
-## 📝 Handling Form Submission
+<br>
+
+
+
+##  Handling Form Submission
 The `.submit()` method allows handling form submission.
 
 ### Example:
@@ -76,9 +87,11 @@ $('#myForm').submit(function(event) {
 </form>
 ```
 
----
 
-## 📝 Validating Forms
+<br>
+
+
+##  Validating Forms
 We can validate user input using `.blur()` or `.keyup()` events.
 
 ### Example:
@@ -95,9 +108,12 @@ $('#email').blur(function() {
 <input type="email" id="email" placeholder="Enter your email">
 ```
 
----
 
-## 📝 Preventing Default Behavior
+<br>
+
+
+
+##  Preventing Default Behavior
 To prevent default form submission, use `event.preventDefault()`.
 
 ### Example:
@@ -108,13 +124,21 @@ $('#myForm').submit(function(event) {
 });
 ```
 
----
 
-## ✅ Summary
+<br>
+
+
+
+##  Summary
 - `.val()` is used to get or set input field values.
 - `.submit()` is used to handle form submission.
 - `.blur()` and `.keyup()` help with form validation.
 - `event.preventDefault()` prevents unwanted form submissions.
 
-🔗 **Next Lesson:** [Lesson 9: jQuery Plugins](./9_jQuery_Plugins.md)
+
+<br>
+
+---
+ 
+ **Next Lesson:** [Lesson 9: jQuery Plugins](./9_jQuery_Plugins.md)
 
