@@ -127,6 +127,93 @@ nodemon app.js
 ```
 
 <br>
+<br>
+
+### Node.js First Project Setup - Quick Flow
+
+1. Install Node.js
+
+* Download from [Node.js official website](https://nodejs.org/)
+* Verify installation:
+
+```bash
+node -v
+npm -v
+```
+
+2. Create Project Folder
+
+```bash
+mkdir my-first-node-app
+cd my-first-node-app
+```
+
+ 3. Initialize Project
+
+```bash
+npm init -y
+```
+
+4. Create Main File
+
+* Create `index.js`:
+
+```javascript
+console.log("Hello Node.js!");
+```
+
+* Run:
+
+```bash
+node index.js
+```
+
+5. Create Simple Express Server (Optional)
+
+* Install Express:
+
+```bash
+npm install express
+```
+
+* Update `index.js`:
+
+```javascript
+const express = require("express");
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+  res.send("Hello Express!");
+});
+
+app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
+```
+
+* Run:
+
+```bash
+node index.js
+```
+
+ 6. Optional: Use nodemon for Auto-Restart
+
+```bash
+npm install -g nodemon
+nodemon index.js
+```
+
+7. Basic Project Structure
+
+```
+my-first-node-app/
+├── node_modules/
+├── package.json
+└── index.js
+```
+
+
+<br>
 
 ---
 
