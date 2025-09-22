@@ -344,6 +344,31 @@ confirm the installation via `package.json`
   },
 ```
 
+
+[With Postcss]
+```bash
+npm install -D @tailwindcss/postcss
+```
+and
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+confirm the installation via `package.json`
+```json
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "vite": "^7.1.6"
+  }
+```
+
 #### 4. Add these two lines inside `vite.config.js`
 ```js
 import { defineConfig } from 'vite'
@@ -370,17 +395,35 @@ and press `CTRL + s` to save
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 .
 .
+remove this default css..
 ```
 
-#### 6. Start Building 
+#### 6. Configure App.jsx For trial
+rfc
+```jsx
+export default function App() {
+  return (
+    <h1 className='text-lg font-bold underline text-red-500'>
+      YB-Tutorials
+    </h1>
+  )
+}
+```
+
+
+
+#### 7. Start Building 
 ```bash
 npm run dev
 ```
+and Visit `http://localhost:5173/` 
 
 **Done...!**
 
 ---
+> [!Tip]
 > Tailwind CSS Version 4+ Latest supports auto cinfigurations, learn more about it
+> we dont have `tailwind.config.js` and `postcss.config.j`
 ---
 
 Now Check working <br>
