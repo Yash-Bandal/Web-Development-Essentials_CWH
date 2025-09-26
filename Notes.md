@@ -82,3 +82,11 @@ getElementsByTagName("input")     //not work
 - Its simple, just prrocess datta at backend and create/parse into a JSON format and create a **POST** request from backend -JSONIFY
 - On the frontend, fetch the api sent from backend
 - Use CORS library
+
+
+<br>
+
+
+# Errors
+1. If you thinK AI isnt solving problem, or showing different things, ask what version of library its using and install that version only
+2. Mostly download old versions only, new are experimenttal
