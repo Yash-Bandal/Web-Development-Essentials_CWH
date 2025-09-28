@@ -24,6 +24,21 @@ display : flex and justify all props
 ### javascript
 designMode = on..temporarily edit websites
 
+<br>
+
+---
+
+<br>
+
+#  Design Thinking
+1. Visit the website you want to clone design
+2. Inspect sections and their css
+3. Map on a plain paper
+4. Then implement
+5. Dont go to chatgpt without a proper structure, use AI sometimes for errors and enhance something, not blind coding
+
+<br>
+
 ### Hamburger nav bar
 You can toggle the visibility of a hamburger menu close button using CSS display: none; [default] and display: block;[on phone media query] based on a media query for mobile devices.
 
