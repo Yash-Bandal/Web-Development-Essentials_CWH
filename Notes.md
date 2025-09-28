@@ -69,18 +69,14 @@ You can toggle the visibility of a hamburger menu close button using CSS display
 
 
 
-
-
-
-
-## Text animations
+### Text animations
 [1](https://tobiasahlin.com/moving-letters/)
 [2](https://prismic.io/blog/css-hover-effects#3-explosive-text-effect)
 
-## Swwet Alerts
+### Swwet Alerts
 [SweetAlerts](https://sweetalert2.github.io/)
 
-## UI/UX Componants
+### UI/UX Componants
 
 | Library                        | Description                             | Website                                                                                    |
 | ------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -95,7 +91,7 @@ You can toggle the visibility of a hamburger menu close button using CSS display
 | **Flatpickr**                  | Lightweight date picker                 | [https://flatpickr.js.org](https://flatpickr.js.org)                                       |
 | **Swiper.js**                  | Modern mobile touch slider              | [https://swiperjs.com](https://swiperjs.com)                                               |
 
-## UI Kits (Templates)
+### UI Kits (Templates)
 
 | Kit                   | Description                                  | Website                                          |
 | --------------------- | -------------------------------------------- | ------------------------------------------------ |
