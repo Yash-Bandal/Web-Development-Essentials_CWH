@@ -39,11 +39,11 @@ designMode = on..temporarily edit websites
 
 <br>
 
-### Hamburger nav bar
-You can toggle the visibility of a hamburger menu close button using CSS display: none; [default] and display: block;[on phone media query] based on a media query for mobile devices.
-
-### Tips
-- A good way is to make the web responsive on phone ..ie adding media queries side by side
+# Knowledge based
+## Backend FrontEnd Connection
+- Its simple, just prrocess datta at backend and create/parse into a JSON format and create a **POST** request from backend -JSONIFY
+- On the frontend, fetch the api sent from backend
+- Use CORS library
 
 ### why do we declare global var of local
 because local var changes every time new funct called...global is static
@@ -55,8 +55,22 @@ getElementsByTagName("input")     //not work
 ```
 
 
-### Some common error faced 
-- see item.dataset / item.targer.dataset...see what we need while accesing contents from the folder
+> [!Tip]
+>  A good way is to make the web responsive on phone ..ie adding media queries side by side
+
+<br>
+
+---
+
+# Resources
+### Hamburger nav bar
+You can toggle the visibility of a hamburger menu close button using CSS display: none; [default] and display: block;[on phone media query] based on a media query for mobile devices.
+
+
+
+
+
+
 
 
 ## Text animations
@@ -93,10 +107,6 @@ getElementsByTagName("input")     //not work
 | **CodePen Templates** | Search "UI template", "login form", etc.     | [https://codepen.io](https://codepen.io)         |
 
 
-## Backend FrontEnd Connection
-- Its simple, just prrocess datta at backend and create/parse into a JSON format and create a **POST** request from backend -JSONIFY
-- On the frontend, fetch the api sent from backend
-- Use CORS library
 
 
 <br>
@@ -105,3 +115,4 @@ getElementsByTagName("input")     //not work
 # Errors
 1. If you thinK AI isnt solving problem, or showing different things, ask what version of library its using and install that version only
 2. Mostly download old versions only, new are experimenttal
+3. See item.dataset / item.targer.dataset...see what we need while accesing contents from the folder
