@@ -5,6 +5,8 @@
 4. dont use `a href` use `Link to`
 5. For centering, use justify center and itemcenter mxauto
 
+<br>
+
 ### Error Handling
 1. Ensure changes between old and new version of react
 2. If image / componant not visible ..check {}.generally {} is used for multiple componant import, for single import directly import `img from ../assets/images/img.png`
