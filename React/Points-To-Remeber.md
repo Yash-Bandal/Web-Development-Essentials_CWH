@@ -4,7 +4,7 @@
 3. use `uselocation` hook to maintain page state while switching across ..eg in navbar..same nav on diff pages need thid
 4. dont use `a href` use `Link to`
 5. For centering, use justify center and itemcenter mxauto
-
+ 
 <br>
 
 ### Error Handling
