@@ -1,3 +1,10 @@
+### Frame motion
+1. Use for animation instead of gsap
+2. Use `anmimate` instead of `whileview` and remove `viewport`, this loads animation on every mount
+3. use `uselocation` hook to maintain page state while switching across ..eg in navbar..same nav on diff pages need thid
+4. dont use `a href` use `Link to`
+5. For centering, use justify center and itemcenter mxauto
+
 ### Error Handling
 1. Ensure changes between old and new version of react
 2. If image / componant not visible ..check {}.generally {} is used for multiple componant import, for single import directly import `img from ../assets/images/img.png`
