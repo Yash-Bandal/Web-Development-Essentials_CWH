@@ -1,5 +1,5 @@
 ### Frame motion
-1. Use for animation instead of gsap  
+1. Use for animation instead of gsap   
 2. Use `anmimate` instead of `whileview` and remove `viewport`, this loads animation on every mount
 3. use `uselocation` hook to maintain page state while switching across ..eg in navbar..same nav on diff pages need thid
 4. dont use `a href` use `Link to`
