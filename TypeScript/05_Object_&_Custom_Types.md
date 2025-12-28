@@ -2,7 +2,7 @@
 
 ## 5.1 Object Type Annotations
 
-Objects can be typed by explicitly describing their shape.
+Objects can be typed by explicitly describing their shape. 
 
 ```ts
 const user: { name: string; age: number } = {
