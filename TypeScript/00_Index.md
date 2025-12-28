@@ -1,5 +1,7 @@
 # TypeScript 
 
+### [Sudarshan Sir Notes](https://sudarshansudarshan.github.io/winternship/case-studies/)
+
 ## Index
 
 ### 1. Fundamentals
