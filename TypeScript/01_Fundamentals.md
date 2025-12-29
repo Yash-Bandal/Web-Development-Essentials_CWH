@@ -1,6 +1,6 @@
 # 1. Fundamentals
 
-## 1.1 What is TypeScript (Deep Understanding)
+## 1.1 What is TypeScript (Deep Understanding) 
 
 * TypeScript is a **typed superset of JavaScript** created by Microsoft.
 * It does **not change how JavaScript works at runtime**.
