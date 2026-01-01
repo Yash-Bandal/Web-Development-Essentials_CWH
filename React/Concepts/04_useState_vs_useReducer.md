@@ -157,7 +157,8 @@ dispatch({ type: 'increment' });
 
 Meaning:
 
-> Apply the rule for increment defined in the reducer
+> Apply the rule for increment defined in the reducer\
+> “Hey reducer, apply the increment rule.”
 
 State is **never modified directly**.
 
