@@ -5,6 +5,9 @@
 React provides two primary hooks for managing state in functional components:
 
 * **useState** → Best for simple, independent state values
+  - ```tsx
+    const [state, setState] = useState<Type>(initialValue);
+    ```
 * **useReducer** → Best for complex state logic with strict update rules
 
 Think of it this way:
