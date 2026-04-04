@@ -1,7 +1,7 @@
 # Notes :
  
 ### HTML
-display : flex and justify all props
+display : flex and justify all props.
 
 ### CSS
 1. Box Shadow set:
