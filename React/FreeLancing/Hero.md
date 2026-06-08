@@ -1,0 +1,5 @@
+1. [Zoom hero](https://codepen.io/EricPorter/pen/MeQwWG)
+2. [Title](https://codepen.io/magnificode/pen/GpqGOm)
+3. [Parallax](https://codepen.io/aryancodeworm/pen/rNKqgpY)
+4. [Video](https://codepen.io/GusRuss89/pen/bVwNrE)
+5. [Slide](https://codepen.io/pehaa/pen/QWjwyxy)
