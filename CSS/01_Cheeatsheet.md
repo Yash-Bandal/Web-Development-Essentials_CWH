@@ -11,9 +11,9 @@
 1. [Syntax](#syntax)
 2. [Selectors](#selectors)
 3. [Base](#base)
-4. [Font, Text and Typography](#1-font--text-and-typography)
-   4.1. [Font](#a-font)
-   4.2. [Text](#b-text)
+4. [Font, Text and Typography](#1-font--text-and-typography)\
+   4.1. [Font](#a-font)\
+   4.2. [Text](#b-text)\
 5. [Background](#2-background)
 6. [Positioning & Display](#3-positioning--display)
 7. [Border](#4-border)
@@ -25,12 +25,12 @@
 13. [List & Markers](#10-list--markers)
 14. [Animations](#11-animations)
 15. [Transitions and Transforms](#12-transitions-and-transforms)
-16. [CSS Flexbox](#13-css-flexbox)
-    16.1. [Parent Properties (Flex Container)](#a-parent-properties-flex-container)
-    16.2. [Child Properties (Flex Items)](#b-child-properties-flex-items)
-17. [CSS Grid](#15-css-grid)
-    17.1. [Parent Properties (Grid Container)](#a-parent-properties-grid-container)
-    17.2. [Child Properties (Grid Items)](#b-child-properties-grid-items)
+16. [CSS Flexbox](#13-css-flexbox)\
+    16.1. [Parent Properties (Flex Container)](#a-parent-properties-flex-container)\
+    16.2. [Child Properties (Flex Items)](#b-child-properties-flex-items)\
+17. [CSS Grid](#15-css-grid)\
+    17.1. [Parent Properties (Grid Container)](#a-parent-properties-grid-container)\
+    17.2. [Child Properties (Grid Items)](#b-child-properties-grid-items)\
 18. [CSS Variables](#css-variables)
 19. [Optional but Useful to Include](#optional-but-useful-to-include)
 20. [References](#references)
