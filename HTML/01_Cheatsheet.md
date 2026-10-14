@@ -5,6 +5,28 @@
 
 <br>
 
+## Index
+
+1. [Boilerplate](#1-boilerplate)
+2. [Headings](#2-headings)
+3. [Containers](#3-containers)
+4. [Text Formatting](#4-text-formatting)
+5. [Lists](#5-lists)
+6. [Media](#6-media)
+7. [Table](#7-table)
+8. [Links](#8-links)
+9. [Form](#9-form)
+10. [Form Elements](#10-form-elements)
+11. [Characters & Symbols](#11-characters--symbols)
+12. [Semantic Elements](#12-semantic-elements)
+13. [Meta Tags](#13-meta-tags)
+14. [CSS Integration](#14-css-integration)
+15. [Accessibility](#15-accessibility)
+16. [Responsive Design](#16-responsive-design)
+17. [JavaScript Integration](#17-javascript-integration)
+18. [Comments](#18-comments)
+19. [Tips for HTML Beginners](#19-tips-for-html-beginners)
+
 <br>
 
 ---
