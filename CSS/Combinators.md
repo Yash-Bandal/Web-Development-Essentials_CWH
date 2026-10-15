@@ -1,3 +1,4 @@
+# Combinators
 In CSS, combinators tell us the relationship between HTML elements so we can select the elements we want to style.
 
 Imagine this HTML:
