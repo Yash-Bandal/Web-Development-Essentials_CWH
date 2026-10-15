@@ -3,7 +3,7 @@ In CSS, combinators tell us the relationship between HTML elements so we can sel
 
 Imagine this HTML:
 
-```
+```html
 <div>
     <p>Hello</p>
     <section>
