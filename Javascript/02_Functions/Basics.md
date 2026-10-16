@@ -23,7 +23,12 @@
 19. [Quick Comparison](#19-quick-comparison)
 20. [Practice Exercises](#20-practice-exercises)
 
+<br>
+
 ---
+
+<br>
+
 
 ## 1. Introduction to Functions
 
@@ -57,6 +62,12 @@ Here:
 - `greet()` calls and executes the function.
 
 **Important:** Defining a function does not normally execute its body. Calling it does.
+
+<br>
+
+---
+
+<br>
 
 ## 2. Function Syntax, Parameters and Arguments
 
@@ -116,6 +127,12 @@ console.log(introduce("Yash", 22));
 Yash is 22 years old.
 ```
 
+<br>
+
+---
+
+<br>
+
 ## 3. Return vs console.log()
 
 These two are different and should not be confused.
@@ -166,6 +183,13 @@ undefined
 The function prints `8`, but it has no explicit return statement. Therefore, the function call evaluates to `undefined`.
 
 **Rule:** Use `return` when the calling code needs the result. Use `console.log()` to inspect or display values.
+
+<br>
+
+---
+
+<br>
+
 
 ## 4. Function Declaration
 
@@ -240,6 +264,12 @@ Hello, John!
 
 **When to use:** Named, reusable operations such as `calculateTotal()`, `getMovieDetails()` and `validateForm()`.
 
+<br>
+
+---
+
+<br>
+
 ## 5. Function Expression
 
 A function expression creates a function and assigns it to a variable.
@@ -290,6 +320,13 @@ const addNumbers = function(a, b) {
 ```
 
 **When to use:** When storing functions in variables or passing them as arguments to other functions.
+
+<br>
+
+---
+
+<br>
+
 
 ## 6. Arrow Functions
 
@@ -388,6 +425,13 @@ const add = (a, b) => {
 
 **When to use:** Short calculations, callbacks, array methods and modern frontend code.
 
+<br>
+
+---
+
+<br>
+
+
 ## 7. Anonymous Functions
 
 An anonymous function is a function without its own name.
@@ -421,6 +465,13 @@ setTimeout(() => {
 Anonymous functions are commonly used as callbacks, but not every anonymous function is a callback.
 
 **When to use:** When a function is needed for a specific operation and does not require a separate name.
+
+<br>
+
+---
+
+<br>
+
 
 ## 8. Immediately Invoked Function Expression (IIFE)
 
@@ -470,6 +521,13 @@ Private value
 The variable `secret` is local to the function and cannot be accessed outside it.
 
 IIFEs were historically useful for avoiding global variables. Modern JavaScript also provides modules and block scope, so IIFEs are less necessary in many new projects.
+
+<br>
+
+---
+
+<br>
+
 
 ## 9. Callback Functions
 
@@ -539,6 +597,13 @@ Here, the function passed to `addEventListener()` is a callback that the browser
 
 **When to use:** Event handlers, timers, array methods and asynchronous operations.
 
+<br>
+
+---
+
+<br>
+
+
 ## 10. Default Parameters
 
 Default parameters provide fallback values when an argument is omitted or explicitly passed as `undefined`.
@@ -592,6 +657,13 @@ Hello, null!
 ```
 
 **When to use:** Optional discounts, default quantities, pagination limits and other optional inputs.
+
+<br>
+
+---
+
+<br>
+
 
 ## 11. Rest Parameters
 
@@ -660,6 +732,13 @@ console.log(Math.max(...numbers));
 
 **When to use:** Functions that need a variable number of inputs.
 
+<br>
+
+---
+
+<br>
+
+
 ## 12. Function as a Return Value
 
 A function can return another function.
@@ -724,6 +803,13 @@ console.log(triple(5));
 ```
 
 **When to use:** Function factories, configurable operations and reusable validators.
+
+<br>
+
+---
+
+<br>
+
 
 ## 13. Higher-Order Functions
 
@@ -800,6 +886,13 @@ console.log(recommendedMovies);
 
 **When to use:** Processing arrays of movies, users, products, orders and other application data.
 
+<br>
+
+---
+
+<br>
+
+
 ## 14. Recursive Functions
 
 A recursive function calls itself to solve a smaller version of the same problem.
@@ -850,6 +943,13 @@ Two important parts:
 Without a suitable base case, recursion may continue until JavaScript throws a stack overflow error.
 
 **When to use:** Tree traversal, nested structures and problems naturally broken into smaller versions of themselves.
+
+<br>
+
+---
+
+<br>
+
 
 ## 15. Closures
 
@@ -916,6 +1016,13 @@ Each invocation of `makeCounter()` creates a separate `count` variable.
 
 **When to use:** Private state, counters, function factories and event-handler patterns.
 
+<br>
+
+---
+
+<br>
+
+
 ## 16. Promises
 
 A Promise represents the eventual result of an operation that may complete in the future.
@@ -973,6 +1080,13 @@ Promise created
 The executor function passed to `new Promise()` runs immediately. The Promise represents the eventual outcome; creating a Promise does not automatically make synchronous work asynchronous.
 
 **When to use:** Network requests, timers and operations whose results may become available later.
+
+<br>
+
+---
+
+<br>
+
 
 ## 17. Async and Await
 
@@ -1056,6 +1170,13 @@ This example requires a server that serves `movies.json` at the specified path.
 
 **When to use:** Fetching movie data from an API, loading user information and submitting forms to a backend.
 
+<br>
+
+---
+
+<br>
+
+
 ## 18. Generator Functions
 
 A generator is a special function that can pause execution and resume later.
@@ -1105,6 +1226,13 @@ The `value` property contains the yielded value. The `done` property indicates w
 
 **When to use:** Custom iterators, lazy sequences and specialised data-processing patterns.
 
+<br>
+
+---
+
+<br>
+
+
 ## 19. Quick Comparison
 
 | Concept | Main purpose |
@@ -1126,6 +1254,13 @@ The `value` property contains the yielded value. The `done` property indicates w
 | Generator | Pause and resume execution using `yield`. |
 
 **Note:** These are not 15 completely separate function types. Several concepts overlap. For example, an arrow function can be a callback, and a function returned by another function can form a closure.
+
+<br>
+
+---
+
+<br>
+
 
 ## 20. Practice Exercises
 
