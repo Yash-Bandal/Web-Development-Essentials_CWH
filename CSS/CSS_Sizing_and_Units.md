@@ -21,6 +21,8 @@
 
 <br>
 
+
+
 ## 1. Introduction
 
 CSS units are used to define the size of elements, text, spacing, and other properties.
@@ -45,7 +47,10 @@ CSS units are mainly divided into two categories:
 1. **Absolute units** — For example, `px`.
 2. **Relative units** — For example, `%`, `em`, `rem`, `vw`, and `vh`.
 
----
+
+<br>
+
+
 
 ## 2. Pixels (`px`)
 
@@ -72,7 +77,10 @@ In this example:
 
 Use pixels when you need a specific size, such as border thickness, small icons, or precise spacing.
 
----
+
+<br>
+
+
 
 ## 3. Percentage (`%`)
 
@@ -134,7 +142,10 @@ Container: 800px
 
 Use percentages when an element should resize according to its parent.
 
----
+
+<br>
+
+
 
 ## 4. Viewport Units (`vw` and `vh`)
 
@@ -230,7 +241,10 @@ The three sections together equal the viewport height, assuming their sizing and
 
 Use them for full-screen layouts, hero sections, responsive widths, and elements that should scale with the viewport.
 
----
+
+<br>
+
+
 
 ## 5. `vmin` and `vmax`
 
@@ -285,7 +299,9 @@ Use `vmin` to keep an element proportionate to the smaller screen dimension, suc
 
 Use `vmax` when sizing relative to the larger screen dimension is useful.
 
----
+
+<br>
+
 
 ## 6. `em` — Relative to Font Size
 
@@ -382,7 +398,10 @@ The font size increases at each level because each child uses its parent's font 
 
 Use `em` when you want text or spacing to scale relative to an element's typography.
 
----
+
+<br>
+
+
 
 ## 7. `rem` — Relative to the Root Font Size
 
@@ -480,7 +499,10 @@ button {
 }
 ```
 
----
+
+<br>
+
+
 
 ## 8. `min-width`, `max-width`, `min-height`, and `max-height`
 
@@ -577,7 +599,9 @@ This means:
 
 If the viewport is too narrow to accommodate the minimum width, the element can overflow its containing area. Choose minimums carefully for responsive layouts.
 
----
+
+<br>
+
 
 ## 9. `margin: auto` and Centering
 
@@ -626,7 +650,10 @@ The browser centers the container horizontally when the layout conditions permit
 
 **Important:** `margin: auto` does not automatically center an element vertically.
 
----
+
+<br>
+
+
 
 ## 10. `box-sizing: border-box`
 
@@ -658,3 +685,5 @@ Total width = Content + Padding + Border
     box-sizing: border-box;
     width: 200px;
     padding
+}
+```
