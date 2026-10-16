@@ -1,94 +1,97 @@
 # Combinators
 In CSS, combinators tell us the relationship between HTML elements so we can select the elements we want to style.
 
-Imagine this HTML:
-
-```html
-<div>
-    <p>Hello</p>
-    <section>
-        <p>Welcome</p>
-    </section>
-</div>
-
-<p>Goodbye</p>
-```
-
 CSS has 4 main combinators.
+
+1. **` ` Descendents** - 
+2. **`>` Child**
+3. **`~` General Sibling**
+4. **`+` Adjacent Sibling**
+
+<br>
 
 ## 1. Descendant combinator — space (` `)
 
 Selects all matching elements inside another element, even if they are nested deeply.
 
+```html
+<div>
+    <p>This is #1</p>
+    <p>This is #2</p>
+    <div>
+       <p>This is #3</p>
+    </div>
+</div>
+
+<p>This is #4</p>
+<p>This is #5</p>
 ```
+```css
 div p {
-    color: red;
+    background-color: yellow;
 }
 ```
 
 Result
 
-div
+<img width="240" alt="image" src="https://github.com/user-attachments/assets/56478f3f-5ec6-4e83-b4ea-e989ac671dca" />
 
-Hello — red
 
-section
-
-Welcome — red
-
-Goodbye — unchanged
-
-Why? Both `Hello` and `Welcome` are inside the `div`. The space means any descendant, not just an immediate child.
 
 ## 2. Child combinator — `>`
 
 Selects only the direct children of an element.
 
+```html
+<div>
+    <p>This is #1</p>
+    <p>This is #2</p>
+    <div>
+       <p>This is #3</p>
+    </div>
+</div>
+
+<p>This is #4</p>
+<p>This is #5</p>
 ```
+```css
 div > p {
-    color: blue;
+    background-color: yellow;
 }
 ```
 
 Result
 
-div
+<img width="240" alt="image" src="https://github.com/user-attachments/assets/d33275b0-d6c8-43c7-b7d2-bdf1a25e379e" />
 
-Hello — blue
 
-section
-
-Welcome — unchanged
-
-Goodbye — unchanged
-
-Why? `Hello` is a direct child of `div`, but `Welcome` is inside `section`, so it is not a direct child of `div`.
 
 ## 3. Adjacent sibling combinator — `+`
 
 Selects the immediately following sibling.
 
-```
-<h2>Movies</h2>
-<p>First paragraph</p>
-<p>Second paragraph</p>
-```
+```html
+<div>
+    <p>This is #1</p>
+    <p>This is #2</p>
+    <div>
+       <p>This is #3</p>
+    </div>
+</div>
 
+<p>This is #4</p>
+<p>This is #5</p>
 ```
-h2 + p {
-    color: green;
+```css
+div + p {
+    background-color: yellow;
 }
 ```
 
 Result:
 
-### Movies
+<img width="240" alt="image" src="https://github.com/user-attachments/assets/8e07dc7c-043b-4b49-9277-9bc0eee99140" />
 
-First paragraph — green
-
-Second paragraph — unchanged
-
-Why? The first `p` comes immediately after the `h2`. The second `p` does not.
 
 ## 4. General sibling combinator — `~`
 
@@ -96,21 +99,28 @@ Selects all matching siblings that come after the specified element.
 
 Using the same HTML:
 
+```html
+<div>
+    <p>This is #1</p>
+    <p>This is #2</p>
+    <div>
+       <p>This is #3</p>
+    </div>
+</div>
+
+<p>This is #4</p>
+<p>This is #5</p>
 ```
-h2 ~ p {
-    color: purple;
+```css
+div ~ p {
+    background-color: yellow;
 }
 ```
 
 Result:
 
-### Movies
+<img width="240" alt="image" src="https://github.com/user-attachments/assets/471b5575-77f3-4926-bfe0-76da0f59f3a3" />
 
-First paragraph — purple
-
-Second paragraph — purple
-
-Why? Both paragraphs come after the `h2` and share the same parent.
 
 ## Quick comparison
 
