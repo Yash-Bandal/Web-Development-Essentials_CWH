@@ -3,7 +3,7 @@ In CSS, combinators tell us the relationship between HTML elements so we can sel
 
 CSS has 4 main combinators.
 
-1. **` ` Descendents** - 
+1. **` ` Descendents** 
 2. **`>` Child**
 3. **`~` General Sibling**
 4. **`+` Adjacent Sibling**
