@@ -23,7 +23,8 @@ console.log(arr);
     });
 ```
 
-//-------------------------------------   
+<br>
+
 # `target` vs. `currentTarget` in JavaScript Events
 
 ## **What is `target`?**
