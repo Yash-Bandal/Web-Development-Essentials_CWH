@@ -35,6 +35,12 @@
 19. [Optional but Useful to Include](#optional-but-useful-to-include)
 20. [References](#references)
 
+
+<br>
+
+### More
+1. [Pseudo  Classes](#1-pseudo-classes)
+
 <br>
 
 ---
@@ -1088,3 +1094,242 @@ References: <br>
 - [Emmet Cheatsheet](https://docs.emmet.io/cheat-sheet/)
 - [W3School](https://www.w3schools.com/css/default.asp)
 - [CWH](https://www.codewithharry.com/blogpost/css-cheatsheet)
+
+
+<br>
+
+## More
+
+## 1 Pseudo Classes
+### Complete List of Pseudo-Classes with Code Examples
+
+```css
+/* ==========================================================================
+   1. USER ACTION & LINK pseudo-classes
+   ========================================================================== */
+
+a:hover {
+  color: #ff0000;
+}
+
+button:active {
+  background-color: #0000ff;
+}
+
+input:focus {
+  border-color: #00ff00;
+}
+
+a:visited {
+  color: #800080;
+}
+
+a:link {
+  color: #0000ff;
+}
+
+a:any-link {
+  color: #00ffff;
+}
+
+button:focus-visible {
+  outline: 2px solid #0000ff;
+}
+
+button:focus-within {
+  border-color: #ff00ff;
+}
+
+/* ==========================================================================
+   2. TREE-STRUCTURAL & POSITION pseudo-classes
+   ========================================================================== */
+
+:root {
+  --primary-color: #333333;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:only-child {
+  margin: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-last-child(2) {
+  background-color: #ffff00;
+}
+
+p:first-of-type {
+  font-size: 1.2rem;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+p:only-of-type {
+  color: #555555;
+}
+
+h2:nth-of-type(2) {
+  color: #008000;
+}
+
+h2:nth-last-of-type(1) {
+  text-transform: uppercase;
+}
+
+p:empty {
+  display: none;
+}
+
+/* ==========================================================================
+   3. LOGICAL & FUNCTIONAL pseudo-classes
+   ========================================================================== */
+
+div:not(.special) {
+  opacity: 0.5;
+}
+
+:is(h1, h2, h3):hover {
+  color: #ff5722;
+}
+
+:where(h1, h2, h3) {
+  margin: 0;
+}
+
+article:has(img) {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ==========================================================================
+   4. FORM & INPUT STATE pseudo-classes
+   ========================================================================== */
+
+input[type="checkbox"]:checked {
+  accent-color: #2196f3;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+input:enabled {
+  background-color: #ffffff;
+}
+
+input:required {
+  border-left: 3px solid #ff0000;
+}
+
+input:optional {
+  border-left: 1px solid #cccccc;
+}
+
+input:valid {
+  border-color: #4caf50;
+}
+
+input:invalid {
+  border-color: #f44336;
+}
+
+input:in-range {
+  background-color: #e8f5e9;
+}
+
+input:out-of-range {
+  background-color: #ffebee;
+}
+
+input:read-only {
+  background-color: #eee;
+}
+
+input:read-write {
+  background-color: #fff;
+}
+
+input:placeholder-shown {
+  border-color: #aaa;
+}
+
+input:autofill {
+  box-shadow: 0 0 0 30px #fff8dc inset;
+}
+
+input:default {
+  outline: 2px solid #2196f3;
+}
+
+input:indeterminate {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   5. OTHER / SPECIAL pseudo-classes
+   ========================================================================== */
+
+section:target {
+  background-color: #fffde7;
+}
+
+p:lang(es) {
+  font-style: italic;
+}
+
+:defined {
+  visibility: visible;
+}
+
+:fullscreen {
+  background-color: #000000;
+}
+
+:picture-in-picture {
+  box-shadow: 0 0 10px #000;
+}
+
+/* ==========================================================================
+   6. MEDIA & RESOURCE PLAYBACK pseudo-classes
+   ========================================================================== */
+
+video:playing {
+  border: 2px solid #4caf50;
+}
+
+video:paused {
+  border: 2px solid #ff9800;
+}
+
+video:seeking {
+  opacity: 0.8;
+}
+
+video:buffering {
+  filter: blur(1px);
+}
+
+video:stalled {
+  opacity: 0.5;
+}
+
+video:muted {
+  filter: grayscale(100%);
+}
+
+video:volume-locked {
+  cursor: not-allowed;
+}
+
+```
