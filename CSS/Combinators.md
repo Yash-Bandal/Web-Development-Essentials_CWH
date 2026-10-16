@@ -130,17 +130,3 @@ Result:
 | `A > B`    | Child            | Directly inside A           |
 | `A + B`    | Adjacent sibling | The very next sibling       |
 | `A ~ B`    | General sibling  | All later matching siblings |
-
-## Test your understanding
-
-Suppose the HTML is:
-
-```
-<div>
-    <p>One</p>
-    <section>
-        <p>Two</p>
-    </section>
-</div>
-```
-
