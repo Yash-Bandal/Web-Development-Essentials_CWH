@@ -4,19 +4,21 @@
 
 ## Index
 
+## Index
+
 1. [Introduction](#1-introduction)
-2. [Pixels (px)](#-2-pixels-px)
-3. [Percentage (%) ](#-3-percentage-)
-4. [Viewport Units (vw and vh)](#-4-viewport-units-vw-and-vh)
-5. [vmin and vmax](#-5-vmin-and-vmax)
-6. [em — Relative to Font Size](#-6-em--relative-to-font-size)
-7. [rem — Relative to the Root Font Size](#-7-rem--relative-to-the-root-font-size)
-8. [min-width, max-width, min-height, and max-height](#-8-min-width-max-width-min-height-and-max-height)
-9. [margin: auto and Centering](#-9-margin-auto-and-centering)
-10. [box-sizing: border-box](#-10-box-sizing-border-box)
-11. [Common Mistakes to Avoid](#-11-common-mistakes-to-avoid)
-12. [Quick Revision Table](#-12-quick-revision-table)
-13. [Practice Questions](#-13-practice-questions)
+2. [Pixels (px)](#2-pixels-px)
+3. [Percentage (%) ](#3-percentage-)
+4. [Viewport Units (vw and vh)](#4-viewport-units-vw-and-vh)
+5. [vmin and vmax](#5-vmin-and-vmax)
+6. [em — Relative to Font Size](#6-em--relative-to-font-size)
+7. [rem — Relative to the Root Font Size](#7-rem--relative-to-the-root-font-size)
+8. [min-width, max-width, min-height, and max-height](#8-min-width-max-width-min-height-and-max-height)
+9. [margin: auto and Centering](#9-margin-auto-and-centering)
+10. [box-sizing: border-box](#10-box-sizing-border-box)
+11. [Common Mistakes to Avoid](#11-common-mistakes-to-avoid)
+12. [Quick Revision Table](#12-quick-revision-table)
+13. [Practice Questions](#13-practice-questions)
 
 <br>
 
