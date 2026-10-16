@@ -1,24 +1,28 @@
-# JavaScript Functions — Complete Notes
+# JavaScript Functions
 
 ## Index
-
+**Foundations:**
 1. [Introduction to Functions](#1-introduction-to-functions)
 2. [Function Syntax, Parameters and Arguments](#2-function-syntax-parameters-and-arguments)
 3. [Return vs console.log](#3-return-vs-consolelog)
 4. [Function Declaration](#4-function-declaration)
 5. [Function Expression](#5-function-expression)
-6. [Arrow Functions](#6-arrow-functions)
-7. [Anonymous Functions](#7-anonymous-functions)
+
+**Practical:**
+6. [Arrow Functions](#6-arrow-functions) 🏷️
+7. [Anonymous Functions](#7-anonymous-functions) 🏷️
 8. [Immediately Invoked Function Expression (IIFE)](#8-immediately-invoked-function-expression-iife)
 9. [Callback Functions](#9-callback-functions)
 10. [Default Parameters](#10-default-parameters)
 11. [Rest Parameters](#11-rest-parameters)
 12. [Function as a Return Value](#12-function-as-a-return-value)
-13. [Higher-Order Functions](#13-higher-order-functions)
-14. [Recursive Functions](#14-recursive-functions)
+13. [Higher-Order Functions](#13-higher-order-functions) 🏷️
+14. [Recursive Functions](#14-recursive-functions)  
 15. [Closures](#15-closures)
-16. [Promises](#16-promises)
-17. [Async and Await](#17-async-and-await)
+16. [Promises](#16-promises) 🏷️
+17. [Async and Await](#17-async-and-await) 🏷️
+
+**Extras:**
 18. [Generator Functions](#18-generator-functions)
 19. [Quick Comparison](#19-quick-comparison)
 20. [Practice Exercises](#20-practice-exercises)
