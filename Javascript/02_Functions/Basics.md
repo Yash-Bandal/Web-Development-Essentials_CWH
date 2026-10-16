@@ -9,6 +9,7 @@
 5. [Function Expression](#5-function-expression)
 
 **Practical:**
+
 6. [Arrow Functions](#6-arrow-functions) 🏷️
 7. [Anonymous Functions](#7-anonymous-functions) 🏷️
 8. [Immediately Invoked Function Expression (IIFE)](#8-immediately-invoked-function-expression-iife)
@@ -23,6 +24,7 @@
 17. [Async and Await](#17-async-and-await) 🏷️
 
 **Extras:**
+
 18. [Generator Functions](#18-generator-functions)
 19. [Quick Comparison](#19-quick-comparison)
 20. [Practice Exercises](#20-practice-exercises)
