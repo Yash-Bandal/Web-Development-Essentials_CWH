@@ -14,9 +14,13 @@
 
 <br>
 
+
 ## 1. Introduction
 
 The CSS `display` property defines how an element behaves in the page layout.
+
+<br>
+
 
 ## 2. display: block
 
@@ -33,6 +37,9 @@ The CSS `display` property defines how an element behaves in the page layout.
 
 **Examples:** `div`, `p`, `h1` (default display behavior).
 
+<br>
+
+
 ## 3. display: inline
 
 - Elements appear side by side.
@@ -46,6 +53,9 @@ span {
 ```
 
 Example: Two `span` elements normally appear on the same line.
+
+<br>
+
 
 ## 4. display: inline-block
 
@@ -64,6 +74,9 @@ Example: Two `span` elements normally appear on the same line.
 
 Example: Two boxes can appear side by side while maintaining their specified widths.
 
+<br>
+
+
 ## 5. display: none
 
 - Completely removes the element from the page layout.
@@ -76,6 +89,9 @@ Example: Two boxes can appear side by side while maintaining their specified wid
 ```
 
 The other elements move into the space it previously occupied.
+
+<br>
+
 
 ## 6. visibility: hidden
 
@@ -91,6 +107,9 @@ The other elements move into the space it previously occupied.
 **Remember:**
 - `display: none` → Element and its layout space are removed.
 - `visibility: hidden` → Element is hidden, but its layout space remains.
+
+<br>
+
 
 ## 7. display: flex
 
@@ -111,6 +130,9 @@ The other elements move into the space it previously occupied.
 - `align-items: center` → Aligns children along the cross axis.
 - `gap: 20px` → Adds space between children.
 
+<br>
+
+
 ## 8. display: inline-flex
 
 - Behaves like an inline-level element on the outside.
@@ -130,6 +152,9 @@ The other elements move into the space it previously occupied.
 - `flex` → The container behaves like a block-level element.
 - `inline-flex` → The container behaves like an inline-level element.
 
+<br>
+
+
 ## 9. Quick Revision Table
 
 | Property | Behavior |
@@ -141,3 +166,6 @@ The other elements move into the space it previously occupied.
 | `visibility: hidden` | Hides element but preserves its layout space |
 | `flex` | Creates a block-level flex container |
 | `inline-flex` | Creates an inline-level flex container |
+
+<br>
+
