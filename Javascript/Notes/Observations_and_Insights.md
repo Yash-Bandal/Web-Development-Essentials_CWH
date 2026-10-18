@@ -1,4 +1,4 @@
-
+## Tips
 ```js
 //form array from 1 to n..vimp trick learn
 let n = 10;
@@ -6,7 +6,54 @@ let arr = Array.from(Array(n+1).keys());
 console.log(arr);  
 ```
 
-## 1 Toggling between images
+<br>
+
+---
+
+<br>
+
+## 1. var, let, const
+
+```
+console.log(a);
+var a = 10;
+// Output: undefined
+```
+
+With `var`, JavaScript allows the early access and returns `undefined`.
+
+Now try `let` and `const`:
+
+```
+console.log(b);
+let b = 20;
+// Output: ReferenceError
+```
+
+```
+console.log(c);
+const c = 30;
+// Output: ReferenceError
+```
+
+> [!Note]
+> - `var` is initialized with `undefined` before its declaration is reached.
+> - `let` and `const` are also hoisted, but cannot be accessed before initialization. This period is called the Temporal Dead Zone (TDZ).
+
+## Quick revision
+
+| Difference                | `var`       | `let`            | `const`          |
+| ------------------------- | ----------- | ---------------- | ---------------- |
+| Scope                     | Function    | Block            | Block            |
+| Reassignment              | Allowed     | Allowed          | Not allowed      |
+| Access before declaration | `undefined` | `ReferenceError` | `ReferenceError` |
+
+<br>
+
+---
+
+
+## 2. Toggling between images
 ```js
     document.querySelector('.volume img').addEventListener('click', (e) => {
         console.log(e.target)
@@ -57,7 +104,7 @@ document.getElementById("parent").addEventListener("click", (event) => {
 - `event.target` → `<div id="parent">...</div>`  
 - `event.currentTarget` → `<div id="parent">...</div>`  
 
----
+<br>
 
 ## **Common Mistakes / Points to Remember**
 ###  **1. Using `target` incorrectly inside event delegation**
@@ -97,11 +144,11 @@ document.getElementById("parent").addEventListener("click", (event) => {
 
 <br>
 
-## **When to Use `target` vs. `currentTarget`?**
+### **When to Use `target` vs. `currentTarget`?**
 | Use Case | `target` | `currentTarget` |
 |----------|---------|---------------|
 | Event delegation (child elements) |  Yes |  No |
 | Ensuring the event listener is on the right element |  No |  Yes |
 | Checking if a specific element was clicked |  Yes |  No |
 
----
+<br>
