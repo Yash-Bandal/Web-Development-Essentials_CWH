@@ -33,31 +33,32 @@ console.log(fruits); // Output: ["apple", "banana", "orange"]
 ```
 
 ### Hoisting
-```
-console.log(a);
-var a = 10;
-// Output: undefined
-```
-
-With `var`, JavaScript allows the early access and returns `undefined`.
-
-Now try `let` and `const`:
-
-```
-console.log(b);
-let b = 20;
-// Output: ReferenceError
+1. **var Hoisting (The Sneaky undefined)**
+When you use `var`, JavaScript hoists the variable declaration to the top and automatically gives it a starting value of `undefined`.
+This means you can technically use a `var` variable before you declare it in your code without crashing, but it will just be `undefined` until the code reaches your actual assignment line:
+```javascript
+console.log(score); // Output: undefined (doesn't crash!)
+var score = 10;
+console.log(score); // Output: 10
 ```
 
-```
-console.log(c);
-const c = 30;
-// Output: ReferenceError
+
+Behind the scenes, JavaScript reads it like this:
+```javascript
+var score; // Hoisted to the top
+console.log(score); // undefined
+score = 10;
+console.log(score); // 10
 ```
 
-> [!Note]
-> - `var` is initialized with `undefined` before its declaration is reached.
-> - `let` and `const` are also hoisted, but cannot be accessed before initialization. This period is called the Temporal Dead Zone (TDZ).
+
+2. **let and const Hoisting (The "Temporal Dead Zone")**
+`let` and `const` are also hoisted, but with a catch: JavaScript does not initialize them.
+If you try to access a `let` or `const` variable before the line where you actually declared it, JavaScript throws a strict error and blocks your code. This protected zone before the declaration is called the **Temporal Dead Zone (TDZ)**.
+```javascript
+console.log(age); // ReferenceError: Cannot access 'age' before initialization!
+let age = 25;
+```
 
 ## Quick revision
 
