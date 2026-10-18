@@ -13,13 +13,10 @@ console.log(arr);
 <br>
 
 ## 1. var, let, const
-They declare variables,
-
-var is generally avoided by modern developers
-
-let is used when we will need to change/update the declared variable
-
-const is used when we dont want to update variable, 
+All three keywords are used to declare variables in JavaScript, but they behave very differently:
+- `var`: The old-school declaration method. It is function-scoped and prone to unexpected bugs, so modern developers generally avoid it.
+- `let`: Used when the variable's value will need to change or update over time (block-scoped).
+- `const`: Used by default when the variable's reference should not be reassigned (block-scoped).
 
 > [!Note]
 > You can create a const array and update it, add elements in it, but cannot point it to complete new array
