@@ -13,7 +13,29 @@ console.log(arr);
 <br>
 
 ## 1. var, let, const
+They declare variables,
 
+var is generally avoided by modern developers
+
+let is used when we will need to change/update the declared variable
+
+const is used when we dont want to update variable, 
+
+> [!Note]
+> You can create a const array and update it, add elements in it, but cannot point it to complete new array
+```js
+// 1. Declare a const array of allowed fruits
+const fruits = ["apple", "banana"];
+
+// 2. MUTATING: You CAN add new items to it (this works fine!)
+fruits.push("orange"); 
+console.log(fruits); // Output: ["apple", "banana", "orange"]
+
+// 3. REASSIGNING: You CANNOT point the 'fruits' variable to a brand new array (this throws an error!)
+// fruits = ["grape", "mango"]; -> TypeError: Assignment to constant variable.
+```
+
+### Hoisting
 ```
 console.log(a);
 var a = 10;
