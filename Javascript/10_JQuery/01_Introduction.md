@@ -47,52 +47,52 @@ If you see an **alert box**, jQuery is successfully loaded!
 ## Index
 
 ###  1. Introduction to jQuery
-- [What is jQuery?](./chapters/1_Introduction_to_jQuery.md)
-- [Why use jQuery?](./chapters/1_Introduction_to_jQuery.md)
-- [How to include jQuery (CDN vs. Local File)](./chapters/1_Introduction_to_jQuery.md)
+- [What is jQuery?](./chapters/01_Introduction_to_jQuery.md)
+- [Why use jQuery?](./chapters/01_Introduction_to_jQuery.md)
+- [How to include jQuery (CDN vs. Local File)](./chapters/01_Introduction_to_jQuery.md)
 
 ###  2. jQuery Basics
-- [Syntax and Selecting Elements ($() function)](./chapters/2_jQuery_Basics.md)
-- [The document.ready() Function](./chapters/2_jQuery_Basics.md)
-- [Basic Selectors (id, class, element, attribute)](./chapters/2_jQuery_Basics.md)
-- [Chaining Methods](./chapters/2_jQuery_Basics.md)
+- [Syntax and Selecting Elements ($() function)](./chapters/02_jQuery_Basics.md)
+- [The document.ready() Function](./chapters/02_jQuery_Basics.md)
+- [Basic Selectors (id, class, element, attribute)](./chapters/02_jQuery_Basics.md)
+- [Chaining Methods](./chapters/02_jQuery_Basics.md)
 
 ###  3. jQuery Events
-- [Handling Events (click, dblclick, hover, keydown, keyup)](./chapters/3_jQuery_Events.md)
-- [Event Binding and Delegation (on(), off())](./chapters/3_jQuery_Events.md)
-- [Preventing Default Behavior (preventDefault())](./chapters/3_jQuery_Events.md)
+- [Handling Events (click, dblclick, hover, keydown, keyup)](./chapters/03_jQuery_Events.md)
+- [Event Binding and Delegation (on(), off())](./chapters/03_jQuery_Events.md)
+- [Preventing Default Behavior (preventDefault())](./chapters/03_jQuery_Events.md)
 
 ###  4. Manipulating the DOM
-- [Changing Content (text(), html(), val())](./chapters/4_jQuery_DOM.md)
-- [Modifying Attributes (attr(), prop())](./chapters/4_jQuery_DOM.md)
-- [Adding and Removing Elements (append(), prepend(), remove())](./chapters/4_jQuery_DOM.md)
-- [Modifying CSS (css(), addClass(), removeClass(), toggleClass())](./chapters/4_jQuery_DOM.md)
+- [Changing Content (text(), html(), val())](./chapters/04_jQuery_DOM.md)
+- [Modifying Attributes (attr(), prop())](./chapters/04_jQuery_DOM.md)
+- [Adding and Removing Elements (append(), prepend(), remove())](./chapters/04_jQuery_DOM.md)
+- [Modifying CSS (css(), addClass(), removeClass(), toggleClass())](./chapters/04_jQuery_DOM.md)
 
 ###  5. Effects and Animations
 - [Hiding and Showing Elements (hide(), show(), toggle())](./chapters/5_jQuery_Effects.md)
-- [Fading Effects (fadeIn(), fadeOut(), fadeToggle())](./chapters/5_jQuery_Effects.md)
-- [Sliding Effects (slideUp(), slideDown(), slideToggle())](./chapters/5_jQuery_Effects.md)
-- [Custom Animations (animate())](./chapters/5_jQuery_Effects.md)
+- [Fading Effects (fadeIn(), fadeOut(), fadeToggle())](./chapters/05_jQuery_Effects.md)
+- [Sliding Effects (slideUp(), slideDown(), slideToggle())](./chapters/05_jQuery_Effects.md)
+- [Custom Animations (animate())](./chapters/05_jQuery_Effects.md)
 
 ###  6. jQuery Traversing
-- [Finding Elements (parent(), children(), siblings(), closest())](./chapters/6_jQuery_Traversing.md)
-- [Filtering Elements (first(), last(), eq(), filter(), not())](./chapters/6_jQuery_Traversing.md)
+- [Finding Elements (parent(), children(), siblings(), closest())](./chapters/06_jQuery_Traversing.md)
+- [Filtering Elements (first(), last(), eq(), filter(), not())](./chapters/06_jQuery_Traversing.md)
 
 ###  7. jQuery AJAX
-- [What is AJAX?](./chapters/7_jQuery_AJAX.md)
-- [$.ajax() Method](./chapters/7_jQuery_AJAX.md)
-- [Using $.get(), $.post() for API Calls](./chapters/7_jQuery_AJAX.md)
-- [Handling Responses (success, error)](./chapters/7_jQuery_AJAX.md)
+- [What is AJAX?](./chapters/07_jQuery_AJAX.md)
+- [$.ajax() Method](./chapters/07_jQuery_AJAX.md)
+- [Using $.get(), $.post() for API Calls](./chapters/07_jQuery_AJAX.md)
+- [Handling Responses (success, error)](./chapters/07_jQuery_AJAX.md)
 
 ###  8. jQuery Forms Handling
-- [Getting Form Values (val(), serialize())](./chapters/8_jQuery_Forms.md)
-- [Handling Form Submission (submit())](./chapters/8_jQuery_Forms.md)
-- [Validating Forms (keyup(), blur())](./chapters/8_jQuery_Forms.md)
+- [Getting Form Values (val(), serialize())](./chapters/08_jQuery_Forms.md)
+- [Handling Form Submission (submit())](./chapters/08_jQuery_Forms.md)
+- [Validating Forms (keyup(), blur())](./chapters/08_jQuery_Forms.md)
 
 ###  9. jQuery Plugins
-- [What are jQuery Plugins?](./chapters/9_jQuery_Plugins.md)
-- [How to Use a jQuery Plugin](./chapters/9_jQuery_Plugins.md)
-- [Popular jQuery Plugins (Sliders, Modals, DatePickers)](./chapters/9_jQuery_Plugins.md)
+- [What are jQuery Plugins?](./chapters/09_jQuery_Plugins.md)
+- [How to Use a jQuery Plugin](./chapters/09_jQuery_Plugins.md)
+- [Popular jQuery Plugins (Sliders, Modals, DatePickers)](./chapters/09_jQuery_Plugins.md)
 
 ###  10. jQuery Best Practices & Performance Optimization
 - [Using on() for Event Delegation](./chapters/10_jQuery_Best_Practices.md)
