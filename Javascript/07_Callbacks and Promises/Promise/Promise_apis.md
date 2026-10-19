@@ -110,12 +110,11 @@ cakeOrder
 ```
 ### Waiting for All Tasks to Settle with Promise.allSettled():
 Now, suppose after all this work, the baker wants to know if the cake, box, and packing are done, regardless of whether any of the tasks failed. This is where Promise.allSettled() is useful. It waits for all promises to either fulfill or reject and reports their status.
-
+```javascript
 let boxPreparation = new Promise((resolve) => setTimeout(() => resolve("Box prepared!"), 1000));
 let cakeQualityCheck = new Promise((resolve, reject) => setTimeout(() => reject("Cake failed the quality check!"), 500));
 let decorationReview = new Promise((resolve) => setTimeout(() => resolve("Cake decoration approved!"), 2000));
 
-```javascript
 Promise.allSettled([boxPreparation, cakeQualityCheck, decorationReview])
     .then(results => {
         console.log(results);
