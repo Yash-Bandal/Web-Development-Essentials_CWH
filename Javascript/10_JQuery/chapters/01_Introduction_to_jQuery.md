@@ -91,5 +91,5 @@ $("#darkModeToggle").click(function() {
 ##  What’s Next? 
 Now that you've understood the **basics of jQuery**, the next lesson will cover **jQuery Syntax and Selectors**, where you'll learn how to select and manipulate elements using `$( )`.
 
- **[Next Chapter: jQuery Basics →](./2_jQuery_Basics.md)**
+ **[Next Chapter: jQuery Basics →](./02_jQuery_Basics.md)**
 
