@@ -10,6 +10,11 @@ Verify installation:
 node -v
 npm -v
 ```
+Vue3 shall require v22 LTS +
+
+<br>
+
+
 
 ## 2. Create a Vue 3 Project
 
@@ -44,6 +49,9 @@ npm create vue@latest .
 
 **Important:** If using `npm create vue@latest .`, ensure the current folder is empty or contains only files you intend to keep.
 
+<br>
+
+
 ## 3. Install Dependencies
 
 If the scaffolder has not already installed them:
@@ -66,6 +74,9 @@ npm install -D vite-plugin-vuetify
 
 Use the Vuetify version compatible with your Vue version and project requirements.
 
+<br>
+
+
 ## 4. Run the Project
 
 ```bash
@@ -79,6 +90,9 @@ Stop the development server with:
 ```text
 Ctrl + C
 ```
+
+<br>
+
 
 ## 5. Useful Commands
 
@@ -94,6 +108,9 @@ Ctrl + C
 | `npm list --depth=0` | List installed top-level packages |
 
 Available scripts depend on the generated `package.json`.
+
+<br>
+
 
 ## 6. Typical Project Structure
 
@@ -119,6 +136,9 @@ my-app/
 
 Add folders only when required by your application.
 
+<br>
+
+
 ## 7. What Each Technology Does
 
 - **Vue 3:** Build reactive user interfaces.
@@ -130,6 +150,9 @@ Add folders only when required by your application.
 - **Vite:** Run the development server and build the application.
 - **ESLint:** Identify common code problems.
 - **Prettier:** Format code consistently.
+
+<br>
+
 
 ### Next Steps After Setup
 
